@@ -206,7 +206,8 @@ dialog.veh{border:0;padding:0;background:var(--surface);color:var(--ink);width:m
 dialog.veh::backdrop{background:rgba(10,14,20,.72);backdrop-filter:blur(2px)}
 .v-inner{display:grid;grid-template-columns:1.15fr .85fr;max-height:calc(100vh - 24px);overflow:auto}
 .v-media{background:var(--navy);padding:14px;display:grid;gap:10px;align-content:start}
-.v-main{aspect-ratio:4/3;background:var(--navy-deep);overflow:hidden;position:relative}
+.v-main{aspect-ratio:4/3;background:var(--navy-deep);overflow:hidden;position:relative;display:block}
+.v-media .btn{width:100%}
 .v-main img{width:100%;height:100%;object-fit:cover}
 .v-main .fallback{position:absolute;inset:0;display:grid;place-items:center;align-content:center;gap:10px;color:var(--on-navy-muted)}
 .v-main .fallback img{width:38%;opacity:.5;object-fit:contain}
@@ -363,6 +364,7 @@ footer .legal button{background:none;border:0;padding:0;color:inherit;cursor:poi
     <nav class="nav" id="nav" aria-label="Hauptnavigation">
       <a href="#fahrzeuge">Fahrzeuge</a>
       <a href="#leistungen">Leistungen</a>
+      <a href="#inzahlungnahme">Inzahlungnahme</a>
       <a href="#ueber-uns">Über uns</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
@@ -448,13 +450,65 @@ footer .legal button{background:none;border:0;padding:0;color:inherit;cursor:poi
     </div>
     <div class="serv-grid">
       <div class="serv"><svg><use href="#i-shield"/></svg><h3>Gebrauchtwagengarantie</h3><p>Auf Wunsch erhalten Sie zu Ihrem Fahrzeug eine Gebrauchtwagengarantie – für Sicherheit über den Kauf hinaus.</p></div>
-      <div class="serv"><svg><use href="#i-swap"/></svg><h3>Inzahlungnahme</h3><p>Wir nehmen Ihr Altfahrzeug in Zahlung und rechnen es fair auf den Kaufpreis an.</p></div>
+      <a class="serv" href="#inzahlungnahme" style="text-decoration:none;color:inherit"><svg><use href="#i-swap"/></svg><h3>Inzahlungnahme</h3><p>Wir nehmen Ihr Altfahrzeug in Zahlung und rechnen es fair auf den Kaufpreis an. Jetzt Fahrzeug anbieten →</p></a>
       <div class="serv"><svg><use href="#i-truck"/></svg><h3>Bundesweite Lieferung</h3><p>Ihr neues Fahrzeug liefern wir Ihnen auf Wunsch deutschlandweit direkt vor die Haustür.</p></div>
       <div class="serv"><svg><use href="#i-plate"/></svg><h3>Zulassungsservice</h3><p>Bundesweite Zulassung sowie Kurzzeit- und Zollkennzeichen – wir übernehmen den Behördengang.</p></div>
       <div class="serv"><svg><use href="#i-check"/></svg><h3>TÜV &amp; Gebrauchtwagencheck</h3><p>Hauptuntersuchung auf Wunsch (durch externe Prüfingenieure) und ein Check Ihres Wunschfahrzeugs vor der Übergabe.</p></div>
       <div class="serv"><svg><use href="#i-umbrella"/></svg><h3>Versicherungslösungen</h3><p>Individuelle Versicherungsangebote passend zu Ihrem Fahrzeug – direkt beim Kauf.</p></div>
       <div class="serv"><svg><use href="#i-tire"/></svg><h3>Reifen &amp; Aufbereitung</h3><p>Winter-, Sommer- oder Allwetterreifen gegen Aufpreis, Reifenservice und professionelle Fahrzeugaufbereitung.</p></div>
       <div class="serv"><svg><use href="#i-globe"/></svg><h3>Händler &amp; Export</h3><p>Gewerbliche Abnehmer erhalten auf Anfrage unser aktuelles Händler-Exposé mit allen Fahrzeugdaten.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="inzahlungnahme" style="background:var(--surface-2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Inzahlungnahme</p>
+      <h2>Ihr bisheriges Fahrzeug in Zahlung geben</h2>
+      <hr class="rule">
+      <p>Sie haben ein Fahrzeug bei uns gefunden und möchten Ihr altes abgeben? Wir nehmen es in Zahlung und rechnen den Wert direkt auf den Kaufpreis an – unabhängig von Marke, Alter und Laufleistung.</p>
+    </div>
+    <div class="contact">
+      <div style="display:grid;gap:24px">
+        <div class="steps" style="grid-template-columns:1fr;margin-top:0;gap:14px">
+          <div class="step"><b>SCHRITT 1</b><h3>Fahrzeugdaten senden</h3><p>Füllen Sie das Formular aus und schicken Sie es per WhatsApp oder E-Mail. Fotos von außen, innen und vom Tacho können Sie direkt in WhatsApp anhängen.</p></div>
+          <div class="step"><b>SCHRITT 2</b><h3>Unverbindliche Einschätzung</h3><p>Wir melden uns zeitnah mit einer ersten Einschätzung zum Wert Ihres Fahrzeugs.</p></div>
+          <div class="step"><b>SCHRITT 3</b><h3>Besichtigung vor Ort</h3><p>Bei einem Termin in unserem Autohaus bewerten wir das Fahrzeug und machen Ihnen ein verbindliches Angebot.</p></div>
+          <div class="step"><b>SCHRITT 4</b><h3>Anrechnung auf den Kaufpreis</h3><p>Der vereinbarte Wert wird auf Ihr neues Fahrzeug angerechnet – Abmeldung und Papiere übernehmen wir.</p></div>
+        </div>
+        <p class="hint" style="font-size:.85rem;color:var(--muted)">Bitte bringen Sie zur Besichtigung Fahrzeugschein, Fahrzeugbrief, Serviceheft, HU-Bericht und alle Schlüssel mit.</p>
+      </div>
+
+      <form class="form" id="tradeForm" novalidate>
+        <h3>Fahrzeug zur Inzahlungnahme anbieten</h3>
+        <div class="row">
+          <div class="field"><label for="tCar">Marke &amp; Modell</label><input id="tCar" type="text" placeholder="z. B. VW Golf 1.5 TSI" required></div>
+          <div class="field"><label for="tEz">Erstzulassung</label><input id="tEz" type="text" placeholder="MM/JJJJ" inputmode="numeric"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="tKm">Kilometerstand</label><input id="tKm" type="text" placeholder="z. B. 85.000" inputmode="numeric"></div>
+          <div class="field"><label for="tFuel">Kraftstoff / Getriebe</label><select id="tFuel"><option value="">Bitte wählen</option><option>Benzin · Schaltgetriebe</option><option>Benzin · Automatik</option><option>Diesel · Schaltgetriebe</option><option>Diesel · Automatik</option><option>Hybrid · Automatik</option><option>Elektro</option></select></div>
+        </div>
+        <div class="field"><label for="tState">Zustand, Schäden, Besonderheiten</label><textarea id="tState" placeholder="z. B. unfallfrei, scheckheftgepflegt, kleiner Kratzer hinten links, HU bis 05/2027, 2 Schlüssel"></textarea></div>
+        <div class="field"><label for="tWish">Wunschfahrzeug aus unserem Bestand (optional)</label><select id="tWish"><option value="">Noch nicht festgelegt</option></select></div>
+        <div class="row">
+          <div class="field"><label for="tName">Name</label><input id="tName" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="tTel">Telefon oder E-Mail</label><input id="tTel" type="text" autocomplete="tel" required></div>
+        </div>
+        <div class="actions">
+          <button class="btn btn-navy" type="submit">Anfrage vorbereiten</button>
+          <span class="hint">Danach senden Sie per WhatsApp (mit Fotos) oder per E-Mail.</span>
+        </div>
+        <div class="sendbox" id="tradeSend" aria-live="polite">
+          <p><b>Ihre Anfrage ist fertig.</b> Per WhatsApp können Sie direkt im Anschluss Fotos Ihres Fahrzeugs anhängen.</p>
+          <div class="acts">
+            <a class="btn btn-gold btn-sm" id="tradeWa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> Per WhatsApp senden</a>
+            <a class="btn btn-outline btn-sm" id="tradeMail" href="#"><svg><use href="#i-mail"/></svg> Per E-Mail senden</a>
+            <button class="btn btn-outline btn-sm" type="button" id="tradeCopy">Text kopieren</button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </section>
@@ -596,6 +650,7 @@ footer .legal button{background:none;border:0;padding:0;color:inherit;cursor:poi
       <ul>
         <li><a href="#fahrzeuge">Fahrzeuge</a></li>
         <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#inzahlungnahme">Inzahlungnahme</a></li>
         <li><a href="#ueber-uns">Über uns</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
@@ -668,6 +723,12 @@ const ezKey=c=>{const [m,y]=c.ez.split('/');return +y*100+ +m;};
 const fuelGroup=c=>c.fuel.startsWith('Benzin')?'Benzin':c.fuel;
 const bodyGroup=c=>c.body.startsWith('Limousine')?'Limousine':c.body;
 const waLink=txt=>`https://wa.me/${WA}?text=${encodeURIComponent(txt)}`;
+const AS_DEALER='https://www.autoscout24.de/haendler/autocenter-imperial-gmbh';
+const AS_DIRECT=false; // true = direkter Inserat-Link über die Inserat-Kennung, false = Händlerseite gefiltert auf dieses Fahrzeug
+const asLink=c=>{
+  if(AS_DIRECT&&c.img){const slug=(c.brand+'-'+c.model).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');return `https://www.autoscout24.de/angebote/${slug}-${c.img.split('_')[0]}`;}
+  return `${AS_DEALER}?pricefrom=${c.price-10}&priceto=${c.price+10}`;
+};
 const mailLink=(subj,body)=>`mailto:${MAIL}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
 const fallbackHtml=(c,big)=>`<div class="fallback"><img src="img/logo-light.png" alt=""><span>${big?'Fotos folgen in Kürze':'Fotos folgen'}</span></div>`;
 function hiRes(img){if(!img||!img.dataset.hi)return;const hi=new Image();hi.onload=()=>{img.src=hi.src;};hi.src=AS+img.dataset.hi+'.jpg/720x540.webp';}
@@ -768,7 +829,8 @@ function openCar(id){
     ['Verbrauch (komb.)',c.cons||'auf Anfrage'],['CO₂-Emission (komb.)',c.co2||'auf Anfrage'],c.hu?['HU',c.hu]:null
   ].filter(Boolean);
   const media=c.photos.length?`
-    <div class="v-main" id="vMain"><img src="${esc(c.photos[0])}" alt="${esc(title(c))}" data-hi="${esc(c.img)}" onerror="imgFail(this,true)"></div>
+    <a class="v-main" id="vMain" href="${asLink(c)}" target="_blank" rel="noopener" title="Alle Fotos auf AutoScout24 ansehen"><img src="${esc(c.photos[0])}" alt="${esc(title(c))}" data-hi="${esc(c.img)}" onerror="imgFail(this,true)"></a>
+    <a class="btn btn-gold" href="${asLink(c)}" target="_blank" rel="noopener" style="width:100%"><svg><use href="#i-search"/></svg> Alle Fotos &amp; Details auf AutoScout24</a>
     ${c.photos.length>1?`<div class="v-thumbs">${c.photos.map((p,i)=>`<button type="button" data-p="${esc(p)}" aria-current="${i===0}" aria-label="Foto ${i+1}"><img src="${esc(p)}" alt=""></button>`).join('')}</div>`:''}`
     :`<div class="v-main">${fallbackHtml(c,true)}</div>`;
   $('#dlgInner').innerHTML=`
@@ -784,7 +846,7 @@ function openCar(id){
         <a class="btn btn-outline" href="${mailLink('Anfrage: '+title(c)+' '+c.variant,ask+'\n\nMit freundlichen Grüßen\n')}"><svg><use href="#i-mail"/></svg> E-Mail-Anfrage</a>
         <button class="btn btn-outline" type="button" data-copy="${esc(ask)}">Anfragetext kopieren</button>
       </div>
-      <p class="v-foot">Angaben ohne Gewähr. Irrtümer und Zwischenverkauf vorbehalten. Alle Fotos und die vollständige Ausstattungsliste finden Sie in unserem <a href="https://www.autoscout24.de/haendler/autocenter-imperial-gmbh" target="_blank" rel="noopener" style="color:var(--gold-text)">AutoScout24-Inserat</a>; Fahrzeughistorie und Unterlagen zeigen wir Ihnen gern vor Ort.</p>
+      <p class="v-foot">Angaben ohne Gewähr. Irrtümer und Zwischenverkauf vorbehalten. Alle Fotos und die vollständige Ausstattungsliste finden Sie in unserem <a href="${asLink(c)}" target="_blank" rel="noopener" style="color:var(--gold-text)">AutoScout24-Inserat</a>; Fahrzeughistorie und Unterlagen zeigen wir Ihnen gern vor Ort.</p>
       <div class="v-nav"><button class="btn btn-outline btn-sm" type="button" id="prevCar">← Vorheriges</button><button class="btn btn-outline btn-sm" type="button" id="nextCar">Nächstes →</button></div>
     </div>`;
   $('#prevCar').disabled=curIdx===0;$('#nextCar').disabled=curIdx===current.length-1;
@@ -813,6 +875,22 @@ $('#form').addEventListener('submit',e=>{
   $('#sendbox').classList.add('show');
   $('#sendbox').scrollIntoView({block:'nearest',behavior:'smooth'});
 });
+
+/* ---------- Inzahlungnahme ---------- */
+(function(){
+  const wish=$('#tWish');
+  [...CARS].sort((a,b)=>title(a).localeCompare(title(b),'de')).forEach(c=>{const o=document.createElement('option');o.value=c.id;o.textContent=`${title(c)} ${c.variant} (${c.ez}, ${eur(c.price)})`;wish.appendChild(o);});
+  $('#tradeForm').addEventListener('submit',e=>{
+    e.preventDefault();
+    const v=id=>$('#'+id).value.trim();
+    if(!v('tCar')||!v('tName')||!v('tTel')){toast('Bitte Fahrzeug, Name und Kontakt angeben');(v('tCar')?(v('tName')?$('#tTel'):$('#tName')):$('#tCar')).focus();return;}
+    const w=CARS.find(c=>c.id===v('tWish'));
+    const body=`Guten Tag,\n\nich möchte mein Fahrzeug in Zahlung geben:\n\nFahrzeug: ${v('tCar')}\nErstzulassung: ${v('tEz')||'–'}\nKilometerstand: ${v('tKm')||'–'}\nKraftstoff/Getriebe: ${v('tFuel')||'–'}\nZustand: ${v('tState')||'–'}\n${w?`\nWunschfahrzeug: ${title(w)} ${w.variant} (${w.ez}, ${num(w.km)} km, ${eur(w.price)})\n`:''}\nName: ${v('tName')}\nKontakt: ${v('tTel')}\n\nFotos sende ich gern nach.\n\nMit freundlichen Grüßen\n${v('tName')}`;
+    $('#tradeWa').href=waLink(body);$('#tradeMail').href=mailLink('Inzahlungnahme: '+v('tCar'),body);
+    $('#tradeCopy').onclick=()=>copyText(body);
+    $('#tradeSend').classList.add('show');$('#tradeSend').scrollIntoView({block:'nearest',behavior:'smooth'});
+  });
+})();
 
 /* ---------- Nav / views ---------- */
 const menuBtn=$('#menuBtn'),nav=$('#nav');
