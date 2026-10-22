@@ -841,10 +841,9 @@ function openCar(id){
       <dl class="spec-tbl">${rows.map(([k,v])=>`<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
       <div><p class="eyebrow" style="margin-bottom:8px">Ausstattung (Auszug)</p><div class="tags">${c.feat.map(f=>`<span class="tag">${esc(f)}</span>`).join('')}</div></div>
       <div class="v-cta">
-        <a class="btn btn-gold" href="${waLink(ask)}" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> WhatsApp-Anfrage</a>
+        <a class="btn btn-gold" href="${waLink(ask)}" target="_blank" rel="noopener" style="grid-column:1/-1"><svg><use href="#i-wa"/></svg> WhatsApp-Anfrage</a>
         <a class="btn btn-outline" href="tel:+491639553579"><svg><use href="#i-phone"/></svg> +49 163 9553579</a>
         <a class="btn btn-outline" href="${mailLink('Anfrage: '+title(c)+' '+c.variant,ask+'\n\nMit freundlichen Grüßen\n')}"><svg><use href="#i-mail"/></svg> E-Mail-Anfrage</a>
-        <button class="btn btn-outline" type="button" data-copy="${esc(ask)}">Anfragetext kopieren</button>
       </div>
       <p class="v-foot">Angaben ohne Gewähr. Irrtümer und Zwischenverkauf vorbehalten. Alle Fotos und die vollständige Ausstattungsliste finden Sie in unserem <a href="${asLink(c)}" target="_blank" rel="noopener" style="color:var(--gold-text)">AutoScout24-Inserat</a>; Fahrzeughistorie und Unterlagen zeigen wir Ihnen gern vor Ort.</p>
       <div class="v-nav"><button class="btn btn-outline btn-sm" type="button" id="prevCar">← Vorheriges</button><button class="btn btn-outline btn-sm" type="button" id="nextCar">Nächstes →</button></div>
