@@ -724,7 +724,7 @@ const fuelGroup=c=>c.fuel.startsWith('Benzin')?'Benzin':c.fuel;
 const bodyGroup=c=>c.body.startsWith('Limousine')?'Limousine':c.body;
 const waLink=txt=>`https://wa.me/${WA}?text=${encodeURIComponent(txt)}`;
 const AS_DEALER='https://www.autoscout24.de/haendler/autocenter-imperial-gmbh';
-const AS_DIRECT=false; // true = direkter Inserat-Link über die Inserat-Kennung, false = Händlerseite gefiltert auf dieses Fahrzeug
+const AS_DIRECT=true; // true = direkter Inserat-Link über die Inserat-Kennung, false = Händlerseite gefiltert auf dieses Fahrzeug
 const asLink=c=>{
   if(AS_DIRECT&&c.img){const slug=(c.brand+'-'+c.model).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');return `https://www.autoscout24.de/angebote/${slug}-${c.img.split('_')[0]}`;}
   return `${AS_DEALER}?pricefrom=${c.price-10}&priceto=${c.price+10}`;
