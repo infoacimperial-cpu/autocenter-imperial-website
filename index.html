@@ -190,8 +190,6 @@ a.trust-item:hover b{color:var(--gold-ink)}
 /* inventory */
 .inv-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:26px}
 .inv-head .sec-head{margin-bottom:0}
-.sync{display:block;font-size:.84rem;color:var(--muted);max-width:100%}
-.sync i{display:inline-block;vertical-align:middle;margin-right:8px;width:8px;height:8px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 4px rgba(29,168,81,.15)}
 .toolbar{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:14px;box-shadow:var(--shadow-sm)}
 .chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;scrollbar-width:thin}
 .chip{flex:none;border:1.5px solid var(--line);background:transparent;border-radius:999px;padding:8px 15px;font-size:.88rem;font-weight:600;cursor:pointer;white-space:nowrap}
@@ -540,9 +538,8 @@ dialog.veh::backdrop{background:rgba(8,12,16,.74);backdrop-filter:blur(3px)}
       <div class="sec-head">
         <span class="kicker">Aktueller Bestand</span>
         <h2>Unsere Fahrzeuge</h2>
-        <p>Jedes Fahrzeug mit allen Fotos im AutoScout24-Inserat. Besichtigung und Probefahrt nach kurzer Terminabsprache.</p>
+        <p>Alle Fahrzeuge geprüft und sofort verfügbar. Besichtigung und Probefahrt nach kurzer Terminabsprache.</p>
       </div>
-      <span class="sync"><i aria-hidden="true"></i>Stand <span id="syncDate"></span> · wöchentlich mit AutoScout24 abgeglichen</span>
     </div>
 
     <div class="toolbar" role="region" aria-label="Fahrzeuge filtern">
@@ -1104,7 +1101,6 @@ $('#year').textContent=new Date().getFullYear();
 
 /* ---------- Start ---------- */
 buildFilters();render();renderHero();renderReviews();setMode();
-$('#syncDate').textContent=LAST_SYNC;
 $('#finderStock').textContent=`${CARS.length} Fahrzeuge im Bestand`;
 const h=(location.hash||'').replace('#','');
 if(h==='impressum'||h==='datenschutz')showView(h);
