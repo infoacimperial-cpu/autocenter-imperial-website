@@ -455,6 +455,45 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
 .ablauf b{display:block;font-family:var(--breit);font-stretch:112%;font-weight:500;color:var(--tinte);font-size:.95rem;margin-bottom:2px}
 @media (max-width:520px){.ablauf{grid-template-columns:minmax(0,1fr)}}
 
+
+/* ===== Bestand als Liste wie bei mobile.de ===== */
+.raster{grid-template-columns:minmax(0,1fr);gap:0}
+.auto.fokus{margin-bottom:34px}
+.auto.zeile{display:grid;grid-template-columns:320px minmax(0,1fr) 230px;gap:34px;padding:28px 0;border-bottom:1px solid var(--nacht-linie);align-items:start;transition:background .3s}
+.auto.zeile:first-child{border-top:1px solid var(--nacht-linie)}
+.auto.zeile:hover{background:linear-gradient(90deg,rgba(255,255,255,.025),rgba(255,255,255,0))}
+.zeile .auto-bild{aspect-ratio:4/3}
+.zeile-mitte{min-width:0;display:grid;gap:2px;align-content:start}
+.zeile .auto-modell{font-size:clamp(1.3rem,1.9vw,1.65rem);margin-top:2px}
+.zeile .auto-variante{margin-top:4px}
+.eck{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 22px;margin:18px 0 0;padding-top:16px;border-top:1px solid var(--nacht-linie)}
+.eck div{min-width:0}
+.eck dt{font-size:.82rem;color:var(--grau-hell)}
+.eck dd{margin:2px 0 0;font-family:var(--breit);font-stretch:112%;font-size:.95rem;color:#ECECE9;font-variant-numeric:tabular-nums}
+.verbrauch{margin-top:14px;font-size:.84rem;color:var(--grau)}
+.zeile-preis{display:grid;gap:18px;justify-items:end;text-align:right;align-content:space-between;height:100%}
+.preis-gross{font-family:var(--breit);font-stretch:112%;font-weight:400;font-size:clamp(1.6rem,2.3vw,2.1rem);font-variant-numeric:tabular-nums;line-height:1.1;white-space:nowrap}
+.preis-gross s{display:block;font-size:.95rem;color:var(--grau);margin-top:4px}
+.zeile-aktion{display:flex;gap:8px;align-items:center}
+.zeile-aktion .btn{color:var(--weiss);border-color:var(--nacht-linie)}
+.auto.zeile:hover .zeile-aktion .btn{border-color:var(--messing);color:var(--messing-hell)}
+.wa-quadrat{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;background:var(--wa);color:#fff}
+.wa-quadrat svg{width:20px;height:20px}
+@media (max-width:1060px){.auto.zeile{grid-template-columns:260px minmax(0,1fr) 190px;gap:24px}.eck{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){
+  .auto.zeile{grid-template-columns:42% minmax(0,1fr);gap:8px 16px;padding:20px 0}
+  .zeile .auto-bild{grid-row:1/3}
+  .zeile .auto-variante,.zeile .verbrauch{display:none}
+  .zeile .auto-modell{font-size:1.12rem}
+  .eck{grid-column:1/-1;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 12px;margin-top:10px}
+  .eck dd{font-size:.86rem}
+  .zeile-preis{grid-column:2;grid-row:2;justify-items:start;text-align:left;height:auto;gap:10px}
+  .preis-gross{font-size:1.4rem}
+  .zeile-mitte{grid-row:1}
+  .zeile .marker{font-size:.66rem;padding:4px 8px;top:8px}
+}
+.eck-kurz{display:none}
+@media (max-width:760px){.zeile-mitte .eck{display:none}.eck-kurz{display:block;margin-top:6px;font-family:var(--breit);font-stretch:112%;font-size:.8rem;line-height:1.5;color:#D6D7D4}}
 @media (prefers-reduced-motion:reduce){
   .js .fluegel:not(.da) g>*{transform:none}
   .js .auftauchen{clip-path:none;transition:none}
@@ -957,15 +996,33 @@ function filtered(){
 function carHtml(c,fokus){
   const m=marker(c);
   const pic=c.img?`<img src="${esc(c.photos[0])}" alt="${esc(title(c))}, ${esc(varText(c))}" loading="lazy" data-hi="${esc(c.img)}" onerror="imgFail(this,false)">`:fallbackEl(false).outerHTML;
-  return `<li class="auto${fokus?' fokus':''}" data-open="${c.id}">
-    <div class="auto-bild auftauchen">${pic}${m?`<span class="marker ${m[1]}">${m[0]}</span>`:''}</div>
+  const bild=`<div class="auto-bild auftauchen">${pic}${m?`<span class="marker ${m[1]}">${m[0]}</span>`:''}</div>`;
+  if(fokus) return `<li class="auto fokus" data-open="${c.id}">${bild}
     <div class="auto-text">
-      ${fokus?'<span class="fokus-k">Im Fokus</span>':''}<span class="auto-marke">${esc(c.brand)}</span>
+      <span class="fokus-k">Im Fokus</span><span class="auto-marke">${esc(c.brand)}</span>
       <h3 class="auto-modell"><button type="button" data-open="${c.id}">${esc(c.model)}</button></h3>
       <div class="auto-preis">${eur(c.price)}${c.oldPrice?`<s>${eur(c.oldPrice)}</s>`:''}</div>
       <p class="auto-variante">${esc(varText(c))}</p>
       <p class="auto-daten"><span>EZ ${c.ez}</span><span>${num(c.km)} km</span><span>${c.ps} PS</span><span>${esc(fuelGroup(c))}</span><span>${esc(c.gear)}</span></p>
-      ${fokus?`<span class="btn btn-messing fokus-cta">Fahrzeug ansehen</span>`:'<span class="ansehen">Ansehen</span>'}
+      <span class="btn btn-messing fokus-cta">Fahrzeug ansehen</span>
+    </div>
+  </li>`;
+  const eck=[['Erstzulassung',c.ez],['Kilometer',num(c.km)+' km'],['Leistung',`${c.kw} kW (${c.ps} PS)`],['Kraftstoff',fuelGroup(c)],['Getriebe',c.gear],['Fahrzeughalter',c.owners||'–']];
+  return `<li class="auto zeile" data-open="${c.id}">${bild}
+    <div class="zeile-mitte">
+      <span class="auto-marke">${esc(c.brand)}</span>
+      <h3 class="auto-modell"><button type="button" data-open="${c.id}">${esc(c.model)}</button></h3>
+      <p class="auto-variante">${esc(varText(c))}</p>
+      <dl class="eck">${eck.map(([k,v])=>`<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+      <p class="eck-kurz">EZ ${c.ez}, ${num(c.km)} km, ${c.ps} PS, ${esc(fuelGroup(c))}, ${esc(c.gear)}</p>
+      ${c.cons||c.co2?`<p class="verbrauch">${c.cons?esc(c.cons)+' (komb.)':''}${c.cons&&c.co2?', ':''}${c.co2?esc(c.co2)+' CO₂ (komb.)':''}</p>`:''}
+    </div>
+    <div class="zeile-preis">
+      <div class="preis-gross">${eur(c.price)}${c.oldPrice?`<s>${eur(c.oldPrice)}</s>`:''}</div>
+      <div class="zeile-aktion">
+        <a class="wa-quadrat" href="${waLink(askText(c))}" target="_blank" rel="noopener" aria-label="${esc(title(c))} per WhatsApp anfragen"><svg><use href="#i-wa"/></svg></a>
+        <span class="btn btn-rand btn-klein">Details</span>
+      </div>
     </div>
   </li>`;
 }
@@ -1026,6 +1083,7 @@ function openCar(id){
   if(!dlg.open)dlg.showModal();
 }
 document.addEventListener('click',e=>{
+  if(e.target.closest('.wa-quadrat'))return;
   const o=e.target.closest('[data-open]');if(o){e.preventDefault();openCar(o.dataset.open);return;}
   const t=e.target.closest('[data-trade]');if(t){e.preventDefault();dlg.close();$('#aModeTrade').checked=true;setMode();$('#aWish').value=t.dataset.trade;document.getElementById('ankauf').scrollIntoView({behavior:'smooth'});}
 });
