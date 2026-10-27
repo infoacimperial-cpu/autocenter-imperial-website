@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<link rel="icon" href="../img/logo-dark.png" type="image/png">
+<link rel="icon" href="../img/emblem-gold.svg" type="image/svg+xml"><link rel="alternate icon" href="../img/logo-dark.png" type="image/png">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Autocenter Imperial GmbH – Gebrauchtwagen in Berlin</title>
 <meta name="description" content="Autocenter Imperial GmbH – ausgewählte Gebrauchtwagen in Berlin. Mercedes-Benz, Audi, Maserati, Volvo und mehr. 5,0 Sterne auf Google und mobile.de. Ankauf auch ohne Neukauf.">
@@ -376,13 +376,13 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
 .toast.show{opacity:1;transform:translate(-50%,0)}
 /* ===== Das gewisse Etwas ===== */
 ::selection{background:var(--messing);color:#15110A}
-.fluegel{display:block;width:150px;height:13px;margin:26px auto 30px;color:var(--messing)}
-.fluegel g>*{transform-box:fill-box;transform-origin:right center;transition:transform 1.1s cubic-bezier(.2,.7,.2,1) .15s}
-.fluegel g>*:nth-child(n+5){transform-origin:left center}
-.fluegel g>rect{transform-origin:center}
-.js .fluegel:not(.da) g>*{transform:scaleX(0)}
-.js .fluegel:not(.da) g>rect{transform:scaleY(0)}
-.ankauf-inhalt .fluegel{margin:22px 0 26px}
+.fluegel{display:flex;align-items:center;justify-content:center;gap:18px;margin:26px auto 32px;color:var(--messing)}
+.fluegel svg{width:58px;height:27px;flex:none;transition:opacity .9s .25s,transform .9s .25s cubic-bezier(.2,.7,.2,1)}
+.fluegel i{display:block;width:84px;height:1px;background:linear-gradient(90deg,rgba(176,141,87,0),var(--messing));transform-origin:right;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.fluegel i:last-child{background:linear-gradient(90deg,var(--messing),rgba(176,141,87,0));transform-origin:left}
+.js .fluegel:not(.da) i{transform:scaleX(0)}
+.js .fluegel:not(.da) svg{opacity:0;transform:translateY(6px)}
+.ankauf-inhalt .fluegel{margin:22px 0 26px;justify-content:flex-start}.ankauf-inhalt .fluegel i:first-child{display:none}
 
 /* Körnung auf dunklen Flächen: wirkt wie lackiertes Material statt Bildschirmschwarz */
 .korn{position:relative;isolation:isolate}
@@ -395,7 +395,7 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
 /* Logo: einmaliger Lichtstreif über die Flügel */
 .logo-glanz{position:relative;width:min(440px,72vw);animation:auftritt 1.6s ease-out both}
 .logo-glanz .kino-logo{width:100%;animation:none}
-.logo-glanz::after{content:"";position:absolute;inset:0;-webkit-mask:url("../img/logo-light.png") center/contain no-repeat;mask:url("../img/logo-light.png") center/contain no-repeat;background:linear-gradient(105deg,transparent 35%,rgba(232,206,150,.95) 48%,rgba(255,244,220,1) 50%,rgba(232,206,150,.95) 52%,transparent 65%) no-repeat;background-size:250% 100%;background-position:120% 0;animation:glanz 2.4s 1.1s cubic-bezier(.4,0,.2,1) both}
+.logo-glanz::after{content:"";position:absolute;inset:0;-webkit-mask:url("../img/logo-weiss.svg") center/contain no-repeat;mask:url("../img/logo-weiss.svg") center/contain no-repeat;background:linear-gradient(105deg,transparent 35%,rgba(232,206,150,.95) 48%,rgba(255,244,220,1) 50%,rgba(232,206,150,.95) 52%,transparent 65%) no-repeat;background-size:250% 100%;background-position:120% 0;animation:glanz 2.4s 1.1s cubic-bezier(.4,0,.2,1) both}
 @keyframes glanz{to{background-position:-30% 0}}
 .kino-adresse{margin-top:14px;font-family:var(--breit);font-stretch:125%;font-size:.74rem;letter-spacing:.32em;text-transform:uppercase;color:var(--messing-hell);animation:auftritt 1.6s .55s ease-out both}
 
@@ -495,7 +495,7 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
 .eck-kurz{display:none}
 @media (max-width:760px){.zeile-mitte .eck{display:none}.eck-kurz{display:block;margin-top:6px;font-family:var(--breit);font-stretch:112%;font-size:.8rem;line-height:1.5;color:#D6D7D4}}
 @media (prefers-reduced-motion:reduce){
-  .js .fluegel:not(.da) g>*{transform:none}
+  .js .fluegel:not(.da) i{transform:none}.js .fluegel:not(.da) svg{opacity:1;transform:none}
   .js .auftauchen{clip-path:none;transition:none}
   .logo-glanz,.logo-glanz::after,.kino-adresse{animation:none}
   .logo-glanz::after{display:none}
@@ -537,13 +537,13 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
   <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16v-3l2-5a2 2 0 0 1 2-1.3h10A2 2 0 0 1 19 8l2 5v3"/><path d="M3 16h18v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1H7v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M6 13h12"/></symbol>
 </svg>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-fluegel" viewBox="0 0 260 22"><g fill="currentColor"><path d="M0 4.2h112l-3 2.6H6z"/><path d="M22 9.7h90l-3 2.6H28z"/><path d="M44 15.2h68l-3 2.6H50z"/><rect x="124.5" y="0" width="11" height="22" rx=".5"/><path d="M260 4.2H148l3 2.6h103z"/><path d="M238 9.7h-90l3 2.6h81z"/><path d="M216 15.2h-68l3 2.6h59z"/></g></symbol>
+  <symbol id="i-emblem" viewBox="190 4 697 327"><path fill="currentColor" d="M195.0 100.0 L441.0 100.0 L441.0 121.5 L216.0 121.5ZM882.0 100.0 L636.0 100.0 L636.0 121.5 L861.0 121.5ZM257.0 155.0 L441.0 155.0 L441.0 177.0 L278.0 177.0ZM820.0 155.0 L636.0 155.0 L636.0 177.0 L799.0 177.0ZM311.0 209.0 L441.0 209.0 L441.0 231.0 L332.0 231.0ZM766.0 209.0 L636.0 209.0 L636.0 231.0 L745.0 231.0ZM485 9.5H592V13.2C573 13.4 562.2 18.5 561 28V304C562.2 315.5 573 319.8 592 320.2V325.5H485V320.2C504 319.8 514.8 315.5 516 304V28C514.8 18.5 504 13.4 485 13.2Z"/></symbol>
 </svg>
 
 <header class="kopf" id="top">
   <div class="wrap">
     <button class="menu-knopf" id="menuBtn" type="button" aria-expanded="false" aria-controls="menue"><i aria-hidden="true"></i><span>MENÜ</span><b class="sr">Menü öffnen</b></button>
-    <a class="kopf-logo" href="#start" aria-label="Autocenter Imperial – Startseite"><img src="../img/logo-light.png" alt="Autocenter Imperial" width="102" height="48"></a>
+    <a class="kopf-logo" href="#start" aria-label="Autocenter Imperial – Startseite"><img src="../img/logo-weiss.svg" alt="Autocenter Imperial" width="102" height="48"></a>
     <div class="kopf-rechts">
       <a class="kopf-tel" href="tel:+491639553579">+49 163 9553579</a>
       <a class="kopf-wa" href="https://wa.me/491639553579" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
@@ -554,7 +554,7 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
 <div class="menue" id="menue" role="dialog" aria-modal="true" aria-label="Menü">
   <div class="wrap menue-kopf">
     <button class="menue-zu" id="menuClose" type="button"><svg><use href="#i-x"/></svg>SCHLIESSEN</button>
-    <img src="../img/logo-light.png" alt="" width="102" height="48" style="height:44px;width:auto">
+    <img src="../img/logo-weiss.svg" alt="" width="102" height="48" style="height:44px;width:auto">
   </div>
   <nav aria-label="Hauptnavigation">
     <a href="#fahrzeuge">Fahrzeuge</a>
@@ -581,7 +581,7 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
     <img src="../img/fotos/p06.jpg" alt="" loading="lazy">
   </div>
   <div class="kino-inhalt">
-    <div class="logo-glanz"><img class="kino-logo" src="../img/logo-light.png" alt="Autocenter Imperial" width="440" height="207"></div>
+    <div class="logo-glanz"><img class="kino-logo" src="../img/logo-weiss.svg" alt="Autocenter Imperial" width="440" height="207"></div>
     <p class="kino-adresse">Malteserstraße 24–36, Berlin</p>
     <h1>Ausgewählte Gebrauchtwagen in Berlin</h1>
     <div class="kino-aktion">
@@ -596,7 +596,7 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
   <div class="wrap">
     <div class="schmal">
       <h2 class="titel">Autocenter Imperial</h2>
-      <svg class="fluegel" viewBox="0 0 260 22" aria-hidden="true"><use href="#i-fluegel"/></svg>
+      <span class="fluegel" aria-hidden="true"><i></i><svg viewBox="0 0 697 327"><use href="#i-emblem"/></svg><i></i></span>
       <p>Wir verkaufen Gebrauchtwagen, die wir selbst ausgesucht haben: gepflegt, ehrlich beschrieben und vor Ort in Berlin zu besichtigen. Jedes Gespräch führt der Geschäftsführer persönlich, vom ersten Anruf bis zur Übergabe der Schlüssel.</p>
     </div>
     <div class="kennzahlen">
@@ -611,7 +611,7 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
   <div class="wrap">
     <div class="schmal">
       <h2 class="titel">Unsere Marken</h2>
-      <svg class="fluegel" viewBox="0 0 260 22" aria-hidden="true"><use href="#i-fluegel"/></svg>
+      <span class="fluegel" aria-hidden="true"><i></i><svg viewBox="0 0 697 327"><use href="#i-emblem"/></svg><i></i></span>
       <p class="muted" style="color:#4A4F54">Wählen Sie eine Marke und sehen Sie direkt alle passenden Fahrzeuge.</p>
     </div>
     <div class="marken-raster" id="brandTiles"></div>
@@ -622,7 +622,7 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
   <div class="wrap">
     <div class="schmal">
       <h2 class="titel">Fahrzeugbestand</h2>
-      <svg class="fluegel" viewBox="0 0 260 22" aria-hidden="true"><use href="#i-fluegel"/></svg>
+      <span class="fluegel" aria-hidden="true"><i></i><svg viewBox="0 0 697 327"><use href="#i-emblem"/></svg><i></i></span>
       <p>Alle Fahrzeuge stehen bei uns auf dem Hof. Besichtigung und Probefahrt nach kurzer Absprache.</p>
       <div class="boersen" aria-label="Unser Bestand auf den Fahrzeugbörsen">
         <a class="boerse boerse-mobile" href="https://home.mobile.de/AUTOCENTERIMPERIALGMBH" target="_blank" rel="noopener"><span><small>Alle Fahrzeuge auf</small>mobile.de</span><svg><use href="#i-ext"/></svg></a>
@@ -678,7 +678,7 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
   <div class="ankauf-bild"><img class="auftauchen" src="../img/fotos/p08.jpg" alt="BMW 3er Touring bei der Übergabe an einen Kunden" loading="lazy"></div>
   <div class="ankauf-inhalt">
     <h2 class="titel">Ankauf &amp; Inzahlungnahme</h2>
-    <svg class="fluegel" viewBox="0 0 260 22" aria-hidden="true"><use href="#i-fluegel"/></svg>
+    <span class="fluegel" aria-hidden="true"><i></i><svg viewBox="0 0 697 327"><use href="#i-emblem"/></svg><i></i></span>
     <p>Wir kaufen Ihr Auto, auch wenn Sie bei uns kein Fahrzeug kaufen. Oder Sie geben es beim Kauf in Zahlung und wir verrechnen es mit dem Kaufpreis. Schicken Sie uns die Eckdaten, wir melden uns mit einem Angebot.</p>
     <ol class="ablauf">
       <li><b>Daten senden</b>Modell, Kilometer, ein paar Fotos.</li>
@@ -708,7 +708,7 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
   <div class="wrap">
     <div class="schmal">
       <h2 class="titel">Unser Hof</h2>
-      <svg class="fluegel" viewBox="0 0 260 22" aria-hidden="true"><use href="#i-fluegel"/></svg>
+      <span class="fluegel" aria-hidden="true"><i></i><svg viewBox="0 0 697 327"><use href="#i-emblem"/></svg><i></i></span>
       <p style="color:#4A4F54">In der Malteserstraße stehen die Fahrzeuge, die Sie online sehen, wirklich auf dem Platz. Nehmen Sie sich Zeit, fahren Sie Probe und prüfen Sie alle Unterlagen. Zulassung, Garantie und Lieferung erledigen wir auf Wunsch für Sie.</p>
       <div class="person"><span class="mono" aria-hidden="true">FC</span><div><b>Fatih Cetin</b><span>Geschäftsführer, Ihr Ansprechpartner</span></div></div>
     </div>
@@ -720,7 +720,7 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
   <div class="wrap">
     <div class="schmal">
       <h2 class="titel">Was unsere Kunden sagen</h2>
-      <svg class="fluegel" viewBox="0 0 260 22" aria-hidden="true"><use href="#i-fluegel"/></svg>
+      <span class="fluegel" aria-hidden="true"><i></i><svg viewBox="0 0 697 327"><use href="#i-emblem"/></svg><i></i></span>
       <p style="color:#4A4F54">5,0 von 5 Sternen bei Google und bei mobile.de.</p>
     </div>
     <div class="zitate" id="quotes"></div>
@@ -735,7 +735,7 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
   <div class="wrap">
     <div class="schmal">
       <h2 class="titel">Rund um Ihr Fahrzeug</h2>
-      <svg class="fluegel" viewBox="0 0 260 22" aria-hidden="true"><use href="#i-fluegel"/></svg>
+      <span class="fluegel" aria-hidden="true"><i></i><svg viewBox="0 0 697 327"><use href="#i-emblem"/></svg><i></i></span>
     </div>
     <dl class="leistungen">
       <div><dt>Ankauf</dt><dd>Wir kaufen Ihr Auto, mit oder ohne Neukauf. <a href="#ankauf">Angebot anfragen</a></dd></div>
@@ -754,7 +754,7 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
   <div class="wrap">
     <div class="schmal">
       <h2 class="titel">Besuchen Sie uns</h2>
-      <svg class="fluegel" viewBox="0 0 260 22" aria-hidden="true"><use href="#i-fluegel"/></svg>
+      <span class="fluegel" aria-hidden="true"><i></i><svg viewBox="0 0 697 327"><use href="#i-emblem"/></svg><i></i></span>
     </div>
     <div class="kontakt">
       <div>
@@ -841,7 +841,7 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
 <footer class="fuss">
   <span class="wasser" aria-hidden="true">IMPERIAL</span>
   <div class="wrap">
-    <img src="../img/logo-light.png" alt="Autocenter Imperial" width="136" height="64">
+    <img src="../img/logo-weiss.svg" alt="Autocenter Imperial" width="136" height="64">
     <p class="fuss-adr">Malteserstraße 24–36, 12249 Berlin</p>
     <nav class="fuss-links" aria-label="Weitere Links">
       <a href="https://www.autoscout24.de/haendler/autocenter-imperial-gmbh" target="_blank" rel="noopener">AutoScout24</a>
@@ -945,7 +945,7 @@ const syncDate=(()=>{const [d,m,y]=LAST_SYNC.split('.');return new Date(+y,+m-1,
 const isNew=c=>{if(!c.added)return false;const a=new Date(c.added+'T00:00:00');return (syncDate-a)/864e5<=NEW_DAYS;};
 const askText=c=>`Guten Tag, ich interessiere mich für den ${title(c)} ${c.variant} (EZ ${c.ez}, ${num(c.km)} km, ${eur(c.price)}). Ist das Fahrzeug noch verfügbar?`;
 const varText=c=>c.variant.replace(/ · /g,', ');
-function fallbackEl(big){const d=document.createElement('div');d.className='ersatz';d.innerHTML=`<img src="../../img/logo-light.png" alt=""><span>${big?'Fotos auf AutoScout24':'Foto folgt'}</span>`;return d;}
+function fallbackEl(big){const d=document.createElement('div');d.className='ersatz';d.innerHTML=`<img src="../../img/logo-weiss.svg" alt=""><span>${big?'Fotos auf AutoScout24':'Foto folgt'}</span>`;return d;}
 function imgFail(el,big){el.replaceWith(fallbackEl(big));}
 function upgrade(img,sizes){
   if(!img||!img.dataset.hi)return;
