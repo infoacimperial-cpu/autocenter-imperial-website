@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../img/logo-dark.png" type="image/png">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Autocenter Imperial GmbH – Gebrauchtwagen in Berlin</title>
+<meta name="description" content="Autocenter Imperial GmbH – geprüfte Gebrauchtwagen in Berlin. Mercedes-Benz, Audi, Volkswagen, Peugeot und mehr. 5,0 Sterne auf Google und mobile.de. Ankauf auch ohne Neukauf.">
+
+<meta property="og:url" content="https://autocenter-imperial.de/">
+<meta property="og:title" content="Autocenter Imperial GmbH – Gebrauchtwagen in Berlin">
+<meta property="og:description" content="Geprüfte Gebrauchtwagen in Berlin, persönlich verkauft. 5,0 Sterne auf Google und mobile.de. Ankauf auch ohne Neukauf.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://autocenter-imperial.de/img/fotos/cover-platz.jpg">
+<meta name="theme-color" content="#23272B">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoDealer","name":"Autocenter Imperial GmbH","url":"https://autocenter-imperial.de/","telephone":"+49 163 9553579","email":"info@autocenter-imperial.de","image":"https://autocenter-imperial.de/img/logo-square.png","logo":"https://autocenter-imperial.de/img/logo-square.png","address":{"@type":"PostalAddress","streetAddress":"Malteserstr. 24–36","postalCode":"12249","addressLocality":"Berlin","addressCountry":"DE"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"10:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"14:00"}],"sameAs":["https://www.autoscout24.de/haendler/autocenter-imperial-gmbh","https://www.mobile.de/bewertungen/AutocenterImperialGmbH","https://www.google.com/maps/place/?q=place_id:ChIJXYZ36L5FqEcR9b753FTX07g"]}
+</script>
+<style>
+/* Autocenter Imperial — Entwurf 3
+   Farben aus dem eigenen Firmenschild (pulverbeschichtetes Anthrazit) und dem Logo (Messing).
+   Schrift: Barlow Semi Condensed (Schilder, Kennzeichen, Preise) + Source Serif 4 (Text).
+   Signatur: der Bestand als gedruckte Preisliste; der Kennzeichenhalter als Abschluss. */
+@font-face{font-family:"Barlow SC";font-weight:500;font-display:swap;src:url("../fonts/barlow-semi-condensed-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:"Barlow SC";font-weight:600;font-display:swap;src:url("../fonts/barlow-semi-condensed-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Barlow SC";font-weight:700;font-display:swap;src:url("../fonts/barlow-semi-condensed-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Source Serif";font-weight:400;font-display:swap;src:url("../fonts/source-serif-4-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Source Serif";font-weight:400;font-style:italic;font-display:swap;src:url("../fonts/source-serif-4-latin-400-italic.woff2") format("woff2")}
+@font-face{font-family:"Source Serif";font-weight:600;font-display:swap;src:url("../fonts/source-serif-4-latin-600-normal.woff2") format("woff2")}
+
+:root{
+  --asphalt:#23272B;   /* dunkle Flächen, Text */
+  --schild:#373C41;    /* Anthrazit des Firmenschilds */
+  --kalk:#E8E7E3;      /* Seitenhintergrund, kühles Betongrau */
+  --weiss:#FBFBFA;     /* Flächen */
+  --messing:#A8875A;   /* Logo-Gold */
+  --messing-hell:#CBAE80;
+  --stahl:#62686F;     /* gedämpfter Text */
+  --linie:#CFCDC7;
+  --linie-dunkel:#4A5056;
+  --wa:#1E8A52;
+  --sans:"Barlow SC","Arial Narrow",Arial,sans-serif;
+  --serif:"Source Serif",Georgia,"Times New Roman",serif;
+  --bar:0px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--kalk);color:var(--asphalt);font-family:var(--serif);font-size:17px;line-height:1.62;overflow-x:hidden;padding-bottom:var(--bar)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--asphalt)}
+img{display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--sans);font-weight:700;line-height:1.02;margin:0;letter-spacing:-.005em}
+p{margin:0}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--messing);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.num{font-family:var(--sans);font-variant-numeric:tabular-nums lining-nums}
+.muted{color:var(--stahl)}
+
+/* Schaltflächen: rechteckig wie Beschilderung, kleine Rundung */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:11px 22px;border-radius:3px;border:1.5px solid transparent;font-family:var(--sans);font-weight:600;font-size:1.02rem;letter-spacing:.01em;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .18s,border-color .18s,color .18s}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-messing{background:var(--messing);color:#17130C;border-color:var(--messing)}
+.btn-messing:hover{background:var(--messing-hell);border-color:var(--messing-hell)}
+.btn-dunkel{background:var(--asphalt);color:var(--weiss);border-color:var(--asphalt)}
+.btn-dunkel:hover{background:var(--schild)}
+.btn-linie{background:transparent;border-color:currentColor}
+.btn-linie:hover{border-color:var(--messing);color:var(--messing)}
+.btn-wa{background:var(--wa);color:#fff;border-color:var(--wa)}
+.btn-wa:hover{filter:brightness(1.08)}
+.btn-klein{min-height:40px;padding:8px 16px;font-size:.95rem}
+.btn-block{width:100%}
+
+/* ---------- Kopf ---------- */
+.kopf{position:absolute;top:0;left:0;right:0;z-index:20;color:var(--weiss)}
+.kopf .wrap{display:flex;align-items:center;gap:28px;min-height:84px}
+.marke img{height:58px;width:auto}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{font-family:var(--sans);font-weight:600;font-size:1.02rem;text-decoration:none;padding:6px 0;border-bottom:1.5px solid transparent;opacity:.92}
+.nav a:hover{border-bottom-color:var(--messing-hell);opacity:1}
+.kopf-tel{font-family:var(--sans);font-weight:600;text-decoration:none;font-size:1.02rem;font-variant-numeric:tabular-nums}
+.menu-btn{display:none;background:none;border:1.5px solid rgba(255,255,255,.5);border-radius:3px;width:46px;height:46px;cursor:pointer;color:var(--weiss);align-items:center;justify-content:center}
+.menu-btn svg{width:22px;height:22px}
+@media (max-width:980px){
+  .kopf-tel,.kopf .btn-wa{display:none}
+  .menu-btn{display:inline-flex;margin-left:auto}
+  .nav{display:none;position:absolute;top:84px;left:0;right:0;flex-direction:column;gap:0;background:var(--asphalt);padding:6px 0 14px;border-top:1px solid var(--linie-dunkel)}
+  .nav.open{display:flex}
+  .nav a{padding:14px max(24px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--linie-dunkel);font-size:1.15rem}
+}
+
+/* ---------- Startbild ---------- */
+.start{position:relative;min-height:min(92vh,880px);display:flex;flex-direction:column;justify-content:flex-end;background:var(--asphalt);color:var(--weiss);overflow:hidden}
+.start-foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 58%}
+.start::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(23,26,29,.62) 0,rgba(23,26,29,.25) 45%,rgba(23,26,29,0) 70%),linear-gradient(180deg,rgba(23,26,29,.62) 0,rgba(23,26,29,0) 22%,rgba(23,26,29,0) 42%,rgba(23,26,29,.86) 82%,rgba(23,26,29,.94) 100%)}
+.start-text{position:relative;z-index:2;padding-bottom:44px;width:100%}
+.start h1{font-size:clamp(2.6rem,6.2vw,5.4rem);font-weight:700;line-height:.96;max-width:15ch;letter-spacing:-.01em}
+.start-sub{margin-top:22px;max-width:46ch;font-size:clamp(1.05rem,1.4vw,1.2rem);color:#E3E3DF}
+.start-aktion{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.start .btn-linie{color:var(--weiss)}
+/* Schild-Streifen: wörtlich vom Zaunschild übernommen */
+.schild{position:relative;z-index:2;width:100%;background:var(--schild);border-top:1px solid #4B5157}
+.schild .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;min-height:66px;padding-top:12px;padding-bottom:12px}
+.schild-text{font-family:var(--sans);font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:.88rem;color:#DADAD5;display:flex;flex-wrap:wrap;gap:0}
+.schild-text span+span::before{content:"|";margin:0 .9em;color:var(--messing-hell);letter-spacing:0}
+.noten{display:flex;gap:22px;flex-wrap:wrap}
+.note{display:flex;align-items:baseline;gap:8px;text-decoration:none;color:#E8E8E4;font-family:var(--sans);font-weight:500}
+.note b{font-weight:700;font-size:1.3rem;color:var(--weiss)}
+.note .sterne{color:var(--messing-hell);letter-spacing:1px;font-size:.9rem}
+.note:hover small{text-decoration:underline}
+@media (max-width:700px){
+  .start{min-height:auto;padding-top:120px}
+  .start-foto{object-position:42% 50%}
+  .start-text{padding-top:34vh}
+  .schild-text{font-size:.74rem;letter-spacing:.14em}
+  .schild-text span+span::before{margin:0 .55em}
+}
+
+/* ---------- Abschnitte ---------- */
+.abschnitt{padding:96px 0}
+.kopfzeile{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:34px}
+.kopfzeile h2{font-size:clamp(2.2rem,4.6vw,3.6rem)}
+.kopfzeile p{max-width:52ch;color:var(--stahl);margin-top:12px}
+@media (max-width:700px){.abschnitt{padding:68px 0}}
+
+/* ---------- Bestand ---------- */
+.boersen{display:flex;gap:10px;flex-wrap:wrap}
+.boerse{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:10px 18px;border-radius:3px;text-decoration:none;font-family:var(--sans);font-weight:700;font-size:1.15rem;line-height:1.05}
+.boerse small{display:block;font-weight:500;font-size:.78rem;opacity:.85}
+.boerse svg{width:18px;height:18px}
+.boerse-mobile{background:#F47920;color:#fff}
+.boerse-as24{background:#FFC800;color:#161616}
+.boerse:hover{filter:brightness(1.05)}
+.brands{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.bestand{display:grid;grid-template-columns:230px minmax(0,1fr);gap:44px;align-items:start}
+.filter{position:sticky;top:20px;display:grid;gap:22px}
+.filter h3{font-size:1.02rem;font-weight:600;margin-bottom:8px;color:var(--asphalt)}
+.markenliste{display:grid;gap:0;margin:0;padding:0;list-style:none}
+.markenliste button{display:flex;justify-content:space-between;align-items:baseline;width:100%;background:none;border:0;border-left:2px solid transparent;padding:6px 0 6px 12px;cursor:pointer;font-family:var(--sans);font-weight:500;font-size:1.05rem;text-align:left;color:var(--stahl)}
+.markenliste button span{font-variant-numeric:tabular-nums}
+.markenliste button:hover{color:var(--asphalt)}
+.markenliste button[aria-pressed="true"]{border-left-color:var(--messing);color:var(--asphalt);font-weight:700}
+.feld label{display:block;font-family:var(--sans);font-weight:600;font-size:.95rem;margin-bottom:5px}
+.feld input,.feld select,.feld textarea{width:100%;min-width:0;background:var(--weiss);border:1px solid var(--linie);border-radius:3px;padding:11px 12px;font-size:1rem;font-family:var(--serif)}
+.feld select{appearance:none;-webkit-appearance:none;background:var(--weiss) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2323272B' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 12px center;padding-right:34px}
+.feld input:focus,.feld select:focus,.feld textarea:focus{outline:none;border-color:var(--messing);box-shadow:0 0 0 3px rgba(168,135,90,.2)}
+.filter-zu{background:none;border:0;padding:0;cursor:pointer;font-family:var(--sans);font-weight:600;color:var(--stahl);text-decoration:underline;text-align:left}
+.filter-knopf{display:none}
+
+.liste-kopf{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-bottom:12px;border-bottom:2px solid var(--asphalt);font-family:var(--sans)}
+.liste-kopf b{font-size:1.3rem}
+.liste-kopf .feld{display:flex;align-items:center;gap:10px}
+.liste-kopf .feld label{margin:0;font-weight:500;color:var(--stahl)}
+.liste-kopf .feld select{width:auto;padding-top:7px;padding-bottom:7px}
+.liste{list-style:none;margin:0;padding:0}
+.zeile{display:grid;grid-template-columns:260px minmax(0,1fr) auto;gap:26px;padding:22px 0;border-bottom:1px solid var(--linie);align-items:center;cursor:pointer}
+.zeile:hover .modell{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
+.zeile-foto{position:relative;aspect-ratio:4/3;background:var(--schild);overflow:hidden}
+.zeile-foto img{width:100%;height:100%;object-fit:cover}
+.hinweis{position:absolute;left:0;top:10px;background:var(--asphalt);color:var(--weiss);font-family:var(--sans);font-weight:600;font-size:.82rem;padding:3px 9px}
+.hinweis.neu{background:var(--messing);color:#17130C}
+.fabrikat{font-family:var(--sans);font-weight:500;color:var(--stahl);font-size:1.02rem}
+.modell{display:block;font-family:var(--sans);font-weight:700;font-size:clamp(1.45rem,2.2vw,1.9rem);line-height:1.05;background:none;border:0;padding:0;margin:2px 0 6px;text-align:left;cursor:pointer;color:var(--asphalt)}
+.variante{font-style:italic;color:#3F4449}
+.daten{display:flex;flex-wrap:wrap;gap:6px 26px;margin:14px 0 0;padding:0}
+.daten div{display:grid}
+.daten dt{font-family:var(--sans);font-weight:500;font-size:.85rem;color:var(--stahl)}
+.daten dd{margin:0;font-family:var(--sans);font-weight:600;font-size:1.08rem;font-variant-numeric:tabular-nums}
+.preis{text-align:right;display:grid;gap:10px;justify-items:end}
+.preis b{font-family:var(--sans);font-weight:700;font-size:clamp(1.7rem,2.6vw,2.3rem);font-variant-numeric:tabular-nums;line-height:1}
+.preis s{font-family:var(--sans);color:var(--stahl);font-size:1rem;display:block;margin-top:2px}
+.preis-aktion{display:flex;gap:8px}
+.wa-rund{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:3px;background:var(--wa);color:#fff}
+.wa-rund svg{width:20px;height:20px}
+.leer{padding:46px 0;border-bottom:1px solid var(--linie);color:var(--stahl)}
+.leer a{color:var(--asphalt);font-weight:600}
+.ersatz{display:grid;place-items:center;align-content:center;gap:8px;width:100%;height:100%;background:var(--schild);color:#B9BBB8;font-family:var(--sans);font-size:.9rem}
+.ersatz img{width:42%;opacity:.55}
+
+@media (max-width:1060px){.zeile{grid-template-columns:200px minmax(0,1fr) auto;gap:20px}}
+@media (max-width:900px){
+  .bestand{grid-template-columns:minmax(0,1fr);gap:18px}
+  .filter{position:static;display:none;background:var(--weiss);padding:18px;border:1px solid var(--linie)}
+  .filter.open{display:grid}
+  .filter-knopf{display:inline-flex}
+  .markenliste{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .liste-kopf .feld{width:100%}.liste-kopf .feld select{flex:1}
+  .zeile{grid-template-columns:minmax(0,1fr);gap:14px;padding:20px 0 24px}
+  .preis{text-align:left;justify-items:start;grid-template-columns:1fr auto;align-items:center;width:100%}
+  .daten{gap:6px 18px}
+}
+
+/* Suchauftrag */
+.suche{margin-top:56px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:40px;align-items:start;padding-top:36px;border-top:2px solid var(--asphalt)}
+.suche h3{font-size:1.9rem}
+.suche p{color:var(--stahl);margin-top:10px}
+.suche form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.suche .breit{grid-column:1/-1}
+@media (max-width:800px){.suche{grid-template-columns:minmax(0,1fr)}.suche form{grid-template-columns:minmax(0,1fr)}}
+
+/* Versandbox nach Formular */
+.versand{display:none;grid-column:1/-1;background:var(--weiss);border-left:3px solid var(--messing);padding:16px 18px}
+.versand.show{display:block}
+.versand p{margin-bottom:12px}
+.versand .reihe{display:flex;flex-wrap:wrap;gap:10px}
+
+/* ---------- Ankauf ---------- */
+.dunkel{background:var(--asphalt);color:var(--weiss)}
+.dunkel .kopfzeile p,.dunkel .muted{color:#BFC1BE}
+.ankauf{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:64px;align-items:start}
+.ankauf h2{font-size:clamp(2.2rem,4.6vw,3.6rem);max-width:13ch}
+.ankauf-text>p{margin-top:20px;max-width:46ch;color:#D4D5D1;font-size:1.08rem}
+.punkte{margin:30px 0 0;padding:0;list-style:none;display:grid;gap:0;border-top:1px solid var(--linie-dunkel)}
+.punkte li{padding:14px 0;border-bottom:1px solid var(--linie-dunkel);display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px}
+.punkte b{font-family:var(--sans);font-weight:600;color:var(--messing-hell);font-size:1.05rem}
+.punkte span{color:#D4D5D1}
+.ankauf-form{background:var(--schild);padding:30px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.ankauf-form .breit{grid-column:1/-1}
+.ankauf-form .feld label{color:#E6E6E2}
+.ankauf-form .feld input,.ankauf-form .feld select{background:#2B3035;border-color:#555B61;color:var(--weiss)}
+.ankauf-form .feld select{background:#2B3035 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23CBAE80' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 12px center;color-scheme:dark}
+.wahl{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;border:1.5px solid #5A6066;border-radius:3px;overflow:hidden}
+.wahl input{position:absolute;opacity:0;pointer-events:none}
+.wahl label{display:block;text-align:center;padding:12px 10px;cursor:pointer;font-family:var(--sans);font-weight:600;color:#C9CBC8}
+.wahl input:checked+label{background:var(--messing);color:#17130C}
+.wahl input:focus-visible+label{outline:2px solid var(--messing-hell);outline-offset:-4px}
+.ankauf-form .versand{background:#2B3035;color:var(--weiss)}
+@media (max-width:900px){.ankauf{grid-template-columns:minmax(0,1fr);gap:36px}.punkte li{grid-template-columns:minmax(0,1fr);gap:2px}}
+@media (max-width:520px){.ankauf-form{grid-template-columns:minmax(0,1fr);padding:20px}}
+
+/* ---------- Der Hof ---------- */
+.hof{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:56px;align-items:end}
+.hof-gross{position:relative;display:block;width:100%;padding:0;border:0;background:var(--schild);cursor:zoom-in;aspect-ratio:4/5;overflow:hidden}
+.hof-gross img{width:100%;height:100%;object-fit:cover}
+.hof-text h2{font-size:clamp(2.2rem,4.6vw,3.6rem)}
+.hof-text p{margin-top:18px;max-width:48ch;color:#3F4449}
+.person{display:flex;gap:16px;align-items:center;margin-top:30px;padding-top:22px;border-top:1px solid var(--linie)}
+.person .mono{width:58px;height:58px;flex:none;display:grid;place-items:center;background:var(--asphalt);color:var(--messing-hell);font-family:var(--sans);font-weight:700;font-size:1.25rem}
+.person b{display:block;font-family:var(--sans);font-size:1.25rem}
+.person span{color:var(--stahl);font-size:.95rem}
+.streifen{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:12px}
+.streifen button{padding:0;border:0;background:var(--schild);cursor:zoom-in;aspect-ratio:1;overflow:hidden}
+.streifen img{width:100%;height:100%;object-fit:cover;transition:opacity .2s}
+.streifen button:hover img{opacity:.86}
+.alle-fotos{margin-top:16px;background:none;border:0;padding:0;font-family:var(--sans);font-weight:600;font-size:1.02rem;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+@media (max-width:900px){.hof{grid-template-columns:minmax(0,1fr);gap:28px}.hof-gross{aspect-ratio:4/3}.streifen{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ---------- Stimmen ---------- */
+.stimmen-kopf{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:48px;align-items:end;padding-bottom:28px;border-bottom:2px solid var(--asphalt)}
+.stimmen-kopf h2{font-size:clamp(2.2rem,4.6vw,3.6rem)}
+.wert{text-decoration:none;display:grid;gap:2px}
+.wert b{font-family:var(--sans);font-weight:700;font-size:clamp(3rem,6vw,4.6rem);line-height:.9}
+.wert span{font-family:var(--sans);font-weight:500;color:var(--stahl)}
+.wert:hover span{color:var(--asphalt);text-decoration:underline}
+.zitate{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 44px}
+.zitat{margin:0;padding:30px 0;border-bottom:1px solid var(--linie)}
+.zitat blockquote{margin:0;font-size:1.22rem;line-height:1.5}
+.zitat figcaption{margin-top:14px;font-family:var(--sans);color:var(--stahl);font-weight:500}
+.zitat figcaption b{color:var(--asphalt);font-weight:600}
+.stimmen-fuss{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+@media (max-width:900px){.stimmen-kopf{grid-template-columns:1fr 1fr;gap:24px}.stimmen-kopf h2{grid-column:1/-1}.zitate{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- Leistungen ---------- */
+.leistungen{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 56px;margin:0;border-top:2px solid var(--asphalt)}
+.leistungen div{display:grid;grid-template-columns:220px minmax(0,1fr);gap:20px;padding:20px 0;border-bottom:1px solid var(--linie)}
+.leistungen dt{font-family:var(--sans);font-weight:700;font-size:1.25rem;line-height:1.15}
+.leistungen dd{margin:0;color:#3F4449}
+.leistungen a{font-weight:600}
+@media (max-width:900px){.leistungen{grid-template-columns:minmax(0,1fr)}.leistungen div{grid-template-columns:minmax(0,1fr);gap:4px}}
+
+/* ---------- Kontakt ---------- */
+.kontakt{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:start}
+.kontakt h2{font-size:clamp(2.2rem,4.6vw,3.6rem)}
+.adresse{margin-top:24px;font-family:var(--sans);font-weight:600;font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.15}
+.kontakt-wege{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.zeiten{margin:34px 0 0;display:grid;max-width:420px}
+.zeiten div{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--linie-dunkel)}
+.zeiten dt{font-family:var(--sans);font-weight:500;color:#D4D5D1}
+.zeiten dd{margin:0;font-family:var(--sans);font-weight:600;font-variant-numeric:tabular-nums}
+.zeiten-hinweis{margin-top:12px;color:#BFC1BE;font-size:.95rem}
+.kontakt-form{background:var(--weiss);color:var(--asphalt);padding:30px;display:grid;gap:14px}
+.kontakt-form h3{font-size:1.6rem}
+.kontakt-form textarea{min-height:120px;resize:vertical}
+@media (max-width:900px){.kontakt{grid-template-columns:minmax(0,1fr);gap:40px}}
+@media (max-width:520px){.kontakt-form{padding:20px}}
+
+/* ---------- Fuß: Kennzeichenhalter ---------- */
+.fuss{background:#191C1F;color:#C9CBC8;padding:56px 0 calc(28px + var(--bar))}
+.halter{max-width:560px;margin:0 auto;border-radius:9px;background:linear-gradient(180deg,#2A2E32,#1C1F22);border:1px solid #3B4045;padding:14px 22px 10px;text-align:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+.halter strong{display:block;font-family:var(--sans);font-weight:600;letter-spacing:.32em;color:#E4E4E0;font-size:clamp(1rem,2.6vw,1.35rem);padding-left:.32em}
+.halter small{display:block;margin-top:4px;font-family:var(--sans);font-weight:500;font-size:.78rem;letter-spacing:.06em;color:#9EA2A0}
+.fuss-links{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 26px;margin-top:34px;font-family:var(--sans);font-weight:500}
+.fuss-links a,.fuss-links button{color:#C9CBC8;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;font:inherit}
+.fuss-links a:hover,.fuss-links button:hover{color:var(--weiss);text-decoration:underline}
+.fuss-recht{text-align:center;margin-top:18px;font-size:.88rem;color:#8D918F}
+
+/* ---------- Mobile Leiste ---------- */
+.leiste{display:none}
+@media (max-width:760px){
+  :root{--bar:calc(64px + env(safe-area-inset-bottom,0px))}
+  .leiste{display:grid;grid-template-columns:1fr 1.25fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--asphalt);border-top:1px solid var(--linie-dunkel);padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px));gap:8px}
+  .leiste a{display:flex;align-items:center;justify-content:center;gap:7px;min-height:48px;border-radius:3px;text-decoration:none;color:var(--weiss);font-family:var(--sans);font-weight:600;border:1px solid var(--linie-dunkel)}
+  .leiste a.wa{background:var(--wa);border-color:var(--wa)}
+  .leiste svg{width:18px;height:18px}
+}
+
+/* ---------- Rechtliches ---------- */
+.legal-view{display:none;padding:150px 0 90px;background:var(--kalk)}
+.legal-view.show{display:block}
+.legal-view .wrap{max-width:820px}
+.legal-view .eyebrow,.legal-view .rule{display:none}
+.legal-view h2{font-size:clamp(2.2rem,4.6vw,3.2rem);margin-bottom:24px}
+.legal-view h3{font-size:1.3rem;margin:30px 0 8px}
+.legal-view .box{background:var(--weiss);padding:22px;border-left:3px solid var(--messing)}
+.legal-view .btn-outline{border-color:currentColor}
+.legal-view a{color:var(--asphalt)}
+
+/* ---------- Detailansicht ---------- */
+dialog.fz{border:0;padding:0;background:var(--weiss);color:var(--asphalt);width:min(1120px,calc(100vw - 32px));max-height:calc(100vh - 32px);border-radius:4px;box-shadow:0 40px 100px rgba(0,0,0,.45);overflow:hidden}
+dialog.fz::backdrop{background:rgba(20,23,26,.78)}
+.fz-innen{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);max-height:calc(100vh - 32px);overflow:auto}
+.fz-bild{background:var(--asphalt);padding:18px;display:grid;gap:12px;align-content:start}
+.fz-haupt{display:block;aspect-ratio:4/3;overflow:hidden;background:var(--schild)}
+.fz-haupt img{width:100%;height:100%;object-fit:cover}
+.fz-info{padding:28px 28px 30px;display:grid;gap:20px;align-content:start;min-width:0}
+.fz-info h3{font-size:2rem;padding-right:48px}
+.fz-preis{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;padding:14px 0;border-top:2px solid var(--asphalt);border-bottom:1px solid var(--linie)}
+.fz-preis b{font-family:var(--sans);font-size:2.4rem;font-weight:700;font-variant-numeric:tabular-nums;line-height:1}
+.fz-preis s{font-family:var(--sans);color:var(--stahl)}
+.fz-preis small{flex-basis:100%;color:var(--stahl);font-size:.9rem}
+.spez{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 22px;margin:0}
+.spez div{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--linie)}
+.spez dt{color:var(--stahl);font-size:.95rem}
+.spez dd{margin:0;font-family:var(--sans);font-weight:600;text-align:right}
+.ausst h4{font-size:1.05rem;margin-bottom:6px}
+.ausst p{color:#3F4449}
+.fz-aktion{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.fz-aktion .ganz{grid-column:1/-1}
+.fz-aktion .btn{white-space:normal}
+.fz-zusatz{font-size:.86rem;color:var(--stahl)}
+.fz-zusatz a{color:var(--asphalt);font-weight:600}
+.fz-nav{display:flex;justify-content:space-between;gap:8px;border-top:1px solid var(--linie);padding-top:14px}
+.fz-zu{position:absolute;right:14px;top:14px;width:44px;height:44px;border-radius:3px;border:1px solid var(--linie);background:var(--weiss);cursor:pointer;display:grid;place-items:center;z-index:3}
+.fz-zu svg{width:18px;height:18px}
+@media (max-width:860px){
+  dialog.fz{width:100vw;max-width:100vw;height:100vh;max-height:100vh;margin:0;border-radius:0}
+  .fz-innen{grid-template-columns:minmax(0,1fr);max-height:100vh}
+  .fz-bild{padding:max(12px,env(safe-area-inset-top,0px)) 12px 12px}
+  .fz-info{padding:20px 20px max(30px,env(safe-area-inset-bottom,0px))}
+  .spez{grid-template-columns:minmax(0,1fr)}
+}
+
+/* ---------- Fotos groß ---------- */
+dialog.lb{border:0;padding:0;margin:0;background:transparent;width:100vw;max-width:100vw;height:100vh;max-height:100vh;color:var(--weiss)}
+dialog.lb[open]{display:grid;place-items:center}
+dialog.lb::backdrop{background:rgba(16,18,20,.95)}
+dialog.lb figure{margin:0;display:grid;gap:12px;justify-items:center;padding:0 16px}
+dialog.lb img{max-width:min(1100px,calc(100vw - 32px));max-height:calc(100vh - 130px);width:auto;height:auto;background:var(--schild)}
+dialog.lb figcaption{font-family:var(--sans);font-weight:500;color:#C9CBC8;display:flex;gap:14px}
+.lb-btn{position:fixed;width:48px;height:48px;border-radius:3px;border:1px solid rgba(255,255,255,.25);background:rgba(35,39,43,.8);color:#fff;cursor:pointer;display:grid;place-items:center}
+.lb-btn svg{width:20px;height:20px}
+.lb-zu{right:max(16px,env(safe-area-inset-right,0px));top:max(16px,env(safe-area-inset-top,0px))}
+.lb-vor{right:max(16px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%)}
+.lb-zurueck{left:max(16px,env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%)}
+.lb-zurueck svg{transform:rotate(180deg)}
+@media (max-width:700px){.lb-vor,.lb-zurueck{top:auto;bottom:max(20px,env(safe-area-inset-bottom,0px));transform:none}.lb-zurueck{left:calc(50% - 58px)}.lb-vor{right:calc(50% - 58px)}}
+
+.toast{position:fixed;left:50%;bottom:calc(24px + var(--bar));transform:translate(-50%,20px);opacity:0;background:var(--asphalt);color:var(--weiss);padding:12px 18px;border-radius:3px;font-family:var(--sans);font-weight:600;z-index:80;transition:opacity .2s,transform .2s;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-gauge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15a8 8 0 1 1 16 0"/><path d="M12 15l4-5"/><circle cx="12" cy="15" r="1.4" fill="currentColor"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L5 13h6l-1 9 9-12h-6l0-8z"/></symbol>
+  <symbol id="i-fuel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16"/><path d="M3 21h13M7 7h6v4H7z"/><path d="M15 10h2a2 2 0 0 1 2 2v5a1.5 1.5 0 0 0 3 0V9l-3-3"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="5" r="2"/><circle cx="12" cy="5" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="12" cy="19" r="2"/><path d="M6 7v10M12 7v10M18 7v5H6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 1 1-4.2 15.3l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3 4.4c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3s1 2.7 1.1 2.9c.2.2 2 3.1 4.9 4.2 2.4.9 2.9.8 3.4.7.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.2-.2-.5-.3l-1.9-.9c-.3-.1-.5-.1-.6.1l-.9 1.1c-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.4-.5-.6-.5h-.6z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+  <symbol id="i-plate" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="2"/><path d="M6 7v10M9 12h9"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/><path d="M9 11h4M11 9v4"/></symbol>
+  <symbol id="i-umbrella" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0H3z"/><path d="M12 12v6a2 2 0 0 0 4 0M12 3v1"/></symbol>
+  <symbol id="i-tire" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3v5.5M12 15.5V21M3 12h5.5M15.5 12H21"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 17l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8l2.8 6 6.5.7-4.9 4.4 1.4 6.4L12 17l-5.8 3.3 1.4-6.4-4.9-4.4 6.5-.7z"/></symbol>
+  <symbol id="i-cam" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h3l2-3h6l2 3h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="4"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l2 2"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16v-3l2-5a2 2 0 0 1 2-1.3h10A2 2 0 0 1 19 8l2 5v3"/><path d="M3 16h18v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1H7v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M6 13h12"/></symbol>
+</svg>
+
+<header class="kopf" id="top">
+  <div class="wrap">
+    <a class="marke" href="#start" aria-label="Autocenter Imperial – Startseite"><img src="../img/logo-light.png" alt="Autocenter Imperial" width="98" height="46"></a>
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+      <a href="#fahrzeuge">Fahrzeuge</a>
+      <a href="#ankauf">Ankauf</a>
+      <a href="#hof">Der Hof</a>
+      <a href="#bewertungen">Bewertungen</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="kopf-tel" href="tel:+491639553579">+49 163 9553579</a>
+    <a class="btn btn-wa btn-klein" href="https://wa.me/491639553579" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menü öffnen"><svg><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+
+<main id="site">
+<section class="start" id="start">
+  <img class="start-foto" src="../img/fotos/p05.jpg" srcset="../img/fotos/p05-640.jpg 640w, ../img/fotos/p05.jpg 1206w" sizes="100vw" alt="Unser Platz in der Malteserstraße mit Mercedes-Benz CLA, GLE und weiteren Fahrzeugen">
+  <div class="wrap start-text">
+    <h1>Gebrauchtwagen in Berlin.<br>Persönlich verkauft.</h1>
+    <p class="start-sub">Geprüfte Fahrzeuge von Mercedes-Benz, Audi, Volkswagen und anderen Marken. Sie sprechen direkt mit dem Geschäftsführer, vom ersten Anruf bis zur Übergabe.</p>
+    <div class="start-aktion">
+      <a class="btn btn-messing" href="#fahrzeuge" id="startBestand">Bestand ansehen</a>
+      <a class="btn btn-linie" href="#ankauf">Auto verkaufen</a>
+    </div>
+  </div>
+  <div class="schild">
+    <div class="wrap">
+      <p class="schild-text" aria-label="An- und Verkauf, Zulassungsdienst, Inzahlungnahme"><span>An- und Verkauf</span><span>Zulassungsdienst</span><span>Inzahlungnahme</span></p>
+      <div class="noten">
+        <a class="note" id="noteGoogle" href="#" target="_blank" rel="noopener"><span class="sterne" aria-hidden="true">★★★★★</span><b class="js-gscore">5,0</b><small>Google, <span class="js-gcount">30</span> Bewertungen</small></a>
+        <a class="note" id="noteMobile" href="#" target="_blank" rel="noopener"><span class="sterne" aria-hidden="true">★★★★★</span><b class="js-mscore">5,0</b><small>mobile.de, <span class="js-mcount">19</span> Bewertungen</small></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt" id="fahrzeuge">
+  <div class="wrap">
+    <div class="kopfzeile">
+      <div>
+        <h2>Unser Bestand</h2>
+        <p>Jedes Fahrzeug steht bei uns auf dem Hof. Besichtigung und Probefahrt nach kurzer Absprache.</p>
+      </div>
+      <div class="boersen" aria-label="Unser Bestand auf den Fahrzeugbörsen">
+        <a class="boerse boerse-mobile" href="https://home.mobile.de/AUTOCENTERIMPERIALGMBH" target="_blank" rel="noopener"><span><small>Alle Fahrzeuge auf</small>mobile.de</span><svg><use href="#i-ext"/></svg></a>
+        <a class="boerse boerse-as24" href="https://www.autoscout24.de/haendler/autocenter-imperial-gmbh" target="_blank" rel="noopener"><span><small>Alle Fahrzeuge auf</small>AutoScout24</span><svg><use href="#i-ext"/></svg></a>
+      </div>
+    </div>
+    <div class="brands" aria-label="Marken im Bestand"><span>Mercedes-Benz</span><span>Audi</span><span>Volkswagen</span><span>Peugeot</span><span>Volvo</span><span>Maserati</span><span>Citroën</span><span>smart</span></div>
+
+    <div class="bestand">
+      <aside class="filter" id="filter" aria-label="Fahrzeuge filtern">
+        <div><h3>Marke</h3><ul class="markenliste" id="brandChips"></ul></div>
+        <div class="feld"><label for="q">Suche</label><input id="q" type="search" placeholder="z. B. 7-Sitzer, Panorama" autocomplete="off"></div>
+        <div class="feld"><label for="fPrice">Preis bis</label><select id="fPrice"><option value="">Beliebig</option><option value="10000">10.000 €</option><option value="15000">15.000 €</option><option value="20000">20.000 €</option><option value="25000">25.000 €</option><option value="30000">30.000 €</option><option value="40000">40.000 €</option></select></div>
+        <div class="feld"><label for="fBody">Aufbau</label><select id="fBody"><option value="">Alle</option></select></div>
+        <div class="feld"><label for="fFuel">Kraftstoff</label><select id="fFuel"><option value="">Alle</option></select></div>
+        <div class="feld"><label for="fGear">Getriebe</label><select id="fGear"><option value="">Alle</option></select></div>
+        <button class="filter-zu" type="button" id="resetBtn">Filter zurücksetzen</button>
+      </aside>
+      <div>
+        <div class="liste-kopf">
+          <span><b class="num" id="resCount">26</b> <span id="resLabel">Fahrzeuge</span></span>
+          <button class="btn btn-linie btn-klein filter-knopf" type="button" id="filterBtn" aria-expanded="false" aria-controls="filter">Filtern</button>
+          <div class="feld"><label for="sort">Sortieren</label><select id="sort"><option value="rec">Empfohlen</option><option value="pa">Preis aufsteigend</option><option value="pd">Preis absteigend</option><option value="km">Kilometer</option><option value="ez">Neueste Erstzulassung</option><option value="ps">Leistung</option></select></div>
+        </div>
+        <ul class="liste" id="grid" aria-live="polite"></ul>
+      </div>
+    </div>
+
+    <div class="suche" id="suchauftrag">
+      <div>
+        <h3>Ihr Wunschauto ist nicht dabei?</h3>
+        <p>Sagen Sie uns, was Sie suchen. Wir melden uns, sobald ein passendes Fahrzeug zu uns kommt.</p>
+      </div>
+      <form id="wishForm" novalidate>
+        <div class="feld"><label for="sCar">Marke und Modell</label><input id="sCar" type="text" placeholder="z. B. Mercedes-Benz GLC"></div>
+        <div class="feld"><label for="sBudget">Budget bis</label><input id="sBudget" type="text" inputmode="numeric" placeholder="z. B. 30.000 €"></div>
+        <div class="feld"><label for="sName">Name</label><input id="sName" type="text" autocomplete="name"></div>
+        <div class="feld"><label for="sTel">Telefon oder E-Mail</label><input id="sTel" type="text" autocomplete="tel"></div>
+        <div class="breit"><button class="btn btn-dunkel" type="submit">Suchauftrag vorbereiten</button></div>
+        <div class="versand" id="wishSend" aria-live="polite"><p>Ihr Suchauftrag ist fertig. Wie möchten Sie ihn senden?</p><div class="reihe"><a class="btn btn-wa btn-klein" id="wishWa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Per WhatsApp</a><a class="btn btn-linie btn-klein" id="wishMail" href="#"><svg><use href="#i-mail"/></svg>Per E-Mail</a></div></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt dunkel" id="ankauf">
+  <div class="wrap ankauf">
+    <div class="ankauf-text">
+      <h2>Wir kaufen Ihr Auto. Auch ohne Neukauf.</h2>
+      <p>Sie wollen Ihr Fahrzeug verkaufen oder beim Kauf in Zahlung geben? Schicken Sie uns die Eckdaten, wir melden uns mit einem Angebot.</p>
+      <ul class="punkte">
+        <li><b>Ankauf</b><span>Wir kaufen Ihr Auto, auch wenn Sie bei uns kein Fahrzeug kaufen.</span></li>
+        <li><b>Inzahlungnahme</b><span>Ihr bisheriges Auto wird mit dem Kaufpreis verrechnet.</span></li>
+        <li><b>Bewertung</b><span>Wir sehen uns Ihr Auto an und nennen Ihnen einen festen Preis.</span></li>
+      </ul>
+    </div>
+    <form class="ankauf-form" id="buyForm" novalidate>
+      <div class="wahl" role="radiogroup" aria-label="Art des Angebots">
+        <input type="radio" name="aMode" id="aModeSell" value="sell" checked><label for="aModeSell">Nur verkaufen</label>
+        <input type="radio" name="aMode" id="aModeTrade" value="trade"><label for="aModeTrade">In Zahlung geben</label>
+      </div>
+      <div class="feld breit"><label for="aCar">Marke und Modell</label><input id="aCar" type="text" placeholder="z. B. VW Golf 1.5 TSI"></div>
+      <div class="feld"><label for="aEz">Erstzulassung</label><input id="aEz" type="text" placeholder="MM/JJJJ"></div>
+      <div class="feld"><label for="aKm">Kilometerstand</label><input id="aKm" type="text" inputmode="numeric"></div>
+      <div class="feld"><label for="aFuel">Kraftstoff und Getriebe</label><input id="aFuel" type="text" placeholder="z. B. Diesel, Automatik"></div>
+      <div class="feld"><label for="aState">Zustand</label><select id="aState"><option value="">Bitte wählen</option><option>Sehr gut</option><option>Gut</option><option>Gebrauchsspuren</option><option>Unfallschaden</option><option>Nicht fahrbereit</option></select></div>
+      <div class="feld breit" id="aWishWrap"><label for="aWish">Wunschfahrzeug aus unserem Bestand</label><select id="aWish"><option value="">Noch offen</option></select></div>
+      <div class="feld"><label for="aName">Name</label><input id="aName" type="text" autocomplete="name"></div>
+      <div class="feld"><label for="aTel">Telefon oder E-Mail</label><input id="aTel" type="text" autocomplete="tel"></div>
+      <div class="breit"><button class="btn btn-messing btn-block" type="submit">Angebot anfragen</button></div>
+      <div class="versand" id="buySend" aria-live="polite"><p>Ihre Anfrage ist fertig. Fotos können Sie direkt im Chat mitschicken.</p><div class="reihe"><a class="btn btn-wa btn-klein" id="buyWa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Per WhatsApp</a><a class="btn btn-linie btn-klein" id="buyMail" href="#"><svg><use href="#i-mail"/></svg>Per E-Mail</a></div></div>
+    </form>
+  </div>
+</section>
+
+<section class="abschnitt" id="hof">
+  <div class="wrap">
+    <div class="hof">
+      <button class="hof-gross" type="button" data-i="6" aria-label="Foto vergrößern: Unser Eingang in der Malteserstraße"><img src="../img/fotos/p07.jpg" srcset="../img/fotos/p07-640.jpg 640w, ../img/fotos/p07.jpg 1174w" sizes="(max-width:900px) 100vw, 680px" alt="Firmenschild am Eingang, Malteserstraße 24–36" loading="lazy"></button>
+      <div class="hof-text">
+        <h2>Der Hof in der Malteserstraße</h2>
+        <p>Bei uns stehen die Fahrzeuge, die Sie online sehen, wirklich auf dem Platz. Sie können sie in Ruhe ansehen, Probe fahren und alle Unterlagen prüfen, bevor Sie sich entscheiden.</p>
+        <p>Wir kümmern uns auf Wunsch um Zulassung, Garantie und Lieferung, damit Sie nur noch einsteigen müssen.</p>
+        <div class="person">
+          <span class="mono" aria-hidden="true">FC</span>
+          <div><b>Fatih Cetin</b><span>Geschäftsführer, Ihr Ansprechpartner für Kauf und Ankauf</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="streifen" id="gal"></div>
+    <button class="alle-fotos" type="button" id="galAll">Alle Fotos ansehen</button>
+  </div>
+</section>
+
+<section class="abschnitt" id="bewertungen" style="background:var(--weiss)">
+  <div class="wrap">
+    <div class="stimmen-kopf">
+      <h2>Was unsere Kunden sagen</h2>
+      <a class="wert" id="gRead" href="#" target="_blank" rel="noopener"><b class="js-gscore">5,0</b><span>Google, <span class="js-gcount">30</span> Bewertungen</span></a>
+      <a class="wert" id="mRead" href="#" target="_blank" rel="noopener"><b class="js-mscore">5,0</b><span>mobile.de, <span class="js-mcount">19</span> Bewertungen</span></a>
+    </div>
+    <div class="zitate" id="quotes"></div>
+    <div class="stimmen-fuss">
+      <a class="btn btn-linie btn-klein" id="gWrite" href="#" target="_blank" rel="noopener">Bewertung auf Google schreiben</a>
+      <a class="btn btn-linie btn-klein" id="mRead2" href="#" target="_blank" rel="noopener">Alle Bewertungen auf mobile.de</a>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt" id="leistungen">
+  <div class="wrap">
+    <div class="kopfzeile"><div><h2>Was wir für Sie erledigen</h2></div></div>
+    <dl class="leistungen">
+      <div><dt>Ankauf und Inzahlungnahme</dt><dd>Wir kaufen Ihr Auto, mit oder ohne Neukauf. <a href="#ankauf">Angebot anfragen</a></dd></div>
+      <div><dt>Zulassung</dt><dd>Bundesweite Zulassung, Kurzzeit- und Zollkennzeichen.</dd></div>
+      <div><dt>Gebrauchtwagengarantie</dt><dd>Auf Wunsch zu Ihrem Fahrzeug dazu.</dd></div>
+      <div><dt>TÜV und Check</dt><dd>TÜV-Abnahme auf Wunsch, Durchsicht vor der Übergabe.</dd></div>
+      <div><dt>Lieferung</dt><dd>Bundesweit bis vor Ihre Haustür.</dd></div>
+      <div><dt>Versicherung</dt><dd>Passende Versicherung direkt beim Kauf.</dd></div>
+      <div><dt>Reifen</dt><dd>Sommer-, Winter- oder Allwetterreifen gegen Aufpreis.</dd></div>
+      <div><dt>Suchauftrag</dt><dd>Wir halten nach Ihrem Wunschauto Ausschau. <a href="#suchauftrag">Suchauftrag aufgeben</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="abschnitt dunkel" id="kontakt">
+  <div class="wrap kontakt">
+    <div>
+      <h2>Besuchen Sie uns</h2>
+      <p class="adresse">Malteserstr. 24–36<br>12249 Berlin</p>
+      <div class="kontakt-wege">
+        <a class="btn btn-wa" href="https://wa.me/491639553579" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+        <a class="btn btn-linie" href="tel:+491639553579"><svg><use href="#i-phone"/></svg>+49 163 9553579</a>
+        <a class="btn btn-linie" href="mailto:info@autocenter-imperial.de"><svg><use href="#i-mail"/></svg>E-Mail</a>
+        <a class="btn btn-linie" href="https://www.google.com/maps/search/?api=1&amp;query=Autocenter+Imperial+GmbH+Malteserstr.+24-36+12249+Berlin" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Route planen</a>
+      </div>
+      <dl class="zeiten" aria-label="Öffnungszeiten">
+        <div><dt>Montag bis Freitag</dt><dd>10:00 – 17:00 Uhr</dd></div>
+        <div><dt>Samstag</dt><dd>10:00 – 14:00 Uhr</dd></div>
+        <div><dt>Sonntag</dt><dd>geschlossen</dd></div>
+      </dl>
+      <p class="zeiten-hinweis">Für Besichtigungen und Probefahrten bitte kurz vorher anrufen oder schreiben.</p>
+    </div>
+    <form class="kontakt-form" id="form" novalidate>
+      <h3>Nachricht schreiben</h3>
+      <div class="feld"><label for="fName">Name</label><input id="fName" type="text" autocomplete="name"></div>
+      <div class="feld"><label for="fTel">Telefon oder E-Mail</label><input id="fTel" type="text" autocomplete="tel"></div>
+      <div class="feld"><label for="fCar">Fahrzeug</label><select id="fCar"><option value="">Allgemeine Anfrage</option></select></div>
+      <div class="feld"><label for="fMsg">Ihre Nachricht</label><textarea id="fMsg" placeholder="Ist das Fahrzeug noch verfügbar? Wann passt eine Besichtigung?"></textarea></div>
+      <button class="btn btn-dunkel btn-block" type="submit">Nachricht vorbereiten</button>
+      <div class="versand" id="sendbox" aria-live="polite"><p>Ihre Nachricht ist fertig. Wie möchten Sie sie senden?</p><div class="reihe"><a class="btn btn-wa btn-klein" id="sendWa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Per WhatsApp</a><a class="btn btn-linie btn-klein" id="sendMail" href="#"><svg><use href="#i-mail"/></svg>Per E-Mail</a></div></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<section class="legal-view" id="impressum">
+  <div class="wrap">
+    <p class="eyebrow">Rechtliches</p>
+    <h2>Impressum</h2>
+    <hr class="rule">
+    <h3>Angaben gemäß § 5 DDG</h3>
+    <div class="box">
+      <p><b>Autocenter Imperial GmbH</b><br>Malteserstr. 24–36<br>12249 Berlin<br>Deutschland</p>
+      <p style="margin-top:10px"><b>Vertreten durch:</b> Geschäftsführer Fatih Cetin</p>
+      <p style="margin-top:10px"><b>Kontakt:</b><br>Telefon: +49 163 9553579<br>E-Mail: info@autocenter-imperial.de<br>Internet: www.autocenter-imperial.de</p>
+      <p style="margin-top:10px"><b>Registereintrag:</b><br>Eintragung im Handelsregister<br>Registergericht: Amtsgericht Charlottenburg (Berlin)<br>Registernummer: HRB 285735 B</p>
+      <p style="margin-top:10px"><b>Umsatzsteuer-Identifikationsnummer</b> gemäß § 27a UStG: DE461907193</p>
+      <p style="margin-top:10px"><b>Verantwortlich für den Inhalt</b> nach § 18 Abs. 2 MStV: Fatih Cetin, Anschrift wie oben</p>
+    </div>
+    <h3>Verbraucherstreitbeilegung</h3>
+    <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+    <h3>Haftung für Inhalte</h3>
+    <p>Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Alle Fahrzeugangaben erfolgen nach bestem Wissen; Irrtümer, Zwischenverkauf und Änderungen bleiben vorbehalten. Verbindlich sind ausschließlich die Angaben im schriftlichen Kaufvertrag.</p>
+    <h3>Haftung für Links</h3>
+    <p>Unser Angebot enthält Links zu externen Websites Dritter (z. B. AutoScout24, mobile.de, Google Maps), auf deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte ist stets der jeweilige Anbieter oder Betreiber verantwortlich.</p>
+    <h3>Urheberrecht</h3>
+    <p>Die auf dieser Website veröffentlichten Inhalte, insbesondere Fahrzeugfotos, Texte und das Logo, unterliegen dem deutschen Urheberrecht. Vervielfältigung und Verwendung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung der Autocenter Imperial GmbH.</p>
+    <p style="margin-top:28px"><a class="btn btn-outline btn-sm" href="#start" data-view="site">Zurück zur Startseite</a></p>
+  </div>
+</section>
+
+<section class="legal-view" id="datenschutz">
+  <div class="wrap">
+    <p class="eyebrow">Rechtliches</p>
+    <h2>Datenschutzerklärung</h2>
+    <hr class="rule">
+    <h3>1. Verantwortlicher</h3>
+    <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist die Autocenter Imperial GmbH, Malteserstr. 24–36, 12249 Berlin, vertreten durch den Geschäftsführer Fatih Cetin. Telefon: +49 163 9553579, E-Mail: info@autocenter-imperial.de.</p>
+    <h3>2. Keine Cookies, kein Tracking</h3>
+    <p>Diese Website setzt keine Cookies und keine Analyse- oder Tracking-Dienste ein. Schriftarten und Bilder werden grundsätzlich von unserem eigenen Server geladen; eine Verbindung zu Google Fonts findet nicht statt. Die Fahrzeugfotos werden von Servern der AutoScout24 GmbH geladen; dabei wird Ihre IP-Adresse an AutoScout24 übermittelt (Art. 6 Abs. 1 lit. f DSGVO – berechtigtes Interesse an der Darstellung unseres Fahrzeugangebots).</p>
+    <h3>3. Server-Logfiles</h3>
+    <p>Diese Website wird über GitHub Pages gehostet, einen Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf der Website verarbeitet GitHub automatisch technische Daten (IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browsertyp) in Server-Logfiles. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO zur Sicherstellung des Betriebs und der Sicherheit der Website; die Logdaten werden nicht mit anderen Daten zusammengeführt. Mit GitHub besteht ein Vertrag über Auftragsverarbeitung (Art. 28 DSGVO). Soweit Daten in die USA übermittelt werden, geschieht dies auf Grundlage der Standardvertragsklauseln der EU-Kommission (Art. 46 Abs. 2 lit. c DSGVO); GitHub ist zudem nach dem EU-U.S. Data Privacy Framework zertifiziert. Weitere Informationen: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub-Datenschutzerklärung</a>.</p>
+    <h3>4. Kontaktaufnahme per E-Mail, Telefon oder WhatsApp</h3>
+    <p>Wenn Sie uns per E-Mail, Telefon oder über das Anfrageformular kontaktieren, verarbeiten wir die von Ihnen mitgeteilten Daten (Name, Kontaktdaten, Inhalt der Anfrage) zur Bearbeitung Ihrer Anfrage und für den Fall von Anschlussfragen (Art. 6 Abs. 1 lit. b DSGVO). Das Anfrageformular dieser Website speichert keine Daten auf unserem Server; die Nachricht wird erst über den von Ihnen gewählten Weg (WhatsApp oder E-Mail-Programm) versendet.</p>
+    <p>Bei einer Kontaktaufnahme über WhatsApp werden Ihre Daten von der WhatsApp Ireland Limited bzw. Meta Platforms verarbeitet, auch außerhalb der EU. Nähere Informationen finden Sie in der Datenschutzerklärung von WhatsApp. Die Nutzung von WhatsApp ist freiwillig; Sie können uns jederzeit auch per Telefon oder E-Mail erreichen.</p>
+    <h3>5. Vertragsabwicklung</h3>
+    <p>Beim Kauf eines Fahrzeugs verarbeiten wir Ihre Daten zur Vertragserfüllung (Kaufvertrag, Zulassung, Garantie, Rechnungsstellung) auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO sowie zur Erfüllung gesetzlicher Aufbewahrungspflichten (Art. 6 Abs. 1 lit. c DSGVO).</p>
+    <h3>6. Externe Links</h3>
+    <p>Diese Website verlinkt auf AutoScout24, mobile.de, Google (Unternehmensprofil, Bewertungen und Google Maps) und WhatsApp. Beim Aufruf dieser Angebote gelten die Datenschutzbestimmungen des jeweiligen Anbieters.</p>
+    <h3>7. Ihre Rechte</h3>
+    <p>Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21 DSGVO). Zudem haben Sie das Recht, sich bei einer Aufsichtsbehörde zu beschweren, z. B. bei der Berliner Beauftragten für Datenschutz und Informationsfreiheit, Alt-Moabit 59–61, 10555 Berlin.</p>
+    <p style="margin-top:28px"><a class="btn btn-outline btn-sm" href="#start" data-view="site">Zurück zur Startseite</a></p>
+  </div>
+</section>
+
+
+
+<footer class="fuss">
+  <div class="wrap">
+    <div class="halter" aria-label="Autocenter Imperial, Malteserstraße 24–36, 12249 Berlin"><strong>AUTOCENTER IMPERIAL</strong><small>Autocenter Imperial · Malteserstraße 24–36 · 12249 Berlin</small></div>
+    <nav class="fuss-links" aria-label="Weitere Links">
+      <a href="https://www.autoscout24.de/haendler/autocenter-imperial-gmbh" target="_blank" rel="noopener">AutoScout24</a>
+      <a id="fMobile" href="#" target="_blank" rel="noopener">mobile.de</a>
+      <a id="fGoogle" href="#" target="_blank" rel="noopener">Google</a>
+      <a href="https://www.instagram.com/autocenter.imperial/" target="_blank" rel="noopener">Instagram</a>
+      <button type="button" data-view="impressum">Impressum</button>
+      <button type="button" data-view="datenschutz">Datenschutz</button>
+    </nav>
+    <p class="fuss-recht">© <span id="year">2026</span> Autocenter Imperial GmbH, Geschäftsführer Fatih Cetin</p>
+  </div>
+</footer>
+
+<nav class="leiste" aria-label="Schnellkontakt">
+  <a href="tel:+491639553579"><svg><use href="#i-phone"/></svg>Anrufen</a>
+  <a class="wa" href="https://wa.me/491639553579" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+  <a href="#fahrzeuge"><svg><use href="#i-car"/></svg>Autos</a>
+</nav>
+
+<dialog class="fz" id="dlg" aria-labelledby="dlgTitle">
+  <button class="fz-zu" id="dlgClose" type="button" aria-label="Schließen"><svg><use href="#i-x"/></svg></button>
+  <div class="fz-innen" id="dlgInner"></div>
+</dialog>
+<dialog class="lb" id="lb" aria-label="Fotos vom Hof">
+  <button class="lb-btn lb-zu" id="lbClose" type="button" aria-label="Schließen"><svg><use href="#i-x"/></svg></button>
+  <button class="lb-btn lb-zurueck" id="lbPrev" type="button" aria-label="Vorheriges Foto"><svg><use href="#i-arrow"/></svg></button>
+  <button class="lb-btn lb-vor" id="lbNext" type="button" aria-label="Nächstes Foto"><svg><use href="#i-arrow"/></svg></button>
+  <figure><img id="lbImg" alt=""><figcaption><b id="lbNum"></b><span id="lbCap"></span></figcaption></figure>
+</dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ---------- Bestand (wird wöchentlich mit AutoScout24 abgeglichen) ---------- */
+const WA='491639553579', MAIL='info@autocenter-imperial.de';
+const AS='https://prod.pictures.autoscout24.net/listing-images/';
+const LAST_SYNC='24.10.2026'; // Datum des letzten Abgleichs mit AutoScout24 (wird wöchentlich aktualisiert)
+const CARS=[
+ {id:'a01',as:'Audi A6|2.0 TDI 2xS Line Avant/Pano/360°/ACC/Tot-W.',brand:'Audi',model:'A6 Avant 2.0 TDI',variant:'2× S line · Panoramadach · 360°-Kamera',price:44490,ez:'07/2025',km:12726,kw:150,ps:204,fuel:'Diesel',gear:'Automatik',body:'Kombi',seats:5,owners:1,img:'ad0ab6dc-053f-40d3-9692-eae8063a8deb_277f21c3-2c22-47ee-83df-1c6e9ed0bf49',feat:['S line Exterieur & Interieur','Panoramadach','360°-Kamera','Adaptiver Tempomat (ACC)','Toter-Winkel-Assistent']},
+ {id:'a02',as:'Mercedes-Benz GLE 450|360°Kamera/Memory/Burmester/Head-Up/Spur',brand:'Mercedes-Benz',model:'GLE 450 4MATIC',variant:'360°-Kamera · Burmester · Head-up-Display',price:41890,oldPrice:44790,ez:'11/2020',km:87899,kw:270,ps:367,fuel:'Benzin',gear:'Automatik',body:'SUV',seats:5,owners:1,cons:'8,3 l/100 km',co2:'190 g/km',img:'d287e613-40ae-49a8-8eed-b6ee2d8a43c6_f2adbba4-a93e-4b56-8485-c87a1d0d72a5',feat:['360°-Kamera','Memory-Sitze','Burmester Soundsystem','Head-up-Display','Spurhalteassistent']},
+ {id:'a03',as:'Mercedes-Benz GLC 220|d Coupé 4Matic AMG/Night/S.Dach/Multib.',brand:'Mercedes-Benz',model:'GLC 220 d Coupé 4MATIC',variant:'AMG Line · Night-Paket · Schiebedach',price:34990,ez:'11/2020',km:85162,kw:143,ps:194,fuel:'Diesel',gear:'Automatik',body:'SUV-Coupé',seats:5,owners:1,cons:'5,2 l/100 km',co2:'136 g/km',img:'1f259166-88b3-4abf-85a5-2d6ee6fd1d21_37af331f-148f-49f0-996f-ae7f088b39f2',feat:['AMG Line','4MATIC Allrad','Night-Paket','Schiebedach','MULTIBEAM LED']},
+ {id:'a04',as:'Audi Q5|Sportback 50 TDI quattro 3xS line/Head-Up/Kam',brand:'Audi',model:'Q5 Sportback 50 TDI quattro',variant:'3× S line · Head-up-Display · Kamera',price:31490,ez:'09/2022',km:107415,kw:210,ps:286,fuel:'Diesel',gear:'Automatik',body:'SUV-Coupé',seats:5,owners:1,cons:'6,7 l/100 km',co2:'176 g/km',img:'2846d923-cea2-4f51-865f-87013d30a98b_feb0e8d0-b77c-41dc-b79b-92e8d2bb0771',feat:['S line Exterieur, Interieur & Sport','quattro Allrad','Head-up-Display','Rückfahrkamera']},
+ {id:'a05',as:'Mercedes-Benz GLB 200|d AMG/Night/7-Sitzer/R.Kamera/Spur/Amb.',brand:'Mercedes-Benz',model:'GLB 200 d',variant:'AMG Line · Night-Paket · 7-Sitzer',price:28390,ez:'09/2023',km:154154,kw:110,ps:150,fuel:'Diesel',gear:'Automatik',body:'SUV',seats:7,owners:1,img:'669b5ce1-96ac-4eda-af66-3a8ebf5dc0df_71eee877-9e83-4446-b5ba-136e3b64be06',feat:['AMG Line','Night-Paket','7-Sitzer','Rückfahrkamera','Spurhalteassistent','Ambientebeleuchtung']},
+ {id:'a06',as:'Mercedes-Benz GLB 200|d Amg/Night/Pano/Spur/Memory/Ambiente',brand:'Mercedes-Benz',model:'GLB 200 d',variant:'AMG Line · Night-Paket · Panoramadach',price:27990,ez:'04/2022',km:132500,kw:110,ps:150,fuel:'Diesel',gear:'Automatik',body:'SUV',seats:5,owners:1,img:'1d73e855-bc08-4e81-84ae-75fe9ebff7e3_9ab47d8b-2ce2-4171-b8da-50022dfb2c72',feat:['AMG Line','Night-Paket','Panoramadach','Spurhalteassistent','Memory-Sitze','Ambientebeleuchtung']},
+ {id:'a07',as:'Mercedes-Benz A 200|d AMG/LED/Spur/Night/Keyless/Ambiente',brand:'Mercedes-Benz',model:'A 200 d',variant:'AMG Line · Night-Paket · LED',price:26490,ez:'04/2023',km:39000,kw:110,ps:150,fuel:'Diesel',gear:'Automatik',body:'Limousine (Schrägheck)',seats:5,owners:1,img:'08f82eeb-7686-41d2-949d-a1608ceb78fa_1aea75a2-730d-4e38-b267-2a08e2969ade',feat:['AMG Line','LED-Scheinwerfer','Spurhalteassistent','Night-Paket','Keyless-Go','Ambientebeleuchtung']},
+ {id:'a08',as:'Mercedes-Benz A 200|d AMG/Night/Spur/R.Kamera/Keyless/LED',brand:'Mercedes-Benz',model:'A 200 d',variant:'AMG Line · Night-Paket · Rückfahrkamera',price:26490,ez:'03/2023',km:31500,kw:110,ps:150,fuel:'Diesel',gear:'Automatik',body:'Limousine (Schrägheck)',seats:5,owners:1,img:'556d92c8-bb1b-4477-ab50-cb5d482684bc_ec5fe39c-e4c0-46ae-9927-5da500be7f43',feat:['AMG Line','Night-Paket','Spurhalteassistent','Rückfahrkamera','Keyless-Go','LED-Scheinwerfer']},
+ {id:'a09',as:'Mercedes-Benz C 220|d T-Modell/Spur/AHK/TOT.W/LED/Ambiente',brand:'Mercedes-Benz',model:'C 220 d T-Modell',variant:'LED · Anhängerkupplung · Ambientebeleuchtung',price:25490,ez:'01/2023',km:77768,kw:147,ps:200,fuel:'Diesel',gear:'Automatik',body:'Kombi',seats:5,owners:1,img:'809938dd-ea7b-44ea-86f4-c2194215fd11_5205ee50-5794-4c02-8721-35e639d0f5d8',feat:['Spurhalteassistent','Anhängerkupplung','Toter-Winkel-Assistent','LED-Scheinwerfer','Ambientebeleuchtung']},
+ {id:'a10',as:'Maserati Ghibli|/360/Memory/H&K Sound/Tot-W./Spur/V6/Apple',brand:'Maserati',model:'Ghibli V6',variant:'Harman Kardon · 360°-Kamera · Memory',price:24990,ez:'03/2020',km:113047,kw:257,ps:349,fuel:'Benzin',gear:'Automatik',body:'Limousine',seats:5,owners:1,cons:'11,1 l/100 km',co2:'252 g/km',img:'e1d98de4-fdf7-4f79-a19f-5856af65fe80_20e806c5-7c0e-4049-8ea1-605c2e6becd7',feat:['V6','360°-Kamera','Memory-Sitze','Harman Kardon Sound','Toter-Winkel-Assistent','Spurhalteassistent','Apple CarPlay']},
+ {id:'a11',as:'Mercedes-Benz A 220|d AMG/ Ambiente/Spur/R-Kamera/LED/Keyl./AHK',brand:'Mercedes-Benz',model:'A 220 d',variant:'AMG Line · Anhängerkupplung',price:23990,ez:'09/2020',km:46307,kw:140,ps:190,fuel:'Diesel',gear:'Automatik',body:'Limousine (Schrägheck)',seats:5,owners:1,cons:'4,4 l/100 km',co2:'116 g/km',img:'e8530010-3b7d-43cc-8333-f5fcb778fbcd_6044759a-83cf-4ece-9699-6a9321169049',feat:['AMG Line','Ambientebeleuchtung','Spurhalteassistent','Rückfahrkamera','LED-Scheinwerfer','Keyless-Go','Anhängerkupplung']},
+ {id:'a12',as:'Mercedes-Benz GLB 200|d/7-Sitzer/R.Kamera/Navi/Spur/AHK/LED/Led',brand:'Mercedes-Benz',model:'GLB 200 d',variant:'7-Sitzer · Leder · Anhängerkupplung',price:23990,ez:'11/2020',km:121500,kw:110,ps:150,fuel:'Diesel',gear:'Automatik',body:'SUV',seats:7,owners:1,cons:'4,8 l/100 km',co2:'126 g/km',img:'6cf1c193-7e6a-4c49-ac25-93ea9e690ab9_9020ab61-71f1-44ce-992b-fab07452b7a9',feat:['7-Sitzer','Rückfahrkamera','Navigation','Spurhalteassistent','Anhängerkupplung','LED-Scheinwerfer','Leder']},
+ {id:'a13',as:'Audi Q2|30 TDI advanced/R.Kamera/Navi',brand:'Audi',model:'Q2 30 TDI',variant:'advanced · Rückfahrkamera · Navigation',price:19990,ez:'03/2022',km:79251,kw:85,ps:116,fuel:'Diesel',gear:'Automatik',body:'SUV',seats:5,owners:1,cons:'4,1 l/100 km',co2:'107 g/km',img:'0bc0c8f9-b17e-4a66-9d39-276ad2174da2_e9e5b596-ce83-43b4-aa42-7f5c1770b6e3',feat:['Rückfahrkamera','Navigation','Automatik']},
+ {id:'a14',as:'Mercedes-Benz GLB 200|d R.Kamera/Spur/Navi/SHZ/AHK/Leder',brand:'Mercedes-Benz',model:'GLB 200 d',variant:'Leder · Navigation · Anhängerkupplung',price:19490,ez:'12/2021',km:180844,kw:110,ps:150,fuel:'Diesel',gear:'Automatik',body:'SUV',seats:5,owners:2,cons:'4,8 l/100 km',co2:'126 g/km',img:'dd66b9b2-0dfd-41f3-9ac3-6f85d8a9a2a6_afc25102-3237-4d15-8b76-8dab50642aa6',feat:['Rückfahrkamera','Spurhalteassistent','Navigation','Sitzheizung','Anhängerkupplung','Leder']},
+ {id:'a15',as:'Volvo V90|Inscription/4WD/Pano/TOT/H&K/LED/Memory/AHK',brand:'Volvo',model:'V90 AWD',variant:'Inscription · Panoramadach · Harman Kardon',price:18290,ez:'05/2019',km:181500,kw:173,ps:235,fuel:'Diesel',gear:'Automatik',body:'Kombi',seats:5,owners:1,cons:'5,6 l/100 km',co2:'146 g/km',img:'df211a0c-423f-4598-85bd-b88a10e2c8ce_b52e9d76-a50d-486d-a04f-5beab41d829d',feat:['Allrad','Panoramadach','Toter-Winkel-Assistent','Harman Kardon Sound','LED-Scheinwerfer','Memory-Sitze','Anhängerkupplung']},
+ {id:'a16',as:'Peugeot 3008|Allure 1.5 HDI/R.Kamera/Navi/T.Winkel/Spur',brand:'Peugeot',model:'3008 1.5 BlueHDi',variant:'Allure · Rückfahrkamera · Navigation',price:17990,ez:'01/2023',km:64540,kw:96,ps:131,fuel:'Diesel',gear:'Automatik',body:'SUV',seats:5,owners:1,img:'b191cddc-f834-479b-bd6f-eddfdf23998f_e886f222-b1af-4c2e-bdf4-36883c7637b3',feat:['Rückfahrkamera','Navigation','Toter-Winkel-Assistent','Spurhalteassistent']},
+ {id:'a17',as:'Mercedes-Benz A 180|d AMG/Spur/LED/SHZ/R.Kamera/Alcantara',brand:'Mercedes-Benz',model:'A 180 d',variant:'AMG Line · Alcantara · Sitzheizung',price:17490,oldPrice:18790,ez:'02/2019',km:147000,kw:85,ps:116,fuel:'Diesel',gear:'Automatik',body:'Limousine (Schrägheck)',seats:5,owners:1,cons:'4,1 l/100 km',co2:'108 g/km',img:'46bb9a37-7440-49c7-8c6b-c581a5cce435_a5bc26b6-4878-4ed0-9976-bc1923cd0939',feat:['AMG Line','Spurhalteassistent','LED-Scheinwerfer','Sitzheizung','Rückfahrkamera','Alcantara']},
+ {id:'a18',as:'Citroen C4 X|R.Kamera/Spur/Navi/Apple-Carplay',brand:'Citroën',model:'C4 X',variant:'Rückfahrkamera · Navigation · Apple CarPlay',price:15490,ez:'12/2023',km:27000,kw:96,ps:131,fuel:'Benzin',gear:'Automatik',body:'Limousine (Crossover)',seats:5,owners:1,img:'db878f74-28ff-48b3-a432-4a82e413bc3c_dfb45bad-4ebf-41c2-94a8-39be91e05081',feat:['Rückfahrkamera','Spurhalteassistent','Navigation','Apple CarPlay']},
+ {id:'a19',as:'Peugeot 3008|GT Line 1.5 HDI/Memory/Pano/Massage/360°Kam',brand:'Peugeot',model:'3008 1.5 BlueHDi',variant:'GT Line · Panoramadach · Massagesitze',price:14990,ez:'02/2020',km:95059,kw:96,ps:131,fuel:'Diesel',gear:'Automatik',body:'SUV',seats:5,owners:1,cons:'4,1 l/100 km',co2:'109 g/km',img:'c7027509-4092-49e2-80fa-5694f7abcf1b_770ae398-52d0-403a-9311-2840efc13ba2',feat:['GT Line','Panoramadach','Massagesitze','Memory-Sitze','360°-Kamera']},
+ {id:'a20',as:'Peugeot 308|Allure Pack R.Kamera/Spur/Navi/Apple-Carplay',brand:'Peugeot',model:'308',variant:'Allure Pack · Rückfahrkamera · Navigation',price:14990,ez:'10/2022',km:121846,kw:96,ps:131,fuel:'Benzin',gear:'Automatik',body:'Limousine (Schrägheck)',seats:5,owners:1,img:'59f01ba3-ede8-40ca-ab93-6dd9531e0c3b_c7967bda-ff89-4007-97d7-648eaa050218',feat:['Allure Pack','Rückfahrkamera','Spurhalteassistent','Navigation','Apple CarPlay']},
+ {id:'a21',as:'Volkswagen Touran|Volkswagen Touran Comfortline BMT/Klima/ACC/2-S',brand:'Volkswagen',model:'Touran 2.0 TDI',variant:'Comfortline BMT · ACC · 2-Sitzer',price:14790,ez:'05/2021',km:116657,kw:110,ps:150,fuel:'Diesel',gear:'Automatik',body:'Van',seats:2,owners:1,cons:'4,4 l/100 km',co2:'116 g/km',img:'f9295654-8c1e-495a-b114-764e9cf9440c_6c974ecb-c35d-4692-bd80-1322f64dc585',feat:['Klimaanlage','Adaptiver Tempomat (ACC)','2-Sitzer']},
+ {id:'a22',as:'Volkswagen Touran|Comfortline BMT/Klima/ACC/2-Sitzer',brand:'Volkswagen',model:'Touran 2.0 TDI',variant:'Comfortline BMT · ACC · 2-Sitzer',price:14490,ez:'05/2021',km:119454,kw:110,ps:150,fuel:'Diesel',gear:'Automatik',body:'Van',seats:2,owners:1,cons:'4,4 l/100 km',co2:'116 g/km',img:'cee496b2-be97-4a63-b9e7-08eb381668b2_c6e245d4-d5f2-4228-be1b-d09c6f851b2e',feat:['Klimaanlage','Adaptiver Tempomat (ACC)','2-Sitzer']},
+ {id:'a23',as:'Peugeot 3008|Allure R.Kamera/Spur/Tot-Winkel/Navi',brand:'Peugeot',model:'3008 1.5 BlueHDi',variant:'Allure · Rückfahrkamera · Toter-Winkel-Assistent',price:13990,oldPrice:14490,ez:'11/2020',km:104725,kw:96,ps:131,fuel:'Diesel',gear:'Automatik',body:'SUV',seats:5,owners:2,cons:'3,8 l/100 km',co2:'101 g/km',img:'bf4c4de3-4ce2-46e6-a3e2-d0b0ac00f595_99c8d214-94a4-4d8a-b9b7-e02fe461e150',feat:['Rückfahrkamera','Spurhalteassistent','Toter-Winkel-Assistent','Navigation']},
+ {id:'a24',as:'Peugeot 308|SW Allure/360/LED/Ambiente/Spur/Keyless/Appl',brand:'Peugeot',model:'308 SW 1.5 BlueHDi',variant:'Allure · 360°-Kamera · LED',price:13490,ez:'11/2022',km:122800,kw:96,ps:131,fuel:'Diesel',gear:'Automatik',body:'Kombi',seats:5,owners:1,img:'2520ea0c-05f8-4b2d-b0ff-ea3d1f53822c_7f83eec4-0998-48d4-b1c0-b5df0ef23d14',feat:['360°-Kamera','LED-Scheinwerfer','Ambientebeleuchtung','Spurhalteassistent','Keyless','Apple CarPlay']},
+ {id:'a25',as:'Volkswagen Polo|VI Comfortline/Navi/Klima/ACC/Apple-Carplay',brand:'Volkswagen',model:'Polo VI',variant:'Comfortline · Navigation · ACC',price:9990,ez:'07/2020',km:142188,kw:70,ps:95,fuel:'Benzin',gear:'Schaltgetriebe',body:'Kleinwagen',seats:5,owners:2,cons:'4,6 l/100 km',co2:'105 g/km',img:'54256699-0a95-44e7-b623-b3fa546bb877_d4056d71-54a3-4c79-a55b-f87dcc2fd522',feat:['Navigation','Klimaanlage','Adaptiver Tempomat (ACC)','Apple CarPlay']},
+ {id:'a26',as:'smart forFour|forfour Basis 52 kW/Automatik/Klima',brand:'smart',model:'forfour',variant:'Basis 52 kW · Automatik · Klimaanlage',price:8290,oldPrice:9190,ez:'09/2018',km:112784,kw:52,ps:71,fuel:'Benzin',gear:'Automatik',body:'Kleinwagen',seats:4,owners:2,cons:'5,0 l/100 km',co2:'113 g/km',img:'29c96601-4133-42b2-a9d2-cffa19b08635_79321f04-85ef-4839-9577-2dd1275961c5',feat:['Automatik','Klimaanlage']}
+];
+const BRAND_ORDER=['Mercedes-Benz','Audi','Volkswagen','Peugeot','Volvo','Maserati','Citroën','smart'];
+const pic=(c,size)=>AS+c.img+'.jpg/'+(size||'420x315.jpg');
+CARS.forEach(c=>{c.photos=c.img?[pic(c)]:[];});
+
+/* ---------- Bewertungen ---------- */
+const RATINGS={
+  google:{score:'5,0',count:30,read:'https://www.google.com/maps/place/?q=place_id:ChIJXYZ36L5FqEcR9b753FTX07g',write:'https://search.google.com/local/writereview?placeid=ChIJXYZ36L5FqEcR9b753FTX07g'},
+  mobile:{score:'5,0',count:19,read:'https://www.mobile.de/bewertungen/AutocenterImperialGmbH'}
+};
+const REVIEWS=[
+  {name:'Esad',date:'28.08.2026',text:'Super Service und sehr freundliche Mitarbeiter. Alles lief schnell und problemlos. Ich bin sehr zufrieden'},
+  {name:'Aleksey',date:'28.08.2026',text:'Die Mitarbeiter waren freundlich, hilfsbereit und haben sich Zeit für meine Fragen genommen.',part:true},
+  {name:'Manfred',date:'16.10.2026',text:'Top Fahrzeug, Top Händler und der beste Café 😊'},
+  {name:'Anonym',date:'25.09.2026',text:'Die Persönliche und transparente Beratung hat mir besonders gefallen.',part:true},
+  {name:'Hasan Kök',date:'28.08.2026',text:'Sehr freundlicher und kompetenter Händler.',part:true},
+  {name:'mobile.de Nutzer',date:'28.08.2026',text:'Sehr freundlicher und zuverlässiger Autohändler.',part:true}
+];
+const FEATURED_ID='a02';   // Fahrzeug im Startbild; ist es verkauft, wird automatisch das teuerste mit Foto gezeigt
+const NEW_DAYS=14;         // Fahrzeuge mit Feld added (JJJJ-MM-TT) gelten so lange als „Neu“
+
+const $=s=>document.querySelector(s);
+const eur=n=>n.toLocaleString('de-DE')+' €';
+const num=n=>n.toLocaleString('de-DE');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const title=c=>`${c.brand} ${c.model}`;
+const ezKey=c=>{const [m,y]=c.ez.split('/');return +y*100+ +m;};
+const fuelGroup=c=>c.fuel.startsWith('Benzin')?'Benzin':c.fuel;
+const bodyGroup=c=>c.body.startsWith('Limousine')?'Limousine':c.body;
+const waLink=txt=>`https://wa.me/${WA}?text=${encodeURIComponent(txt)}`;
+const mailLink=(subj,body)=>`mailto:${MAIL}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
+const AS_DEALER='https://www.autoscout24.de/haendler/autocenter-imperial-gmbh';
+const asLink=c=>{
+  if(c.img){const slug=(c.brand+'-'+c.model).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');return `https://www.autoscout24.de/angebote/${slug}-${c.img.split('_')[0]}`;}
+  return `${AS_DEALER}?pricefrom=${c.price-10}&priceto=${c.price+10}`;
+};
+const syncDate=(()=>{const [d,m,y]=LAST_SYNC.split('.');return new Date(+y,+m-1,+d);})();
+const isNew=c=>{if(!c.added)return false;const a=new Date(c.added+'T00:00:00');return (syncDate-a)/864e5<=NEW_DAYS;};
+const askText=c=>`Guten Tag, ich interessiere mich für den ${title(c)} ${c.variant} (EZ ${c.ez}, ${num(c.km)} km, ${eur(c.price)}). Ist das Fahrzeug noch verfügbar?`;
+const varText=c=>c.variant.replace(/ · /g,', ');
+function fallbackEl(big){const d=document.createElement('div');d.className='ersatz';d.innerHTML=`<img src="../../img/logo-light.png" alt=""><span>${big?'Fotos auf AutoScout24':'Foto folgt'}</span>`;return d;}
+function imgFail(el,big){el.replaceWith(fallbackEl(big));}
+function upgrade(img,sizes){
+  if(!img||!img.dataset.hi)return;
+  const tryNext=i=>{if(i>=sizes.length)return;const t=new Image();t.onload=()=>{if(t.naturalWidth>img.naturalWidth)img.src=t.src;};t.onerror=()=>tryNext(i+1);t.src=AS+img.dataset.hi+'.jpg/'+sizes[i];};
+  tryNext(0);
+}
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),2400);}
+function hinweis(c){if(isNew(c))return['Neu','neu'];if(c.oldPrice)return['Preis gesenkt',''];return null;}
+
+/* ---------- Filter ---------- */
+const state={brand:'',q:'',fuel:'',gear:'',body:'',price:'',sort:'rec'};
+function brandList(){const present=BRAND_ORDER.filter(b=>CARS.some(c=>c.brand===b));CARS.forEach(c=>{if(!present.includes(c.brand))present.push(c.brand);});return present;}
+function fillSelect(sel,vals){[...new Set(vals)].sort((a,b)=>a.localeCompare(b,'de')).forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent=v;sel.appendChild(o);});}
+function syncChips(){document.querySelectorAll('#brandChips button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.brand===state.brand?'true':'false'));}
+function syncControls(){$('#q').value=state.q;$('#fFuel').value=state.fuel;$('#fGear').value=state.gear;$('#fBody').value=state.body;$('#fPrice').value=state.price;$('#sort').value=state.sort;syncChips();}
+function buildFilters(){
+  const chips=$('#brandChips'),brands=brandList();
+  chips.innerHTML=['',...brands].map(b=>`<li><button type="button" data-brand="${esc(b)}" aria-pressed="${b===''}">${b===''?'Alle Marken':esc(b)}<span>${b===''?CARS.length:CARS.filter(c=>c.brand===b).length}</span></button></li>`).join('');
+  chips.addEventListener('click',e=>{const btn=e.target.closest('button');if(!btn)return;state.brand=btn.dataset.brand;syncChips();render();});
+  fillSelect($('#fFuel'),CARS.map(fuelGroup));fillSelect($('#fGear'),CARS.map(c=>c.gear));fillSelect($('#fBody'),CARS.map(bodyGroup));
+  const map={q:'q',fFuel:'fuel',fGear:'gear',fBody:'body',fPrice:'price',sort:'sort'};
+  Object.keys(map).forEach(id=>$('#'+id).addEventListener('input',e=>{state[map[id]]=e.target.value;render();}));
+  $('#resetBtn').addEventListener('click',()=>{Object.assign(state,{brand:'',q:'',fuel:'',gear:'',body:'',price:'',sort:'rec'});syncControls();render();});
+  [...CARS].sort((a,b)=>title(a).localeCompare(title(b),'de')).forEach(c=>{
+    const t=`${title(c)}, ${varText(c)} (${c.ez}, ${eur(c.price)})`;
+    [$('#fCar'),$('#aWish')].forEach(sel=>{const o=document.createElement('option');o.value=c.id;o.textContent=t;sel.appendChild(o);});
+  });
+}
+function filtered(){
+  const q=state.q.trim().toLowerCase();
+  const list=CARS.filter(c=>(!state.brand||c.brand===state.brand)&&(!state.fuel||fuelGroup(c)===state.fuel)&&(!state.gear||c.gear===state.gear)&&(!state.body||bodyGroup(c)===state.body)&&(!state.price||c.price<=+state.price)&&(!q||(`${title(c)} ${c.variant} ${c.body} ${c.fuel} ${c.gear} ${c.feat.join(' ')} ${c.seats}-sitzer`).toLowerCase().includes(q)));
+  const s=state.sort;
+  if(s==='pa')list.sort((a,b)=>a.price-b.price);
+  else if(s==='pd')list.sort((a,b)=>b.price-a.price);
+  else if(s==='km')list.sort((a,b)=>a.km-b.km);
+  else if(s==='ez')list.sort((a,b)=>ezKey(b)-ezKey(a));
+  else if(s==='ps')list.sort((a,b)=>b.ps-a.ps);
+  else list.sort((a,b)=>(isNew(b)-isNew(a))||((b.img?1:0)-(a.img?1:0))||(b.price-a.price));
+  return list;
+}
+
+/* ---------- Preisliste ---------- */
+function rowHtml(c){
+  const h=hinweis(c);
+  const pic=c.img?`<img src="${esc(c.photos[0])}" alt="${esc(title(c))}, ${esc(varText(c))}" loading="lazy" data-hi="${esc(c.img)}" onerror="imgFail(this,false)">`:fallbackEl(false).outerHTML;
+  return `<li class="zeile" data-open="${c.id}">
+    <div class="zeile-foto">${pic}${h?`<span class="hinweis ${h[1]}">${h[0]}</span>`:''}</div>
+    <div>
+      <span class="fabrikat">${esc(c.brand)}</span>
+      <h3><button class="modell" type="button" data-open="${c.id}">${esc(c.model)}</button></h3>
+      <p class="variante">${esc(varText(c))}</p>
+      <dl class="daten">
+        <div><dt>Erstzulassung</dt><dd>${c.ez}</dd></div>
+        <div><dt>Kilometer</dt><dd>${num(c.km)}</dd></div>
+        <div><dt>Leistung</dt><dd>${c.ps} PS</dd></div>
+        <div><dt>Kraftstoff</dt><dd>${esc(fuelGroup(c))}</dd></div>
+        <div><dt>Getriebe</dt><dd>${esc(c.gear)}</dd></div>
+      </dl>
+    </div>
+    <div class="preis">
+      <div><b>${eur(c.price)}</b>${c.oldPrice?`<s>${eur(c.oldPrice)}</s>`:''}</div>
+      <div class="preis-aktion">
+        <a class="wa-rund" href="${waLink(askText(c))}" target="_blank" rel="noopener" aria-label="${esc(title(c))} per WhatsApp anfragen"><svg><use href="#i-wa"/></svg></a>
+        <button class="btn btn-linie btn-klein" type="button" data-open="${c.id}">Details</button>
+      </div>
+    </div>
+  </li>`;
+}
+let current=[];
+function render(){
+  current=filtered();
+  $('#grid').innerHTML=current.length?current.map(rowHtml).join(''):`<li class="leer">Kein Fahrzeug passt zu dieser Auswahl. Setzen Sie die Filter zurück oder <a href="#suchauftrag">geben Sie einen Suchauftrag auf</a>.</li>`;
+  $('#resCount').textContent=current.length;
+  $('#resLabel').textContent=current.length===1?'Fahrzeug':'Fahrzeuge';
+  document.querySelectorAll('#grid img[data-hi]').forEach(img=>{if(img.complete)upgrade(img,['720x540.webp']);else img.addEventListener('load',()=>upgrade(img,['720x540.webp']),{once:true});});
+}
+
+/* ---------- Bewertungen ---------- */
+function renderReviews(){
+  document.querySelectorAll('.js-gcount').forEach(e=>e.textContent=RATINGS.google.count);
+  document.querySelectorAll('.js-mcount').forEach(e=>e.textContent=RATINGS.mobile.count);
+  document.querySelectorAll('.js-gscore').forEach(e=>e.textContent=RATINGS.google.score);
+  document.querySelectorAll('.js-mscore').forEach(e=>e.textContent=RATINGS.mobile.score);
+  ['#noteGoogle','#gRead','#fGoogle'].forEach(s=>$(s).href=RATINGS.google.read);
+  $('#gWrite').href=RATINGS.google.write;
+  ['#noteMobile','#mRead','#mRead2','#fMobile'].forEach(s=>$(s).href=RATINGS.mobile.read);
+  $('#quotes').innerHTML=REVIEWS.map(r=>`<figure class="zitat"><blockquote>„${esc(r.text)}${r.part?' …':''}“</blockquote><figcaption><b>${esc(r.name)}</b>, ${esc(r.date)} auf mobile.de</figcaption></figure>`).join('');
+}
+
+/* ---------- Detailansicht ---------- */
+const dlg=$('#dlg');let curIdx=0;
+function openCar(id){
+  let list=current.some(c=>c.id===id)?current:CARS;
+  curIdx=list.findIndex(c=>c.id===id);const c=list[curIdx];if(!c)return;
+  const rows=[['Erstzulassung',c.ez],['Kilometerstand',num(c.km)+' km'],['Leistung',`${c.kw} kW (${c.ps} PS)`],['Kraftstoff',c.fuel],['Getriebe',c.gear],['Aufbau',c.body],['Sitzplätze',c.seats],c.owners?['Vorbesitzer',c.owners]:null,['Verbrauch kombiniert',c.cons||'siehe Inserat'],['CO₂ kombiniert',c.co2||'siehe Inserat']].filter(Boolean);
+  const media=c.img?`<a class="fz-haupt" id="vMain" href="${asLink(c)}" target="_blank" rel="noopener" title="Alle Fotos auf AutoScout24"><img src="${esc(c.photos[0])}" alt="${esc(title(c))}" data-hi="${esc(c.img)}" onerror="imgFail(this,true)"></a>`:`<a class="fz-haupt" href="${asLink(c)}" target="_blank" rel="noopener">${fallbackEl(true).outerHTML}</a>`;
+  $('#dlgInner').innerHTML=`
+    <div class="fz-bild">${media}
+      <a class="btn btn-messing btn-block" href="${asLink(c)}" target="_blank" rel="noopener"><svg><use href="#i-cam"/></svg>Alle Fotos auf AutoScout24</a>
+    </div>
+    <div class="fz-info">
+      <div><span class="fabrikat">${esc(c.brand)}</span><h3 id="dlgTitle">${esc(c.model)}</h3><p class="variante" style="margin-top:6px">${esc(varText(c))}</p></div>
+      <div class="fz-preis"><b>${eur(c.price)}</b>${c.oldPrice?`<s>${eur(c.oldPrice)}</s>`:''}<small>Endpreis, differenzbesteuert nach § 25a UStG</small></div>
+      <dl class="spez">${rows.map(([k,v])=>`<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+      <div class="ausst"><h4>Ausstattung (Auszug)</h4><p>${c.feat.map(esc).join(', ')}</p></div>
+      <div class="fz-aktion">
+        <a class="btn btn-wa ganz" href="${waLink(askText(c))}" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Per WhatsApp anfragen</a>
+        <a class="btn btn-linie" href="tel:+491639553579"><svg><use href="#i-phone"/></svg>Anrufen</a>
+        <a class="btn btn-linie" href="${mailLink('Anfrage: '+title(c)+' '+c.variant,askText(c)+'\n\nMit freundlichen Grüßen\n')}"><svg><use href="#i-mail"/></svg>E-Mail</a>
+      </div>
+      <p class="fz-zusatz">Altes Auto in Zahlung geben? <a href="#ankauf" data-trade="${c.id}">Fahrzeug anbieten</a>. Angaben ohne Gewähr, Zwischenverkauf vorbehalten.</p>
+      <div class="fz-nav"><button class="btn btn-linie btn-klein" type="button" id="prevCar">Vorheriges</button><button class="btn btn-linie btn-klein" type="button" id="nextCar">Nächstes</button></div>
+    </div>`;
+  $('#prevCar').disabled=curIdx===0;$('#nextCar').disabled=curIdx===list.length-1;
+  $('#prevCar').onclick=()=>openCar(list[curIdx-1].id);
+  $('#nextCar').onclick=()=>openCar(list[curIdx+1].id);
+  $('#dlgInner').scrollTop=0;
+  const img=$('#vMain img');if(img){const go=()=>upgrade(img,['1280x960.webp','720x540.webp']);if(img.complete)go();else img.addEventListener('load',go,{once:true});}
+  if(!dlg.open)dlg.showModal();
+}
+document.addEventListener('click',e=>{
+  if(e.target.closest('a.wa-rund'))return;
+  const o=e.target.closest('[data-open]');if(o){e.preventDefault();openCar(o.dataset.open);return;}
+  const t=e.target.closest('[data-trade]');if(t){e.preventDefault();dlg.close();$('#aModeTrade').checked=true;setMode();$('#aWish').value=t.dataset.trade;document.getElementById('ankauf').scrollIntoView({behavior:'smooth'});}
+});
+$('#dlgClose').addEventListener('click',()=>dlg.close());
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close();});
+
+/* ---------- Formulare ---------- */
+const val=id=>$('#'+id).value.trim();
+function prepare(box,wa,mail,subj,body){$(wa).href=waLink(body);$(mail).href=mailLink(subj,body);$(box).classList.add('show');$(box).scrollIntoView({block:'nearest',behavior:'smooth'});}
+function need(ids,msg){const miss=ids.find(id=>!val(id));if(miss){toast(msg);$('#'+miss).focus();return false;}return true;}
+$('#form').addEventListener('submit',e=>{
+  e.preventDefault();if(!need(['fName','fTel'],'Bitte Name und Kontakt angeben'))return;
+  const car=CARS.find(c=>c.id===val('fCar'));
+  const body=`Guten Tag,\n\n${car?`ich interessiere mich für den ${title(car)} ${car.variant} (EZ ${car.ez}, ${num(car.km)} km, ${eur(car.price)}).\n\n`:''}${val('fMsg')?val('fMsg')+'\n\n':''}Name: ${val('fName')}\nKontakt: ${val('fTel')}\n\nMit freundlichen Grüßen\n${val('fName')}`;
+  prepare('#sendbox','#sendWa','#sendMail',car?`Anfrage: ${title(car)} ${car.variant}`:'Anfrage über die Website',body);
+});
+function setMode(){const trade=$('#aModeTrade').checked;$('#aWishWrap').hidden=!trade;}
+document.querySelectorAll('input[name="aMode"]').forEach(r=>r.addEventListener('change',setMode));
+$('#buyForm').addEventListener('submit',e=>{
+  e.preventDefault();if(!need(['aCar','aName','aTel'],'Bitte Fahrzeug, Name und Kontakt angeben'))return;
+  const trade=$('#aModeTrade').checked,w=trade?CARS.find(c=>c.id===val('aWish')):null;
+  const body=`Guten Tag,\n\n${trade?'ich möchte mein Fahrzeug in Zahlung geben':'ich möchte mein Fahrzeug an Sie verkaufen'}:\n\nFahrzeug: ${val('aCar')}\nErstzulassung: ${val('aEz')||'–'}\nKilometerstand: ${val('aKm')||'–'}\nKraftstoff/Getriebe: ${val('aFuel')||'–'}\nZustand: ${val('aState')||'–'}\n${w?`\nWunschfahrzeug: ${title(w)} ${w.variant} (${w.ez}, ${num(w.km)} km, ${eur(w.price)})\n`:''}\nName: ${val('aName')}\nKontakt: ${val('aTel')}\n\nFotos sende ich gern nach.\n\nMit freundlichen Grüßen\n${val('aName')}`;
+  prepare('#buySend','#buyWa','#buyMail',(trade?'Inzahlungnahme: ':'Ankauf: ')+val('aCar'),body);
+});
+$('#wishForm').addEventListener('submit',e=>{
+  e.preventDefault();if(!need(['sCar','sName','sTel'],'Bitte Wunschfahrzeug, Name und Kontakt angeben'))return;
+  const body=`Guten Tag,\n\nich suche folgendes Fahrzeug:\n\nMarke/Modell: ${val('sCar')}\nBudget bis: ${val('sBudget')||'–'}\n\nBitte melden Sie sich, wenn Sie ein passendes Fahrzeug haben.\n\nName: ${val('sName')}\nKontakt: ${val('sTel')}\n\nMit freundlichen Grüßen\n${val('sName')}`;
+  prepare('#wishSend','#wishWa','#wishMail','Suchauftrag: '+val('sCar'),body);
+});
+$('#filterBtn').addEventListener('click',e=>{const o=$('#filter').classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',o);e.currentTarget.textContent=o?'Filter schließen':'Filtern';});
+
+/* ---------- Navigation ---------- */
+const menuBtn=$('#menuBtn'),nav=$('#nav');
+menuBtn.addEventListener('click',()=>{const o=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',o);});
+nav.addEventListener('click',e=>{if(e.target.tagName==='A'){nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}});
+
+/* ---------- Fotos vom Hof ---------- */
+const PHOTOS=[
+  {f:'p09',c:'Audi A6 und Maserati Ghibli auf unserem Hof'},
+  {f:'p05',c:'Unser Platz in der Malteserstraße'},
+  {f:'p03',c:'Mercedes-Benz CLA AMG Line, Neuzugang'},
+  {f:'p02',c:'BMW 3er Touring und BMW X5'},
+  {f:'p01',c:'Mercedes-Benz CLA AMG Line in Grau metallic'},
+  {f:'p08',c:'BMW 3er Touring M Sport bei der Übergabe'},
+  {f:'p07',c:'Unser Eingang, Malteserstraße 24–36'},
+  {f:'p04',c:'Mercedes-Benz CLA 200 AMG Line und VW Polo GTI'},
+  {f:'p06',c:'Bestand vor Ort'}
+];
+const gal=$('#gal'),lb=$('#lb'),lbImg=$('#lbImg'),lbCap=$('#lbCap'),lbNum=$('#lbNum');let lbI=0;
+gal.innerHTML=[0,2,3,5].map(i=>{const p=PHOTOS[i];return `<button type="button" data-i="${i}" aria-label="Foto vergrößern: ${esc(p.c)}"><img src="../img/fotos/${p.f}-640.jpg" alt="${esc(p.c)}" loading="lazy" decoding="async"></button>`;}).join('');
+function lbShow(i){lbI=(i+PHOTOS.length)%PHOTOS.length;const p=PHOTOS[lbI];lbImg.src=`../img/fotos/${p.f}.jpg`;lbImg.alt=p.c;lbCap.textContent=p.c;lbNum.textContent=`${lbI+1} von ${PHOTOS.length}`;const n=PHOTOS[(lbI+1)%PHOTOS.length];new Image().src=`../img/fotos/${n.f}.jpg`;}
+function lbOpen(i){lbShow(i);if(!lb.open)lb.showModal();}
+document.querySelectorAll('#gal, .hof-gross').forEach(el=>el.addEventListener('click',e=>{const b=e.target.closest('[data-i]');if(b)lbOpen(+b.dataset.i);}));
+$('#galAll').addEventListener('click',()=>lbOpen(0));
+$('#lbClose').addEventListener('click',()=>lb.close());
+$('#lbPrev').addEventListener('click',()=>lbShow(lbI-1));
+$('#lbNext').addEventListener('click',()=>lbShow(lbI+1));
+lb.addEventListener('click',e=>{if(e.target===lb)lb.close();});
+lb.addEventListener('keydown',e=>{if(e.key==='ArrowRight')lbShow(lbI+1);if(e.key==='ArrowLeft')lbShow(lbI-1);});
+let tx=null;lb.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
+lb.addEventListener('touchend',e=>{if(tx===null)return;const d=e.changedTouches[0].clientX-tx;tx=null;if(Math.abs(d)>50)lbShow(lbI+(d<0?1:-1));},{passive:true});
+
+/* ---------- Rechtliches ---------- */
+function showView(v){
+  const legal=v==='impressum'||v==='datenschutz';
+  $('#site').hidden=legal;
+  document.querySelectorAll('.legal-view').forEach(s=>s.classList.toggle('show',s.id===v));
+  $('#top').style.position=legal?'relative':'';$('#top').style.background=legal?'var(--asphalt)':'';
+  if(legal)window.scrollTo({top:0});
+}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-view]');
+  if(b){const v=b.dataset.view;if(v==='site'){e.preventDefault();showView('site');history.replaceState(null,'','#start');window.scrollTo({top:0});}else{showView(v);history.replaceState(null,'','#'+v);}return;}
+  const a=e.target.closest('a[href^="#"]');if(a&&$('#site').hidden&&!a.dataset.view)showView('site');
+});
+$('#year').textContent=new Date().getFullYear();
+
+/* ---------- Start ---------- */
+buildFilters();render();renderReviews();setMode();
+const h=(location.hash||'').replace('#','');
+if(h==='impressum'||h==='datenschutz')showView(h);
+else if(h&&document.getElementById(h))setTimeout(()=>document.getElementById(h).scrollIntoView(),60);
+</script>
+</body>
+</html>
