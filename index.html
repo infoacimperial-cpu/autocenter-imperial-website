@@ -4,487 +4,505 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="index, follow">
-<link rel="icon" href="img/logo-dark.png" type="image/png">
+<link rel="icon" href="img/emblem-gold.svg" type="image/svg+xml"><link rel="alternate icon" href="img/logo-dark.png" type="image/png">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Autocenter Imperial GmbH – Gebrauchtwagen in Berlin</title>
-<meta name="description" content="Autocenter Imperial GmbH – geprüfte Gebrauchtwagen in Berlin. Mercedes-Benz, Audi, Volkswagen, Peugeot und mehr. 5,0 Sterne auf Google und mobile.de. Ankauf auch ohne Neukauf.">
+<meta name="description" content="Autocenter Imperial GmbH – ausgewählte Gebrauchtwagen in Berlin. Mercedes-Benz, Audi, Maserati, Volvo und mehr. 5,0 Sterne auf Google und mobile.de. Ankauf auch ohne Neukauf.">
 <link rel="canonical" href="https://autocenter-imperial.de/">
 <meta property="og:url" content="https://autocenter-imperial.de/">
 <meta property="og:title" content="Autocenter Imperial GmbH – Gebrauchtwagen in Berlin">
-<meta property="og:description" content="Geprüfte Gebrauchtwagen in Berlin. 5,0 Sterne auf Google und mobile.de. Ankauf auch ohne Neukauf, Garantie auf Wunsch, bundesweite Lieferung.">
+<meta property="og:description" content="Ausgewählte Gebrauchtwagen in Berlin, persönlich verkauft. 5,0 Sterne auf Google und mobile.de. Ankauf auch ohne Neukauf.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://autocenter-imperial.de/img/logo-square.png">
-<meta property="og:image:width" content="1000">
-<meta property="og:image:height" content="1000">
-<meta name="theme-color" content="#0E141B">
+<meta property="og:image" content="https://autocenter-imperial.de/img/fotos/cover-platz.jpg">
+<meta name="theme-color" content="#1D2023">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"AutoDealer","name":"Autocenter Imperial GmbH","url":"https://autocenter-imperial.de/","telephone":"+49 163 9553579","email":"info@autocenter-imperial.de","image":"https://autocenter-imperial.de/img/logo-square.png","logo":"https://autocenter-imperial.de/img/logo-square.png","address":{"@type":"PostalAddress","streetAddress":"Malteserstr. 24–36","postalCode":"12249","addressLocality":"Berlin","addressCountry":"DE"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"10:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"14:00"}],"sameAs":["https://www.autoscout24.de/haendler/autocenter-imperial-gmbh","https://www.mobile.de/bewertungen/AutocenterImperialGmbH","https://www.google.com/maps/place/?q=place_id:ChIJXYZ36L5FqEcR9b753FTX07g"]}
 </script>
 <style>
-/* Layout concept: a dark showroom opener with the windscreen price card as the signature,
-   then bright, scannable bands that each end in one clear way to get in touch. */
+/* Autocenter Imperial — Entwurf 4 „Showroom“
+   Vorbild: Kino-Startbild mit mittigem Wappen, Menü-Overlay, viel Ruhe.
+   Eigenständig durch: Flügel-Logo im Zentrum, Hof-Fotos als langsame Überblendung,
+   Bestand dunkel und großformatig wie ein Showroom bei Nacht, Marken als Einstieg.
+   Schrift: Archivo extra breit, leicht (wie die Logo-Schrift) + Source Serif 4 für Text. */
 @font-face{font-family:"Archivo";font-style:normal;font-weight:100 900;font-stretch:62% 125%;font-display:swap;src:url("fonts/archivo-latin-wdth-normal.woff2") format("woff2-variations"),url("fonts/archivo-latin-wdth-normal.woff2") format("woff2")}
-@font-face{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-display:swap;src:url("fonts/instrument-serif-latin-400-italic.woff2") format("woff2")}
+@font-face{font-family:"Source Serif";font-weight:400;font-display:swap;src:url("fonts/source-serif-4-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Source Serif";font-weight:400;font-style:italic;font-display:swap;src:url("fonts/source-serif-4-latin-400-italic.woff2") format("woff2")}
+@font-face{font-family:"Source Serif";font-weight:600;font-display:swap;src:url("fonts/source-serif-4-latin-600-normal.woff2") format("woff2")}
 
 :root{
-  color-scheme:light;
-  --ink:#0E141B;          /* showroom night */
-  --navy:#151E28;
-  --navy-2:#1C2733;
-  --navy-3:#263343;
-  --gold:#B08D57;         /* brand gold from the logo and exposé */
-  --gold-2:#CBA76B;       /* gold on dark */
-  --gold-ink:#83653A;     /* gold as text on light */
-  --paper:#F0F1F3;
-  --white:#FFFFFF;
-  --text:#121A23;
-  --muted:#58616D;
-  --line:#D9DDE3;
-  --on-dark:#F3F0E9;
-  --on-dark-2:#A7AFBA;
-  --line-dark:rgba(255,255,255,.12);
-  --wa:#1DA851;           /* WhatsApp – recognised at a glance */
-  --wa-dark:#168A42;
-  --new:#B08D57;
-  --r:12px; --r-sm:7px;
-  --shadow:0 22px 50px -24px rgba(14,20,27,.45);
-  --shadow-sm:0 8px 22px -14px rgba(14,20,27,.35);
-  --wide:"Archivo","Arial Narrow",Arial,sans-serif;
-  --body:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
-  --bar-h:0px;
+  --nacht:#1D2023;      /* Showroom bei Nacht */
+  --nacht-2:#272B2F;
+  --nacht-linie:#3A3F44;
+  --weiss:#FFFFFF;
+  --nebel:#F3F3F1;      /* helle Zwischenflächen */
+  --tinte:#1D2023;
+  --grau:#7B8086;
+  --grau-hell:#A9ADB1;
+  --linie:#DEDEDB;
+  --messing:#B08D57;
+  --messing-hell:#CDB07F;
+  --wa:#1E8A52;
+  --breit:"Archivo",Arial,sans-serif;
+  --serif:"Source Serif",Georgia,serif;
+  --bar:0px;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:84px}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
-body{margin:0;background:var(--paper);color:var(--text);font-family:var(--body);font-stretch:100%;font-size:16px;line-height:1.55;overflow-x:hidden;padding-bottom:var(--bar-h)}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--ink)}
-img{max-width:100%;display:block}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--weiss);color:var(--tinte);font-family:var(--serif);font-size:17px;line-height:1.65;overflow-x:hidden;padding-bottom:var(--bar)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--nacht)}
+img{display:block}
 a{color:inherit}
-button,input,select,textarea{font:inherit;color:inherit}
-h1,h2,h3,h4{font-family:var(--wide);font-stretch:116%;font-weight:700;line-height:1.06;letter-spacing:-.012em;margin:0;text-wrap:balance;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
 p{margin:0}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.wrap{max-width:1240px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-.kicker,.eyebrow{display:inline-block;font-size:.74rem;font-weight:650;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-ink)}
-.dark .kicker,.dark .eyebrow{color:var(--gold-2)}
-.rule{height:2px;width:48px;border:0;background:var(--gold);margin:0}
-.sec{padding-block:88px}
-.sec-head{display:grid;gap:14px;max-width:760px;margin-bottom:40px}
-.sec-head h2{font-size:clamp(1.9rem,3.6vw,2.9rem)}
-.sec-head p{color:var(--muted);font-size:1.05rem;max-width:62ch}
-.dark{background:var(--ink);color:var(--on-dark)}
-.dark .sec-head p{color:var(--on-dark-2)}
-.tnum{font-variant-numeric:tabular-nums}
+h1,h2,h3,h4{margin:0;font-family:var(--breit);font-stretch:125%;font-weight:400;line-height:1.12;letter-spacing:.01em}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--messing);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.schmal{max-width:760px;margin:0 auto;text-align:center}
+.linie{width:100%;max-width:560px;height:1px;border:0;background:currentColor;opacity:.35;margin:28px auto}
+.dunkel{background:var(--nacht);color:var(--weiss)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 22px;border-radius:999px;border:1.5px solid transparent;text-decoration:none;font-weight:600;font-size:.97rem;cursor:pointer;line-height:1.15;transition:transform .15s ease,background .15s ease,border-color .15s ease,color .15s ease;text-align:center}
-.btn:hover{transform:translateY(-1px)}
-.btn svg{width:19px;height:19px;flex:none}
-.btn-gold{background:var(--gold);color:#14100A;border-color:var(--gold)}
-.btn-gold:hover{background:var(--gold-2);border-color:var(--gold-2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:12px 28px;border:1px solid transparent;border-radius:0;font-family:var(--breit);font-stretch:112%;font-weight:500;font-size:.92rem;letter-spacing:.06em;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-messing{background:var(--messing);color:#15110A;border-color:var(--messing)}
+.btn-messing:hover{background:var(--messing-hell);border-color:var(--messing-hell)}
+.btn-hell{background:transparent;color:var(--weiss);border-color:rgba(255,255,255,.55)}
+.btn-hell:hover{background:var(--weiss);color:var(--nacht)}
+.btn-dunkel{background:var(--nacht);color:var(--weiss);border-color:var(--nacht)}
+.btn-dunkel:hover{background:var(--nacht-2)}
+.btn-rand{background:transparent;border-color:currentColor}
+.btn-rand:hover{border-color:var(--messing);color:var(--messing)}
 .btn-wa{background:var(--wa);color:#fff;border-color:var(--wa)}
-.btn-wa:hover{background:var(--wa-dark);border-color:var(--wa-dark)}
-.btn-ghost{background:transparent;color:var(--on-dark);border-color:rgba(255,255,255,.32)}
-.btn-ghost:hover{border-color:var(--gold-2);color:var(--gold-2)}
-.btn-outline{background:transparent;color:var(--text);border-color:var(--line)}
-.btn-outline:hover{border-color:var(--gold);color:var(--gold-ink)}
-.btn-ink{background:var(--ink);color:var(--on-dark);border-color:var(--ink)}
-.btn-ink:hover{background:var(--navy-3);border-color:var(--navy-3)}
-.btn-sm{min-height:40px;padding:9px 16px;font-size:.9rem}
+.btn-wa:hover{filter:brightness(1.08)}
+.btn-klein{min-height:42px;padding:9px 18px;font-size:.84rem}
 .btn-block{width:100%}
 
-/* top bar + header */
-.topbar{background:var(--ink);color:var(--on-dark-2);font-size:.8rem;border-bottom:1px solid var(--line-dark)}
-.topbar .wrap{display:flex;justify-content:space-between;gap:16px;padding-block:8px;flex-wrap:wrap}
-.topbar a{text-decoration:none;color:var(--on-dark)}
-.topbar a:hover{color:var(--gold-2)}
-.topbar .stars{color:var(--gold-2);letter-spacing:1px}
-.topbar .sep{opacity:.35;margin-inline:8px}
-.head{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(14,20,27,.94);backdrop-filter:saturate(1.2) blur(10px);-webkit-backdrop-filter:saturate(1.2) blur(10px);color:var(--on-dark);border-bottom:1px solid var(--line-dark)}
-.head .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:74px}
-.brand img{height:46px;width:auto}
-.nav{display:flex;gap:30px;align-items:center}
-.nav a{text-decoration:none;font-size:.86rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--on-dark-2);padding-block:6px;border-bottom:1.5px solid transparent}
-.nav a:hover{color:var(--on-dark);border-bottom-color:var(--gold)}
-.head-cta{display:flex;align-items:center;gap:10px}
-.head-tel{text-decoration:none;font-weight:600;font-size:.93rem;color:var(--on-dark);white-space:nowrap}
-.head-tel:hover{color:var(--gold-2)}
-.menu-btn{display:none;width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(255,255,255,.28);background:transparent;cursor:pointer;place-items:center}
-.menu-btn svg{width:22px;height:22px}
-@media (max-width:1060px){.head-tel{display:none}}
-@media (max-width:900px){
-  .nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--ink);border-bottom:2px solid var(--gold);padding-block:6px 12px}
-  .nav.open{display:flex}
-  .nav a{padding:14px max(20px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--line-dark);font-size:.95rem}
-  .menu-btn{display:grid}
-  .topbar .hide-sm{display:none}
+/* ---------- Kopf ---------- */
+.kopf{position:fixed;--fort:0;top:0;left:0;right:0;z-index:30;color:var(--weiss);transition:background .3s}
+.kopf.voll{background:rgba(29,32,35,.94);backdrop-filter:blur(8px)}
+.kopf .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:82px}
+.menu-knopf{justify-self:start;display:inline-flex;align-items:center;gap:14px;background:none;border:0;padding:8px 0;cursor:pointer;font-family:var(--breit);font-stretch:125%;font-weight:500;font-size:.82rem;letter-spacing:.22em;color:var(--weiss)}
+.menu-knopf i{display:grid;gap:6px;width:26px}
+.menu-knopf i::before,.menu-knopf i::after{content:"";height:1.5px;background:currentColor}
+.menu-knopf i{border-top:1.5px solid currentColor;padding-top:5px}
+.kopf-logo img{height:48px;width:auto;opacity:0;transition:opacity .3s}
+.kopf.voll .kopf-logo img{opacity:1}
+.kopf-rechts{justify-self:end;display:flex;align-items:center;gap:22px}
+.kopf-tel{font-family:var(--breit);font-stretch:112%;font-weight:500;font-size:.9rem;letter-spacing:.04em;text-decoration:none;font-variant-numeric:tabular-nums}
+.kopf-wa{display:inline-flex;width:42px;height:42px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.5)}
+.kopf-wa svg{width:19px;height:19px}
+@media (max-width:760px){.kopf-tel{display:none}.menu-knopf span{display:none}.kopf .wrap{min-height:70px}.kopf-logo img{height:40px}}
+
+/* Menü-Overlay */
+.menue{position:fixed;inset:0;z-index:50;background:var(--nacht);color:var(--weiss);display:grid;grid-template-rows:auto 1fr auto;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+.menue.offen{opacity:1;visibility:visible}
+.menue .wrap{width:100%}
+.menue-kopf{display:flex;justify-content:space-between;align-items:center;min-height:82px}
+.menue-zu{background:none;border:0;color:var(--weiss);cursor:pointer;display:inline-flex;align-items:center;gap:12px;font-family:var(--breit);font-stretch:125%;font-size:.82rem;letter-spacing:.22em;padding:8px 0}
+.menue-zu svg{width:22px;height:22px}
+.menue nav{align-self:center;display:grid;gap:4px;justify-items:center;text-align:center}
+.menue nav a{font-family:var(--breit);font-stretch:125%;font-weight:300;font-size:clamp(1.7rem,4.4vw,3.2rem);text-decoration:none;padding:6px 0;color:#E9E9E6;transition:color .2s}
+.menue nav a:hover{color:var(--messing-hell)}
+.menue-fuss{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 34px;padding:28px 0 40px;color:var(--grau-hell);font-family:var(--breit);font-stretch:112%;font-size:.9rem}
+.menue-fuss a{text-decoration:none}
+.menue-fuss a:hover{color:var(--weiss)}
+
+/* ---------- Kino-Startbild ---------- */
+.kino{position:relative;height:100vh;height:100svh;min-height:560px;background:var(--nacht);color:var(--weiss);overflow:hidden;display:grid;place-items:center;text-align:center}
+.kino-bilder{position:absolute;inset:0}
+.kino-bilder img{position:absolute;inset:-3%;width:106%;height:106%;object-fit:cover;opacity:0;animation:blende 28s infinite}
+.kino-bilder img:nth-child(1){animation-delay:0s;object-position:50% 62%}
+.kino-bilder img:nth-child(2){animation-delay:7s;object-position:50% 45%}
+.kino-bilder img:nth-child(3){animation-delay:14s;object-position:50% 55%}
+.kino-bilder img:nth-child(4){animation-delay:21s;object-position:50% 60%}
+@keyframes blende{0%{opacity:0;transform:scale(1)}6%{opacity:1}25%{opacity:1}31%{opacity:0;transform:scale(1.07)}100%{opacity:0}}
+.kino::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(20,22,25,.38) 0,rgba(20,22,25,.72) 70%),linear-gradient(180deg,rgba(20,22,25,.55) 0,rgba(20,22,25,0) 25%,rgba(20,22,25,0) 70%,rgba(20,22,25,.8) 100%)}
+.kino-inhalt{position:relative;z-index:2;padding:0 24px;display:grid;justify-items:center}
+.kino-logo{width:min(440px,72vw);height:auto;animation:auftritt 1.6s ease-out both}
+.kino h1{margin-top:26px;font-weight:300;font-size:clamp(1.05rem,1.9vw,1.45rem);letter-spacing:.06em;color:#ECECE8;animation:auftritt 1.6s .4s ease-out both}
+.kino-aktion{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:38px;animation:auftritt 1.6s .7s ease-out both}
+@keyframes auftritt{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.kino-pfeil{position:absolute;z-index:2;bottom:28px;left:50%;transform:translateX(-50%);color:var(--weiss);opacity:.8;width:44px;height:44px;display:grid;place-items:center}
+.kino-pfeil svg{width:30px;height:30px;transform:rotate(90deg)}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .kino-bilder img{animation:none}.kino-bilder img:first-child{opacity:1}
+  .kino-logo,.kino h1,.kino-aktion{animation:none}
+  .menue,.kopf{transition:none}
 }
 
-/* hero */
-.hero{position:relative;overflow:hidden;background:radial-gradient(70% 70% at 80% 30%,rgba(176,141,87,.16),rgba(176,141,87,0) 62%),radial-gradient(60% 50% at 10% 100%,rgba(38,51,67,.9),rgba(14,20,27,0) 70%),var(--ink)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,1fr);gap:56px;align-items:center;padding-block:52px 72px}
-.hero h1{font-size:clamp(2.2rem,4.1vw,3.55rem);font-stretch:122%;margin-top:16px;color:var(--on-dark)}
-.hero h1 em{font-style:normal;color:var(--gold-2)}
-.hero .lead{margin-top:18px;color:var(--on-dark-2);font-size:1.12rem;max-width:54ch}
-.score-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.score{display:inline-flex;align-items:center;gap:8px;padding:7px 13px 7px 11px;border:1px solid var(--line-dark);border-radius:999px;text-decoration:none;color:var(--on-dark);font-size:.88rem;background:rgba(255,255,255,.03)}
-.score:hover{border-color:var(--gold-2)}
-.score b{font-family:var(--wide);font-stretch:112%;font-size:1.02rem}
-.score .stars{color:var(--gold-2);letter-spacing:1px;font-size:.92rem}
-.score small{color:var(--on-dark-2);font-size:.8rem}
-.finder{margin-top:24px;background:var(--navy-2);border:1px solid var(--line-dark);border-radius:16px;padding:18px;display:grid;gap:14px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
-.finder-title{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
-.finder-title b{font-family:var(--wide);font-stretch:116%;font-size:1.05rem}
-.finder-title small{color:var(--on-dark-2);font-size:.8rem}
-.finder-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.dfield{display:grid;gap:5px;min-width:0}
-.dfield label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--on-dark-2);font-weight:600}
-.dfield select{width:100%;min-width:0;appearance:none;-webkit-appearance:none;background:var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23CBA76B' stroke-width='1.8'/%3E%3C/svg%3E") no-repeat right 12px center;color:var(--on-dark);border:1px solid var(--line-dark);border-radius:var(--r-sm);padding:12px 34px 12px 12px;font-size:.95rem;color-scheme:dark}
-.dfield select:focus{border-color:var(--gold-2);outline:none}
-.finder-portals{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.portal{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto;align-items:center;column-gap:8px;padding:11px 14px 12px;border-radius:12px;text-decoration:none;line-height:1.15;min-width:0;transition:transform .2s,filter .2s}
-.portal small{grid-column:1;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;font-weight:650;opacity:.85}
-.portal b{grid-column:1;font-family:var(--wide);font-stretch:112%;font-size:1.12rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.portal svg{grid-column:2;grid-row:1/3;width:20px;height:20px}
-.portal:hover{transform:translateY(-1px);filter:brightness(1.06)}
-.portal-mobile{background:#F47920;color:#fff;box-shadow:0 14px 30px -16px rgba(244,121,32,.95)}
-.portal-as24{background:#FFC800;color:#161616;box-shadow:0 14px 30px -16px rgba(255,200,0,.95)}
-@media (max-width:420px){.finder-portals{grid-template-columns:1fr}}
-.hero-media{position:relative}
-.hero-photo{display:block;width:100%;position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3;max-width:100%;background:var(--navy-2);box-shadow:0 40px 80px -30px rgba(0,0,0,.7);border:1px solid var(--line-dark)}
-.hero-photo img{width:100%;height:100%;object-fit:cover}
-.hero-media::before{content:"";position:absolute;inset:-14px 14px 14px -14px;border:1px solid rgba(203,167,107,.35);border-radius:22px;pointer-events:none}
-.hero-tag{position:absolute;left:-18px;bottom:-26px;width:min(300px,82%);text-decoration:none}
+/* ---------- Einleitung ---------- */
+.abschnitt{padding:110px 0}
+.titel{font-size:clamp(1.6rem,3vw,2.4rem);text-transform:uppercase;letter-spacing:.08em;font-weight:400}
+.einleitung p{font-size:1.14rem;color:#4A4F54;max-width:62ch;margin:0 auto}
+.kennzahlen{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:64px;border-top:1px solid var(--linie);border-bottom:1px solid var(--linie)}
+.kennzahl{padding:30px 16px;text-align:center;text-decoration:none;display:grid;gap:6px;align-content:start}
+.kennzahl+.kennzahl{border-left:1px solid var(--linie)}
+.kennzahl b{font-family:var(--breit);font-stretch:125%;font-weight:300;font-size:clamp(2.2rem,4vw,3.2rem);line-height:1}
+.kennzahl span{color:var(--grau);font-size:.98rem}
+.kennzahl .sterne{color:var(--messing);letter-spacing:3px;font-size:.9rem}
+a.kennzahl:hover span{color:var(--tinte);text-decoration:underline}
+@media (max-width:700px){.abschnitt{padding:80px 0}.kennzahlen{grid-template-columns:minmax(0,1fr)}.kennzahl+.kennzahl{border-left:0;border-top:1px solid var(--linie)}}
 
-/* windscreen price card – the signature */
-.plate{display:block;background:var(--white);color:var(--text);border-radius:10px;overflow:hidden;box-shadow:var(--shadow)}
-.plate-top{display:block;height:6px;background:linear-gradient(90deg,var(--gold),var(--gold-2))}
-.plate-body{padding:12px 16px 14px;display:grid;gap:4px}
-.plate-k{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-ink);font-weight:700}
-.plate-name{font-family:var(--wide);font-stretch:112%;font-weight:700;font-size:1.02rem;line-height:1.2}
-.plate-meta{font-size:.8rem;color:var(--muted)}
-.plate-price{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-top:6px;padding-top:8px;border-top:1px dashed var(--line)}
-.plate-price b{font-family:var(--wide);font-stretch:118%;font-size:1.55rem;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
-.plate-price span{font-size:.78rem;color:var(--gold-ink);font-weight:600;white-space:nowrap}
-@media (max-width:980px){
-  .hero-grid{grid-template-columns:minmax(0,1fr);gap:44px;padding-block:44px 64px}
-  .hero-media{margin-inline:14px 0;margin-bottom:22px}
-  .hero-tag{left:-14px;bottom:-22px}
-}
-@media (max-width:620px){
-  .finder-fields{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-  .finder-fields .dfield:first-child{grid-column:1/-1}
-  .hero .lead{font-size:1.02rem}
-}
+/* ---------- Marken ---------- */
+.marken-raster{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:54px}
+.marke-kachel{display:grid;place-items:center;gap:8px;min-height:150px;padding:24px 14px;background:var(--weiss);border:1px solid var(--linie);cursor:pointer;text-align:center;transition:border-color .2s,background .2s}
+.marke-kachel:hover{border-color:var(--tinte)}
+.marke-kachel b{font-family:var(--breit);font-stretch:125%;font-weight:400;font-size:1.06rem;text-transform:uppercase;letter-spacing:.1em;line-height:1.25}
+.marke-kachel span{color:var(--grau);font-size:.95rem}
+@media (max-width:900px){.marken-raster{grid-template-columns:repeat(2,minmax(0,1fr))}.marke-kachel{min-height:120px}}
 
-/* trust band */
-.trust{background:var(--white);border-bottom:1px solid var(--line)}
-.trust-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
-.trust-item{display:flex;gap:14px;align-items:center;padding:22px 20px 22px 0;text-decoration:none;color:inherit;min-width:0}
-.trust-item+.trust-item{padding-left:22px;border-left:1px solid var(--line)}
-.trust-item svg{width:30px;height:30px;color:var(--gold);flex:none}
-.trust-item b{display:block;font-family:var(--wide);font-stretch:112%;font-size:1rem;line-height:1.2}
-.trust-item span{display:block;font-size:.86rem;color:var(--muted)}
-a.trust-item:hover b{color:var(--gold-ink)}
-.brands{display:flex;flex-wrap:wrap;gap:6px 26px;justify-content:center;padding-block:14px 18px;border-top:1px solid var(--line)}
-.brands span{font-family:var(--wide);font-stretch:125%;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-@media (max-width:980px){
-  .trust-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .trust-item{padding:18px 14px 18px 0}
-  .trust-item+.trust-item{padding-left:0;border-left:0}
-  .trust-item:nth-child(even){padding-left:16px;border-left:1px solid var(--line)}
-  .trust-item:nth-child(n+3){border-top:1px solid var(--line)}
-}
-@media (max-width:420px){.trust-item svg{width:24px;height:24px}.trust-item b{font-size:.92rem}.trust-item span{font-size:.8rem}}
+/* ---------- Showroom (Bestand) ---------- */
+.showroom{background:var(--nacht);color:var(--weiss);padding:110px 0 120px}
+.showroom .titel{color:var(--weiss)}
+.showroom .schmal p{color:var(--grau-hell);font-size:1.08rem}
+.boersen{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:34px}
+.boerse{display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:10px 22px;text-decoration:none;font-family:var(--breit);font-stretch:112%;font-weight:700;font-size:1.1rem;line-height:1.1;text-align:left}
+.boerse small{display:block;font-weight:500;font-size:.72rem;letter-spacing:.04em;opacity:.9}
+.boerse svg{width:18px;height:18px}
+.boerse-mobile{background:#F47920;color:#fff}
+.boerse-as24{background:#FFC800;color:#161616}
+.boerse:hover{filter:brightness(1.06)}
+.brands{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* inventory */
-.inv-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:26px}
-.inv-head .sec-head{margin-bottom:0}
-.portals{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-bottom:6px}
-.portals>span{font-size:.76rem;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;font-weight:650}
-.portals .btn svg{width:15px;height:15px}
-@media (max-width:700px){.portals>span{width:100%}}
-.toolbar{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:14px;box-shadow:var(--shadow-sm)}
-.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;scrollbar-width:thin}
-.chip{flex:none;border:1.5px solid var(--line);background:transparent;border-radius:999px;padding:8px 15px;font-size:.88rem;font-weight:600;cursor:pointer;white-space:nowrap}
-.chip small{font-weight:500;color:var(--muted);margin-left:4px}
-.chip:hover{border-color:var(--gold)}
-.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--on-dark)}
-.chip[aria-pressed="true"] small{color:var(--on-dark-2)}
-.controls{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(5,minmax(0,1fr));gap:10px}
-.field{display:grid;gap:5px;min-width:0}
-.field label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
-.field input,.field select,.field textarea{width:100%;min-width:0;border:1px solid var(--line);background:var(--paper);color:var(--text);border-radius:var(--r-sm);padding:11px 12px;font-size:.95rem}
-.field select{appearance:none;-webkit-appearance:none;background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2383653A' stroke-width='1.8'/%3E%3C/svg%3E") no-repeat right 12px center;padding-right:32px}
-.field textarea{min-height:110px;resize:vertical;line-height:1.45}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold);outline:none;background-color:var(--white)}
-.result-row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:24px 0 18px;flex-wrap:wrap}
-.result-row .count{font-family:var(--wide);font-stretch:112%;font-weight:700;font-size:1.15rem}
-.result-row .count b{color:var(--gold-ink)}
-.link-btn{background:none;border:0;padding:0;color:var(--gold-ink);cursor:pointer;text-decoration:underline;text-underline-offset:3px;font-size:.92rem;font-weight:600}
-@media (max-width:1100px){.controls{grid-template-columns:repeat(3,minmax(0,1fr))}.controls .f-search{grid-column:1/-1}}
-.more-filters{display:none}
-@media (max-width:640px){
-  .controls{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .controls>.field:not(.f-search){display:none}
-  .controls.open>.field:not(.f-search){display:grid}
-  .more-filters{display:inline-flex;justify-self:start}
-}
+.leiste-filter{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:64px;padding-bottom:18px;border-bottom:1px solid var(--nacht-linie)}
+.reiter{display:flex;flex-wrap:wrap;gap:6px 26px;margin:0;padding:0;list-style:none}
+.reiter button{background:none;border:0;padding:8px 0;cursor:pointer;color:var(--grau-hell);font-family:var(--breit);font-stretch:112%;font-weight:400;font-size:.95rem;letter-spacing:.03em;border-bottom:1.5px solid transparent}
+.reiter button span{margin-left:6px;opacity:.6;font-variant-numeric:tabular-nums}
+.reiter button:hover{color:var(--weiss)}
+.reiter button[aria-pressed="true"]{color:var(--weiss);border-bottom-color:var(--messing)}
+.filter-rechts{display:flex;align-items:center;gap:12px}
+.zahl{font-family:var(--breit);font-stretch:112%;color:var(--grau-hell);font-size:.95rem}
+.zahl b{color:var(--weiss);font-weight:500}
+.showroom .btn-rand{color:var(--weiss);border-color:var(--nacht-linie)}
+.showroom .btn-rand:hover{border-color:var(--messing);color:var(--messing-hell)}
+.filter{display:none;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;padding:22px 0;border-bottom:1px solid var(--nacht-linie)}
+.filter.open{display:grid}
+.filter .feld:first-child{grid-column:span 2}
+.feld label{display:block;font-family:var(--breit);font-stretch:112%;font-size:.8rem;letter-spacing:.05em;margin-bottom:6px;color:inherit;opacity:.85}
+.feld input,.feld select,.feld textarea{width:100%;min-width:0;border:1px solid var(--linie);background:var(--weiss);border-radius:0;padding:12px;font-size:1rem;font-family:var(--serif)}
+.feld select{appearance:none;-webkit-appearance:none;background:var(--weiss) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231D2023' stroke-width='1.4'/%3E%3C/svg%3E") no-repeat right 12px center;padding-right:34px}
+.feld input:focus,.feld select:focus,.feld textarea:focus{outline:none;border-color:var(--messing)}
+.showroom .feld input,.showroom .feld select{background-color:var(--nacht-2);border-color:var(--nacht-linie);color:var(--weiss);color-scheme:dark}
+.showroom .feld select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23CDB07F' stroke-width='1.4'/%3E%3C/svg%3E")}
+.filter-zu{align-self:end;background:none;border:0;padding:12px 0;cursor:pointer;color:var(--grau-hell);text-decoration:underline;font-family:var(--breit);font-stretch:112%;font-size:.85rem;justify-self:start}
+@media (max-width:1000px){.filter{grid-template-columns:repeat(2,minmax(0,1fr))}.filter .feld:first-child{grid-column:1/-1}}
 
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-@media (max-width:1060px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:640px){.grid{grid-template-columns:minmax(0,1fr)}}
-.car{background:var(--white);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
-.car:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#C9CED6}
-.car-pic{position:relative;display:block;width:100%;aspect-ratio:4/3;max-width:100%;padding:0;border:0;background:var(--navy);cursor:pointer;overflow:hidden}
-.car-pic img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.car:hover .car-pic img{transform:scale(1.035)}
-.fallback{position:absolute;inset:0;display:grid;place-items:center;align-content:center;gap:10px;color:var(--on-dark-2);background:radial-gradient(120% 90% at 50% 100%,#2A3646 0%,var(--navy) 62%)}
-.fallback img{width:34%;height:auto;opacity:.5;object-fit:contain;transform:none!important}
-.fallback span{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase}
-.badges{position:absolute;left:12px;top:12px;display:flex;gap:6px;flex-wrap:wrap}
-.badge{background:rgba(14,20,27,.84);color:var(--on-dark);font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;border-radius:999px}
-.badge.new{background:var(--gold);color:#14100A}
-.badge.cut{background:#fff;color:var(--text)}
-.photo-count{position:absolute;right:12px;bottom:12px;background:rgba(14,20,27,.78);color:#fff;font-size:.72rem;padding:5px 9px;border-radius:999px;display:inline-flex;gap:6px;align-items:center}
-.photo-count svg{width:13px;height:13px}
-.car-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:12px;flex:1}
-.car-make{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink)}
-.car h3{font-size:1.18rem;font-stretch:112%;margin-top:4px}
-.car h3 button{all:unset;cursor:pointer}
-.car h3 button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-.car-meta{font-size:.8rem;color:var(--muted);margin-top:6px;letter-spacing:.02em}
-.car-variant{font-size:.88rem;color:var(--muted);margin-top:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.cluster{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0;border-block:1px solid var(--line)}
-.cluster div{padding:9px 0 8px;min-width:0}
-.cluster div+div{padding-left:10px;border-left:1px solid var(--line)}
-.cluster dt{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
-.cluster dd{margin:2px 0 0;font-weight:650;font-size:.9rem;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.car-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto}
-.car-price{display:grid;line-height:1.1}
-.car-price b{font-family:var(--wide);font-stretch:118%;font-size:1.5rem;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.car-price s{font-size:.82rem;color:var(--muted);font-variant-numeric:tabular-nums}
-.car-actions{display:flex;gap:8px;align-items:center}
-.wa-mini{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--wa);color:#fff;flex:none}
-.wa-mini:hover{background:var(--wa-dark)}
-.wa-mini svg{width:22px;height:22px}
-.empty{grid-column:1/-1;padding:46px 20px;text-align:center;border:1.5px dashed var(--line);border-radius:var(--r);color:var(--muted);background:var(--white)}
-.note{font-size:.8rem;color:var(--muted);margin-top:26px;max-width:100ch;line-height:1.5}
+.raster{list-style:none;margin:44px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px 40px}
+.auto{cursor:pointer}
+.auto-bild{position:relative;aspect-ratio:3/2;overflow:hidden;background:var(--nacht-2)}
+.auto-bild img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .4s}
+.auto:hover .auto-bild img{transform:scale(1.03)}
+.marker{position:absolute;left:0;top:18px;background:var(--messing);color:#15110A;font-family:var(--breit);font-stretch:112%;font-weight:600;font-size:.74rem;letter-spacing:.08em;padding:6px 12px}
+.marker.dezent{background:rgba(29,32,35,.88);color:var(--weiss)}
+.auto-text{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 24px;align-items:baseline;padding-top:22px}
+.auto-marke{grid-column:1;font-family:var(--breit);font-stretch:125%;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--messing-hell)}
+.auto-modell{grid-column:1;font-size:clamp(1.3rem,2vw,1.75rem);font-weight:400}
+.auto-modell button{background:none;border:0;padding:0;cursor:pointer;color:inherit;text-align:left;font:inherit;letter-spacing:inherit}
+.auto-preis{grid-column:2;grid-row:1/3;align-self:end;text-align:right;font-family:var(--breit);font-stretch:112%;font-weight:400;font-size:clamp(1.3rem,2vw,1.7rem);font-variant-numeric:tabular-nums;white-space:nowrap}
+.auto-preis s{display:block;font-size:.9rem;color:var(--grau)}
+.auto-variante{grid-column:1/-1;color:var(--grau-hell);font-style:italic}
+.auto-daten{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px 0;margin-top:10px;padding-top:14px;border-top:1px solid var(--nacht-linie);color:#D6D7D4;font-family:var(--breit);font-stretch:112%;font-size:.88rem;letter-spacing:.02em}
+.auto-daten span{padding-right:18px;margin-right:18px;border-right:1px solid var(--nacht-linie)}
+.auto-daten span:last-child{border-right:0;margin-right:0}
+.leer{grid-column:1/-1;text-align:center;padding:60px 0;color:var(--grau-hell)}
+.leer a{color:var(--messing-hell)}
+.ersatz{display:grid;place-items:center;align-content:center;gap:10px;width:100%;height:100%;background:var(--nacht-2);color:var(--grau);font-family:var(--breit);font-stretch:112%;font-size:.85rem}
+.ersatz img{width:34%;opacity:.4}
+@media (max-width:820px){.raster{grid-template-columns:minmax(0,1fr);gap:48px}}
+@media (max-width:520px){.auto-daten span{padding-right:12px;margin-right:12px}}
 
-/* search request band */
-.wish{margin-top:44px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:var(--shadow-sm)}
-.wish h3{font-size:clamp(1.4rem,2.4vw,1.85rem)}
-.wish p{color:var(--muted);margin-top:10px}
-.wish form{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end}
-.wish form .span2{grid-column:span 2}
-.wish form .span3{grid-column:1/-1}
-@media (max-width:900px){.wish{grid-template-columns:minmax(0,1fr);padding:22px}.wish form{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.wish form .span2,.wish form .span3{grid-column:1/-1}}
+.suche{margin-top:110px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:56px;padding-top:56px;border-top:1px solid var(--nacht-linie)}
+.suche h3{font-size:1.6rem;font-weight:300}
+.suche p{margin-top:14px;color:var(--grau-hell)}
+.suche form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.suche .breit{grid-column:1/-1}
+.suche .feld input{background:var(--nacht-2);border-color:var(--nacht-linie);color:var(--weiss)}
+@media (max-width:820px){.suche{grid-template-columns:minmax(0,1fr);gap:28px}.suche form{grid-template-columns:minmax(0,1fr)}}
 
-/* send box */
-.sendbox{display:none;gap:10px;border:1px solid var(--gold);background:#F7F1E6;color:var(--text);border-radius:var(--r);padding:14px;grid-column:1/-1}
-.sendbox.show{display:grid}
-.sendbox p{font-size:.92rem}
-.sendbox .acts{display:flex;flex-wrap:wrap;gap:8px}
+.versand{display:none;grid-column:1/-1;border-left:2px solid var(--messing);padding:14px 18px;background:rgba(176,141,87,.08)}
+.versand.show{display:block}
+.versand p{margin-bottom:12px}
+.versand .reihe{display:flex;flex-wrap:wrap;gap:10px}
 
-/* buy-in band */
-.buy-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:start}
-.buy h2{font-size:clamp(2rem,4vw,3.2rem);font-stretch:122%}
-.buy .intro{color:var(--on-dark-2);font-size:1.06rem;margin-top:18px;max-width:52ch}
-.ticks{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:12px}
-.ticks li{display:flex;gap:12px;align-items:flex-start}
-.ticks svg{width:22px;height:22px;color:var(--gold-2);flex:none;margin-top:1px}
-.flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:36px;counter-reset:step}
-.flow div{border-top:1px solid var(--line-dark);padding-top:14px;display:grid;gap:6px;min-width:0}
-.flow b{font-family:var(--wide);font-stretch:125%;font-size:.72rem;letter-spacing:.16em;color:var(--gold-2)}
-.flow h3{font-size:1rem;font-stretch:110%}
-.flow p{font-size:.88rem;color:var(--on-dark-2)}
-.form{background:var(--white);color:var(--text);border-radius:18px;padding:24px;display:grid;gap:14px;box-shadow:0 40px 80px -40px rgba(0,0,0,.7)}
-.form h3{font-size:1.35rem;font-stretch:112%}
-.row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
-.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--paper);border-radius:999px;padding:4px;gap:4px}
-.seg input{position:absolute;opacity:0;pointer-events:none}
-.seg label{display:block;text-align:center;padding:10px 12px;border-radius:999px;font-weight:650;font-size:.92rem;cursor:pointer;color:var(--muted)}
-.seg input:checked+label{background:var(--ink);color:var(--on-dark)}
-.seg input:focus-visible+label{outline:2px solid var(--gold);outline-offset:2px}
-.hint{font-size:.8rem;color:var(--muted)}
-@media (max-width:980px){.buy-grid{grid-template-columns:minmax(0,1fr);gap:36px}}
-@media (max-width:560px){.flow{grid-template-columns:minmax(0,1fr)}.row2{grid-template-columns:minmax(0,1fr)}.form{padding:18px}}
+/* ---------- Ankauf ---------- */
+.ankauf{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:760px}
+.ankauf-bild{position:relative;overflow:hidden;background:var(--nacht)}
+.ankauf-bild img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.ankauf-inhalt{padding:100px max(24px,6vw);display:grid;align-content:center;gap:0;background:var(--nebel)}
+.ankauf-inhalt .titel{text-align:left}
+.ankauf-inhalt .linie{margin:24px 0;max-width:120px;opacity:.6}
+.ankauf-inhalt>p{color:#4A4F54;max-width:50ch;font-size:1.08rem}
+.ankauf-form{margin-top:36px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.ankauf-form .breit{grid-column:1/-1}
+.wahl{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--tinte)}
+.wahl input{position:absolute;opacity:0;pointer-events:none}
+.wahl label{display:block;text-align:center;padding:13px 10px;cursor:pointer;font-family:var(--breit);font-stretch:112%;font-size:.88rem;letter-spacing:.04em}
+.wahl input:checked+label{background:var(--tinte);color:var(--weiss)}
+.wahl input:focus-visible+label{outline:2px solid var(--messing);outline-offset:-4px}
+@media (max-width:900px){.ankauf{grid-template-columns:minmax(0,1fr)}.ankauf-bild{aspect-ratio:4/3}.ankauf-inhalt{padding:64px 24px}}
+@media (max-width:520px){.ankauf-form{grid-template-columns:minmax(0,1fr)}}
 
-/* reviews */
-.scores{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:28px}
-.scorecard{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 20px;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
-.scorecard .big{grid-row:span 3;font-family:var(--wide);font-stretch:118%;font-weight:750;font-size:3.4rem;line-height:1;letter-spacing:-.03em}
-.scorecard .stars{color:var(--gold);font-size:1.15rem;letter-spacing:2px}
-.scorecard .src{font-weight:650}
-.scorecard .src small{font-weight:500;color:var(--muted)}
-.scorecard .links{display:flex;gap:16px;flex-wrap:wrap;font-size:.9rem}
-.scorecard .links a{color:var(--gold-ink);font-weight:600;text-underline-offset:3px}
-.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.quote{margin:0;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:18px;min-width:0}
-.quote .stars{color:var(--gold);letter-spacing:2px;font-size:.95rem}
-.quote blockquote{margin:0;font-family:var(--serif);font-style:italic;font-size:1.42rem;line-height:1.28;color:var(--text)}
-.quote figcaption{margin-top:auto;font-size:.85rem;color:var(--muted);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:12px}
-.quote figcaption b{color:var(--text);font-weight:650}
-.src-note{margin-top:18px;font-size:.82rem;color:var(--muted)}
-.src-note a{color:var(--gold-ink)}
-@media (max-width:980px){.quotes{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:640px){.scores,.quotes{grid-template-columns:minmax(0,1fr)}.scorecard .big{font-size:2.8rem}}
+/* ---------- Hof ---------- */
+.hof-band{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:300px 300px;gap:6px;margin-top:56px}
+.hof-band button{padding:0;border:0;background:var(--nacht-2);cursor:zoom-in;overflow:hidden}
+.hof-band button:first-child{grid-row:1/3}
+.hof-band img{width:100%;height:100%;object-fit:cover;transition:opacity .3s}
+.hof-band button:hover img{opacity:.85}
+.person{display:inline-flex;gap:18px;align-items:center;margin-top:40px;text-align:left}
+.person .mono{width:64px;height:64px;flex:none;display:grid;place-items:center;border:1px solid var(--messing);color:var(--messing);font-family:var(--breit);font-stretch:125%;font-size:1.1rem;letter-spacing:.08em}
+.person b{display:block;font-family:var(--breit);font-stretch:112%;font-weight:500;font-size:1.1rem}
+.person span{color:var(--grau);font-size:.95rem}
+@media (max-width:820px){.hof-band{grid-template-columns:1fr 1fr;grid-template-rows:260px 160px 160px}.hof-band button:first-child{grid-column:1/-1;grid-row:auto}}
 
-/* services */
-.serv-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.serv{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:10px;align-content:start;min-width:0;text-decoration:none;color:inherit}
-.serv svg{width:28px;height:28px;color:var(--gold)}
-.serv h3{font-size:1.02rem;font-stretch:110%}
-.serv p{font-size:.88rem;color:var(--muted)}
-a.serv:hover{border-color:var(--gold)}
-@media (max-width:1000px){.serv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:460px){.serv-grid{grid-template-columns:minmax(0,1fr)}}
+/* ---------- Stimmen ---------- */
+.stimmen{background:var(--nebel)}
+.zitate{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:56px;margin-top:64px}
+.zitat{margin:0;text-align:center}
+.zitat .sterne{color:var(--messing);letter-spacing:4px;font-size:.88rem}
+.zitat blockquote{margin:14px 0 0;font-size:1.2rem;line-height:1.55}
+.zitat figcaption{margin-top:16px;font-family:var(--breit);font-stretch:112%;font-size:.84rem;letter-spacing:.04em;color:var(--grau)}
+.stimmen-fuss{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:56px}
+@media (max-width:900px){.zitate{grid-template-columns:minmax(0,1fr);gap:40px}}
 
-/* about */
-.about{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:56px;align-items:start}
-.about .txt{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;max-width:64ch;min-width:0}
-.about .txt p{color:var(--muted)}
-.about .txt p.lead{color:var(--text);font-size:1.12rem}
-.person{background:var(--ink);color:var(--on-dark);border-radius:18px;padding:26px;display:grid;gap:14px}
-.person .mono{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:var(--navy-3);color:var(--gold-2);font-family:var(--wide);font-stretch:125%;font-weight:700;font-size:1.2rem;border:1px solid var(--line-dark)}
-.person b{font-family:var(--wide);font-stretch:112%;font-size:1.2rem;display:block}
-.person span{color:var(--on-dark-2);font-size:.9rem}
-.person p{color:var(--on-dark-2);font-size:.95rem}
-.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:48px}
-.step{border-top:2px solid var(--gold);padding-top:14px;display:grid;gap:6px;min-width:0}
-.step b{font-family:var(--wide);font-stretch:125%;font-size:.72rem;letter-spacing:.16em;color:var(--gold-ink)}
-.step h3{font-size:1.04rem;font-stretch:110%}
-.step p{font-size:.9rem;color:var(--muted)}
-@media (max-width:980px){.about{grid-template-columns:minmax(0,1fr);gap:32px}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* ---------- Leistungen ---------- */
+.leistungen{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:56px 0 0;border-top:1px solid var(--linie)}
+.leistungen div{padding:34px 22px 34px 0;border-bottom:1px solid var(--linie)}
+.leistungen div:not(:nth-child(4n+1)){padding-left:22px;border-left:1px solid var(--linie)}
+.leistungen dt{font-family:var(--breit);font-stretch:125%;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;line-height:1.3}
+.leistungen dd{margin:10px 0 0;color:#4A4F54;font-size:.98rem}
+.leistungen a{color:var(--tinte)}
+@media (max-width:1000px){.leistungen{grid-template-columns:repeat(2,minmax(0,1fr))}.leistungen div:not(:nth-child(4n+1)){padding-left:0;border-left:0}.leistungen div:nth-child(2n){padding-left:22px;border-left:1px solid var(--linie)}}
+@media (max-width:560px){.leistungen{grid-template-columns:minmax(0,1fr)}.leistungen div:nth-child(2n){padding-left:0;border-left:0}}
 
-/* gallery */
-.gal{columns:3;column-gap:16px}
-.gal .g{display:block;width:100%;margin:0 0 16px;padding:0;border:0;break-inside:avoid;position:relative;border-radius:16px;overflow:hidden;background:var(--navy-2);cursor:zoom-in;text-align:left;font:inherit;color:#fff;box-shadow:0 20px 40px -30px rgba(14,20,27,.6);transform:translateZ(0)}
-.gal .g img{display:block;width:100%;height:auto;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
-.gal .g:hover img,.gal .g:focus-visible img{transform:scale(1.035)}
-.gal .g::after{content:"";position:absolute;inset:0;border-radius:16px;box-shadow:inset 0 0 0 1px rgba(14,20,27,.08);transition:box-shadow .25s;pointer-events:none}
-.gal .g:hover::after{box-shadow:inset 0 0 0 2px var(--gold)}
-.gal .g span{position:absolute;left:0;right:0;bottom:0;padding:40px 14px 13px;font-size:.82rem;font-weight:600;letter-spacing:.01em;background:linear-gradient(transparent,rgba(14,20,27,.78));opacity:0;transform:translateY(6px);transition:opacity .25s,transform .25s}
-.gal .g:hover span,.gal .g:focus-visible span{opacity:1;transform:none}
-.gal-note{margin-top:18px;font-size:.9rem;color:var(--muted)}
-.gal-note a{color:var(--gold-ink);font-weight:650}
-@media (max-width:900px){.gal{columns:2;column-gap:12px}.gal .g{margin-bottom:12px;border-radius:12px}.gal .g::after{border-radius:12px}.gal .g span{opacity:1;transform:none;padding:30px 10px 9px;font-size:.72rem}}
-@media (hover:none){.gal .g span{opacity:1;transform:none}}
-dialog.lb{border:0;padding:0;margin:0;background:transparent;width:100vw;max-width:100vw;height:100vh;max-height:100vh;color:var(--on-dark)}
-dialog.lb[open]{display:grid;place-items:center}
-dialog.lb::backdrop{background:rgba(8,12,16,.93);backdrop-filter:blur(4px)}
-dialog.lb figure{margin:0;display:grid;gap:12px;justify-items:center;padding:0 16px}
-dialog.lb img{max-width:min(1100px,calc(100vw - 32px));max-height:calc(100vh - 120px);width:auto;height:auto;border-radius:12px;box-shadow:0 40px 100px rgba(0,0,0,.7);background:var(--navy-2)}
-dialog.lb figcaption{font-size:.92rem;color:var(--on-dark-2);text-align:center;display:flex;gap:12px;align-items:center}
-dialog.lb figcaption b{color:var(--gold-2);font-variant-numeric:tabular-nums;font-weight:650}
-.lb-btn{position:fixed;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:rgba(14,20,27,.65);color:#fff;cursor:pointer;display:grid;place-items:center;z-index:2;transition:background .2s,border-color .2s}
-.lb-btn:hover{background:var(--navy-3);border-color:var(--gold-2)}
-.lb-btn svg{width:20px;height:20px}
-.lb-close{right:max(16px,env(safe-area-inset-right,0px));top:max(16px,env(safe-area-inset-top,0px))}
-.lb-prev{left:max(16px,env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%)}
-.lb-next{right:max(16px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%)}
-.lb-prev svg{transform:rotate(180deg)}
-@media (max-width:700px){
-  dialog.lb img{max-height:calc(100vh - 150px)}
-  .lb-prev,.lb-next{top:auto;bottom:max(22px,env(safe-area-inset-bottom,0px));transform:none}
-  .lb-prev{left:calc(50% - 60px)}.lb-next{right:calc(50% - 60px)}
-}
-@media (max-width:520px){.steps{grid-template-columns:minmax(0,1fr)}}
+/* ---------- Kontakt ---------- */
+.kontakt{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:start;margin-top:64px;text-align:left}
+.adresse{font-family:var(--breit);font-stretch:125%;font-weight:300;font-size:clamp(1.4rem,2.4vw,1.9rem);line-height:1.3}
+.kontakt-wege{display:grid;gap:10px;margin-top:30px;max-width:380px}
+.kontakt-wege .btn{justify-content:flex-start}
+.dunkel .btn-rand{color:var(--weiss);border-color:var(--nacht-linie)}
+.dunkel .btn-rand:hover{border-color:var(--messing);color:var(--messing-hell)}
+.zeiten{margin:36px 0 0;max-width:380px}
+.zeiten div{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--nacht-linie)}
+.zeiten dt{color:var(--grau-hell)}
+.zeiten dd{margin:0;font-family:var(--breit);font-stretch:112%;font-variant-numeric:tabular-nums}
+.zeiten-hinweis{margin-top:14px;color:var(--grau-hell);font-size:.95rem;max-width:380px}
+.kontakt-form{display:grid;gap:14px}
+.kontakt-form h3{font-size:1.4rem;font-weight:300;margin-bottom:6px}
+.kontakt-form .feld input,.kontakt-form .feld select,.kontakt-form .feld textarea{background-color:var(--nacht-2);border-color:var(--nacht-linie);color:var(--weiss);color-scheme:dark}
+.kontakt-form .feld select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23CDB07F' stroke-width='1.4'/%3E%3C/svg%3E")}
+.kontakt-form textarea{min-height:130px;resize:vertical}
+@media (max-width:900px){.kontakt{grid-template-columns:minmax(0,1fr);gap:56px}}
 
-/* contact */
-.contact{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:44px;align-items:start}
-.info-list{display:grid;gap:10px}
-.info{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 16px;border:1px solid var(--line-dark);border-radius:14px;background:rgba(255,255,255,.03)}
-.info svg{width:22px;height:22px;color:var(--gold-2)}
-.info .k{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-2);font-weight:600}
-.info .v{font-weight:600;overflow-wrap:anywhere}
-.info .v a{text-decoration:none}
-.info .v a:hover{color:var(--gold-2)}
-.hours{margin-top:14px;border:1px solid var(--line-dark);border-radius:14px;overflow:hidden}
-.hours div{display:flex;justify-content:space-between;gap:12px;padding:11px 16px;border-bottom:1px solid var(--line-dark);font-variant-numeric:tabular-nums}
-.hours div:last-child{border-bottom:0}
-.hours .h-t{background:rgba(255,255,255,.05);font-weight:650}
-.hours .h-t span:last-child{color:var(--gold-2);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;align-self:center}
-@media (max-width:980px){.contact{grid-template-columns:minmax(0,1fr)}}
+/* ---------- Fuß ---------- */
+.fuss{background:#16181A;color:var(--grau-hell);padding:72px 0 calc(34px + var(--bar));text-align:center}
+.fuss img{height:64px;width:auto;margin:0 auto;opacity:.9}
+.fuss-adr{margin-top:20px;font-family:var(--breit);font-stretch:125%;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
+.fuss-links{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 30px;margin-top:34px;font-family:var(--breit);font-stretch:112%;font-size:.88rem}
+.fuss-links a,.fuss-links button{color:var(--grau-hell);text-decoration:none;background:none;border:0;padding:0;cursor:pointer;font:inherit}
+.fuss-links a:hover,.fuss-links button:hover{color:var(--weiss)}
+.fuss-recht{margin-top:26px;font-size:.85rem;color:#6F7377}
 
-/* footer */
-footer{background:var(--ink);color:var(--on-dark-2);border-top:1px solid var(--line-dark)}
-footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;padding-block:52px 32px}
-footer img{height:56px;width:auto;margin-bottom:14px}
-footer h4{font-family:var(--body);font-stretch:100%;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-2);margin-bottom:12px;font-weight:650}
-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:.93rem}
-footer a{text-decoration:none}
-footer a:hover{color:var(--gold-2)}
-footer .legal{border-top:1px solid var(--line-dark);font-size:.8rem;padding-block:18px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
-footer .legal button{background:none;border:0;padding:0;color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;font-size:inherit}
-@media (max-width:900px){footer .cols{grid-template-columns:1fr 1fr}}
-@media (max-width:520px){footer .cols{grid-template-columns:minmax(0,1fr)}}
-
-/* legal views */
-.legal-view{display:none;padding-block:56px 80px;background:var(--paper)}
-.legal-view.show{display:block}
-.legal-view .wrap{max-width:860px}
-.legal-view h2{font-size:2.1rem;margin:10px 0 12px}
-.legal-view h3{font-size:1.12rem;margin:30px 0 8px;font-stretch:108%}
-.legal-view p,.legal-view li{color:var(--muted);font-size:.96rem;line-height:1.62}
-.legal-view a{color:var(--gold-ink)}
-.legal-view .box{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-top:16px}
-.legal-view .box p{color:var(--text)}
-
-/* modal */
-dialog.veh{border:0;padding:0;background:var(--white);color:var(--text);width:min(1100px,calc(100vw - 32px));max-height:calc(100vh - 32px);border-radius:18px;box-shadow:0 40px 100px rgba(0,0,0,.5);overflow:hidden}
-dialog.veh::backdrop{background:rgba(8,12,16,.74);backdrop-filter:blur(3px)}
-.v-inner{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);max-height:calc(100vh - 32px);overflow:auto}
-.v-media{background:var(--ink);padding:16px;display:grid;gap:12px;align-content:start}
-.v-main{position:relative;display:block;aspect-ratio:4/3;max-width:100%;border-radius:12px;overflow:hidden;background:var(--navy)}
-.v-main img{width:100%;height:100%;object-fit:cover}
-.v-media .hint{color:var(--on-dark-2);text-align:center}
-.v-info{padding:24px 26px 26px;display:grid;gap:18px;align-content:start;min-width:0}
-.v-head{display:grid;gap:4px;padding-right:44px}
-.v-head h3{font-size:1.65rem;font-stretch:114%}
-.v-head .car-variant{-webkit-line-clamp:unset}
-.spec{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 20px;margin:0;font-size:.93rem}
-.spec div{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
-.spec dt{color:var(--muted)}
-.spec dd{margin:0;font-weight:650;text-align:right;white-space:nowrap}
-.tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{font-size:.8rem;padding:6px 11px;border:1px solid var(--line);border-radius:999px;background:var(--paper)}
-.v-cta{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
-.v-cta .btn{width:100%;white-space:normal;min-width:0}
-.v-cta .full{grid-column:1/-1}
-.v-cross{display:flex;gap:12px;align-items:center;justify-content:space-between;background:var(--paper);border-radius:12px;padding:12px 14px;font-size:.9rem}
-.v-cross a{color:var(--gold-ink);font-weight:650;white-space:nowrap}
-.v-foot{font-size:.78rem;color:var(--muted);line-height:1.45}
-.v-close{position:absolute;right:14px;top:14px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--white);cursor:pointer;display:grid;place-items:center;z-index:3}
-.v-close svg{width:18px;height:18px}
-.v-nav{display:flex;justify-content:space-between;gap:8px;border-top:1px solid var(--line);padding-top:14px}
-@media (max-width:860px){
-  dialog.veh{width:100vw;max-width:100vw;height:100vh;max-height:100vh;border-radius:0;margin:0}
-  .v-inner{grid-template-columns:minmax(0,1fr);max-height:100vh}
-  .v-media{padding:max(12px,env(safe-area-inset-top,0px)) 12px 12px}
-  .v-info{padding:18px max(18px,env(safe-area-inset-right,0px)) max(28px,env(safe-area-inset-bottom,0px)) max(18px,env(safe-area-inset-left,0px))}
-  .v-close{top:max(14px,env(safe-area-inset-top,0px));right:max(14px,env(safe-area-inset-right,0px))}
-  .spec{grid-template-columns:minmax(0,1fr)}
-}
-
-/* floating WhatsApp + mobile action bar */
-.wa-float{position:fixed;right:max(22px,env(safe-area-inset-right,0px));bottom:max(22px,env(safe-area-inset-bottom,0px));z-index:45;display:inline-flex;align-items:center;gap:10px;background:var(--wa);color:#fff;text-decoration:none;font-weight:650;padding:13px 20px 13px 16px;border-radius:999px;box-shadow:0 14px 30px -10px rgba(22,138,66,.6)}
-.wa-float:hover{background:var(--wa-dark)}
-.wa-float svg{width:24px;height:24px}
-.mbar{display:none}
+/* ---------- Handy-Leiste ---------- */
+.leiste{display:none}
 @media (max-width:760px){
-  :root{--bar-h:calc(66px + env(safe-area-inset-bottom,0px))}
-  .wa-float,.head-cta .btn-gold{display:none}
-  .mbar{display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:45;background:rgba(14,20,27,.97);border-top:1px solid var(--line-dark);padding:9px max(12px,env(safe-area-inset-right,0px)) calc(9px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))}
-  .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:999px;text-decoration:none;font-weight:650;font-size:.92rem;color:var(--on-dark);border:1.5px solid rgba(255,255,255,.22)}
-  .mbar a svg{width:19px;height:19px}
-  .mbar .wa{background:var(--wa);border-color:var(--wa);color:#fff}
+  :root{--bar:calc(64px + env(safe-area-inset-bottom,0px))}
+  .leiste{display:grid;grid-template-columns:1fr 1.3fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--nacht);border-top:1px solid var(--nacht-linie);padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px));gap:8px}
+  .leiste a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;text-decoration:none;color:var(--weiss);font-family:var(--breit);font-stretch:112%;font-size:.86rem;border:1px solid var(--nacht-linie)}
+  .leiste a.wa{background:var(--wa);border-color:var(--wa)}
+  .leiste svg{width:18px;height:18px}
 }
-.toast{position:fixed;left:50%;bottom:calc(var(--bar-h) + 24px);transform:translateX(-50%) translateY(16px);background:var(--ink);color:var(--on-dark);padding:11px 18px;border-radius:999px;border:1px solid var(--gold);font-size:.9rem;opacity:0;pointer-events:none;transition:all .25s ease;z-index:70;max-width:calc(100vw - 32px);text-align:center}
-.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-</style>
 
+/* ---------- Rechtliches ---------- */
+.legal-view{display:none;padding:150px 0 100px}
+.legal-view.show{display:block}
+.legal-view .wrap{max-width:820px}
+.legal-view .eyebrow,.legal-view .rule{display:none}
+.legal-view h2{font-size:clamp(1.7rem,3.4vw,2.4rem);text-transform:uppercase;letter-spacing:.06em;margin-bottom:28px}
+.legal-view h3{font-size:1.05rem;letter-spacing:.04em;margin:32px 0 8px}
+.legal-view .box{background:var(--nebel);padding:24px}
+.legal-view .btn-outline{border-color:currentColor}
+
+/* ---------- Detailansicht ---------- */
+dialog.fz{border:0;padding:0;background:var(--nacht);color:var(--weiss);width:min(1180px,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:hidden}
+dialog.fz::backdrop{background:rgba(12,13,15,.85)}
+.fz-innen{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);max-height:calc(100vh - 32px);overflow:auto}
+.fz-bild{display:grid;align-content:start;gap:0;background:#141618}
+.fz-haupt{display:block;aspect-ratio:4/3;overflow:hidden}
+.fz-haupt img{width:100%;height:100%;object-fit:cover}
+.fz-bild .btn{margin:16px}
+.fz-info{padding:34px 32px;display:grid;gap:22px;align-content:start;min-width:0}
+.fz-info h3{font-size:1.9rem;font-weight:300;padding-right:44px}
+.fz-preis{padding:18px 0;border-top:1px solid var(--nacht-linie);border-bottom:1px solid var(--nacht-linie)}
+.fz-preis b{font-family:var(--breit);font-stretch:112%;font-weight:400;font-size:2.2rem;font-variant-numeric:tabular-nums}
+.fz-preis s{margin-left:12px;color:var(--grau)}
+.fz-preis small{display:block;margin-top:4px;color:var(--grau-hell);font-size:.9rem}
+.spez{display:grid;gap:0;margin:0}
+.spez div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--nacht-linie);font-size:.96rem}
+.spez dt{color:var(--grau-hell)}
+.spez dd{margin:0;text-align:right;font-family:var(--breit);font-stretch:112%}
+.ausst h4{font-size:.86rem;letter-spacing:.12em;text-transform:uppercase;color:var(--messing-hell);margin-bottom:8px}
+.ausst p{color:#D6D7D4}
+.fz-aktion{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.fz-aktion .ganz{grid-column:1/-1}
+.fz-aktion .btn-rand{color:var(--weiss);border-color:var(--nacht-linie)}
+.fz-zusatz{font-size:.88rem;color:var(--grau-hell)}
+.fz-zusatz a{color:var(--messing-hell)}
+.fz-nav{display:flex;justify-content:space-between;gap:8px}
+.fz-nav .btn{color:var(--weiss);border-color:var(--nacht-linie)}
+.fz-zu{position:absolute;right:14px;top:14px;width:44px;height:44px;border:1px solid var(--nacht-linie);background:var(--nacht);color:var(--weiss);cursor:pointer;display:grid;place-items:center;z-index:3}
+.fz-zu svg{width:18px;height:18px}
+@media (max-width:860px){
+  dialog.fz{width:100vw;max-width:100vw;height:100vh;max-height:100vh;margin:0}
+  .fz-innen{grid-template-columns:minmax(0,1fr);max-height:100vh}
+  .fz-info{padding:24px 20px max(30px,env(safe-area-inset-bottom,0px))}
+}
+
+/* ---------- Fotos groß ---------- */
+dialog.lb{border:0;padding:0;margin:0;background:transparent;width:100vw;max-width:100vw;height:100vh;max-height:100vh;color:var(--weiss)}
+dialog.lb[open]{display:grid;place-items:center}
+dialog.lb::backdrop{background:rgba(12,13,15,.96)}
+dialog.lb figure{margin:0;display:grid;gap:14px;justify-items:center;padding:0 16px}
+dialog.lb img{max-width:min(1100px,calc(100vw - 32px));max-height:calc(100vh - 130px);width:auto;height:auto}
+dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem;color:var(--grau-hell);display:flex;gap:16px}
+.lb-btn{position:fixed;width:50px;height:50px;border:1px solid rgba(255,255,255,.25);background:rgba(29,32,35,.8);color:#fff;cursor:pointer;display:grid;place-items:center}
+.lb-btn svg{width:20px;height:20px}
+.lb-zu{right:max(16px,env(safe-area-inset-right,0px));top:max(16px,env(safe-area-inset-top,0px))}
+.lb-vor{right:max(16px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%)}
+.lb-zurueck{left:max(16px,env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%)}
+.lb-zurueck svg{transform:rotate(180deg)}
+@media (max-width:700px){.lb-vor,.lb-zurueck{top:auto;bottom:max(20px,env(safe-area-inset-bottom,0px));transform:none}.lb-zurueck{left:calc(50% - 60px)}.lb-vor{right:calc(50% - 60px)}}
+.toast{position:fixed;left:50%;bottom:calc(24px + var(--bar));transform:translate(-50%,20px);opacity:0;background:var(--nacht);color:var(--weiss);padding:12px 20px;font-family:var(--breit);font-stretch:112%;font-size:.9rem;z-index:80;transition:opacity .2s,transform .2s;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+/* ===== Das gewisse Etwas ===== */
+::selection{background:var(--messing);color:#15110A}
+.fluegel{display:flex;align-items:center;justify-content:center;gap:18px;margin:26px auto 32px;color:var(--messing)}
+.fluegel svg{width:58px;height:27px;flex:none;transition:opacity .9s .25s,transform .9s .25s cubic-bezier(.2,.7,.2,1)}
+.fluegel i{display:block;width:84px;height:1px;background:linear-gradient(90deg,rgba(176,141,87,0),var(--messing));transform-origin:right;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.fluegel i:last-child{background:linear-gradient(90deg,var(--messing),rgba(176,141,87,0));transform-origin:left}
+.js .fluegel:not(.da) i{transform:scaleX(0)}
+.js .fluegel:not(.da) svg{opacity:0;transform:translateY(6px)}
+.ankauf-inhalt .fluegel{margin:22px 0 26px;justify-content:flex-start}.ankauf-inhalt .fluegel i:first-child{display:none}
+
+/* Körnung auf dunklen Flächen: wirkt wie lackiertes Material statt Bildschirmschwarz */
+.korn{position:relative;isolation:isolate}
+.korn::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* Lesefortschritt in Messing */
+.kopf::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:calc(var(--fort,0)*100%);background:var(--messing);opacity:0;transition:opacity .3s}
+.kopf.voll::after{opacity:1}
+
+/* Logo: einmaliger Lichtstreif über die Flügel */
+.logo-glanz{position:relative;width:min(440px,72vw);animation:auftritt 1.6s ease-out both}
+.logo-glanz .kino-logo{width:100%;animation:none}
+.logo-glanz::after{content:"";position:absolute;inset:0;-webkit-mask:url("img/logo-weiss.svg") center/contain no-repeat;mask:url("img/logo-weiss.svg") center/contain no-repeat;background:linear-gradient(105deg,transparent 35%,rgba(232,206,150,.95) 48%,rgba(255,244,220,1) 50%,rgba(232,206,150,.95) 52%,transparent 65%) no-repeat;background-size:250% 100%;background-position:120% 0;animation:glanz 2.4s 1.1s cubic-bezier(.4,0,.2,1) both}
+@keyframes glanz{to{background-position:-30% 0}}
+.kino-adresse{margin-top:14px;font-family:var(--breit);font-stretch:125%;font-size:.74rem;letter-spacing:.32em;text-transform:uppercase;color:var(--messing-hell);animation:auftritt 1.6s .55s ease-out both}
+
+/* Kennzahlen zählen hoch */
+.kennzahl b{font-variant-numeric:tabular-nums}
+
+/* Marken als Bildkacheln */
+.marke-kachel{position:relative;overflow:hidden;min-height:210px;border:0;background:var(--nacht);color:var(--weiss);align-content:end;justify-items:start;text-align:left;padding:22px}
+.marke-kachel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;transition:opacity .6s,transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.marke-kachel::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,22,25,0) 30%,rgba(20,22,25,.85) 100%)}
+.marke-kachel::after{content:"";position:absolute;left:22px;right:22px;bottom:16px;height:1px;z-index:2;background:var(--messing);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.marke-kachel b,.marke-kachel span{position:relative;z-index:2}
+.marke-kachel span{color:var(--messing-hell)}
+.marke-kachel:hover img{opacity:.8;transform:scale(1.05)}
+.marke-kachel:hover::after{transform:scaleX(1)}
+.marke-kachel:hover{border-color:transparent}
+
+/* Showroom: Fahrzeug im Fokus über die volle Breite */
+.auto.fokus{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:0;background:var(--nacht-2)}
+.auto.fokus .auto-bild{aspect-ratio:16/10}
+.auto.fokus .auto-text{padding:40px 38px;align-content:center;grid-template-columns:minmax(0,1fr)}
+.auto.fokus .auto-preis{grid-column:1;grid-row:auto;text-align:left;font-size:2.3rem;margin-top:18px;order:5}
+.auto.fokus .auto-modell{font-size:clamp(1.7rem,2.6vw,2.4rem)}
+.auto.fokus .auto-daten{order:4}
+.auto.fokus .fokus-k{grid-column:1;font-family:var(--breit);font-stretch:125%;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grau-hell);margin-bottom:18px}
+.auto.fokus .fokus-cta{grid-column:1;margin-top:24px;order:6;justify-self:start}
+.auto-text>*{min-width:0}
+.auto .ansehen{grid-column:1/-1;margin-top:14px;font-family:var(--breit);font-stretch:112%;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--messing-hell);display:inline-flex;align-items:center;gap:10px}
+.auto .ansehen::after{content:"";width:28px;height:1px;background:currentColor;transition:width .4s cubic-bezier(.2,.7,.2,1)}
+.auto:hover .ansehen::after{width:64px}
+.auto-bild::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 0 var(--messing);transition:box-shadow .4s}
+.auto:hover .auto-bild::after{box-shadow:inset 0 0 0 1px rgba(205,176,127,.7)}
+@media (max-width:820px){.auto.fokus{grid-template-columns:minmax(0,1fr)}.auto.fokus .auto-text{padding:26px 22px 30px}}
+
+/* Bilder fahren beim Scrollen auf, einmalig */
+.js .auftauchen{clip-path:inset(0 0 100% 0);transition:clip-path 1.1s cubic-bezier(.65,0,.25,1)}
+.js .auftauchen.da{clip-path:inset(0 0 0 0)}
+
+/* Zitat-Band mit Parallaxe */
+.zitatband{position:relative;min-height:78vh;display:grid;place-items:center;text-align:center;color:var(--weiss);background:var(--nacht) url("img/fotos/p02.jpg") center 45%/cover no-repeat;background-attachment:fixed;overflow:hidden}
+.zitatband::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(20,22,25,.55),rgba(20,22,25,.88))}
+.zitatband .wrap{position:relative}
+.zitatband blockquote{margin:0 auto;max-width:20ch;font-family:var(--serif);font-style:italic;font-size:clamp(2rem,4.6vw,3.8rem);line-height:1.18}
+.zitatband blockquote::before{content:"";display:block;width:60px;height:1px;margin:0 auto 36px;background:var(--messing)}
+.zitatband p{margin-top:28px;font-family:var(--breit);font-stretch:125%;font-size:.78rem;letter-spacing:.28em;text-transform:uppercase;color:var(--messing-hell)}
+@media (hover:none),(max-width:900px){.zitatband{background-attachment:scroll;min-height:62vh}}
+
+/* Fuß: großer Schriftzug als Wasserzeichen */
+.fuss{position:relative;overflow:hidden}
+.fuss .wasser{position:absolute;left:50%;bottom:-.18em;transform:translateX(-50%);font-family:var(--breit);font-stretch:125%;font-weight:700;font-size:clamp(4rem,15vw,15rem);letter-spacing:.06em;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(205,176,127,.13);white-space:nowrap;pointer-events:none;user-select:none}
+.fuss .wrap{position:relative}
+
+/* Ankauf: Ablauf in drei Schritten */
+.ablauf{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:30px;padding:0;list-style:none;counter-reset:s}
+.ablauf li{counter-increment:s;border-top:1px solid var(--tinte);padding-top:14px;font-size:.95rem;color:#4A4F54}
+.ablauf li::before{content:counter(s);display:block;font-family:var(--breit);font-stretch:125%;font-weight:300;font-size:2rem;line-height:1;color:var(--messing);margin-bottom:8px}
+.ablauf b{display:block;font-family:var(--breit);font-stretch:112%;font-weight:500;color:var(--tinte);font-size:.95rem;margin-bottom:2px}
+@media (max-width:520px){.ablauf{grid-template-columns:minmax(0,1fr)}}
+
+
+/* ===== Bestand als Liste wie bei mobile.de ===== */
+.raster{grid-template-columns:minmax(0,1fr);gap:0}
+.auto.fokus{margin-bottom:34px}
+.auto.zeile{display:grid;grid-template-columns:320px minmax(0,1fr) 230px;gap:34px;padding:28px 0;border-bottom:1px solid var(--nacht-linie);align-items:start;transition:background .3s}
+.auto.zeile:first-child{border-top:1px solid var(--nacht-linie)}
+.auto.zeile:hover{background:linear-gradient(90deg,rgba(255,255,255,.025),rgba(255,255,255,0))}
+.zeile .auto-bild{aspect-ratio:4/3}
+.zeile-mitte{min-width:0;display:grid;gap:2px;align-content:start}
+.zeile .auto-modell{font-size:clamp(1.3rem,1.9vw,1.65rem);margin-top:2px}
+.zeile .auto-variante{margin-top:4px}
+.eck{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 22px;margin:18px 0 0;padding-top:16px;border-top:1px solid var(--nacht-linie)}
+.eck div{min-width:0}
+.eck dt{font-size:.82rem;color:var(--grau-hell)}
+.eck dd{margin:2px 0 0;font-family:var(--breit);font-stretch:112%;font-size:.95rem;color:#ECECE9;font-variant-numeric:tabular-nums}
+.verbrauch{margin-top:14px;font-size:.84rem;color:var(--grau)}
+.zeile-preis{display:grid;gap:18px;justify-items:end;text-align:right;align-content:space-between;height:100%}
+.preis-gross{font-family:var(--breit);font-stretch:112%;font-weight:400;font-size:clamp(1.6rem,2.3vw,2.1rem);font-variant-numeric:tabular-nums;line-height:1.1;white-space:nowrap}
+.preis-gross s{display:block;font-size:.95rem;color:var(--grau);margin-top:4px}
+.zeile-aktion{display:flex;gap:8px;align-items:center}
+.zeile-aktion .btn{color:var(--weiss);border-color:var(--nacht-linie)}
+.auto.zeile:hover .zeile-aktion .btn{border-color:var(--messing);color:var(--messing-hell)}
+.wa-quadrat{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;background:var(--wa);color:#fff}
+.wa-quadrat svg{width:20px;height:20px}
+@media (max-width:1060px){.auto.zeile{grid-template-columns:260px minmax(0,1fr) 190px;gap:24px}.eck{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){
+  .auto.zeile{grid-template-columns:42% minmax(0,1fr);gap:8px 16px;padding:20px 0}
+  .zeile .auto-bild{grid-row:1/3}
+  .zeile .auto-variante,.zeile .verbrauch{display:none}
+  .zeile .auto-modell{font-size:1.12rem}
+  .eck{grid-column:1/-1;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 12px;margin-top:10px}
+  .eck dd{font-size:.86rem}
+  .zeile-preis{grid-column:2;grid-row:2;justify-items:start;text-align:left;height:auto;gap:10px}
+  .preis-gross{font-size:1.4rem}
+  .zeile-mitte{grid-row:1}
+  .zeile .marker{font-size:.66rem;padding:4px 8px;top:8px}
+}
+.eck-kurz{display:none}
+@media (max-width:760px){.zeile-mitte .eck{display:none}.eck-kurz{display:block;margin-top:6px;font-family:var(--breit);font-stretch:112%;font-size:.8rem;line-height:1.5;color:#D6D7D4}}
+@media (prefers-reduced-motion:reduce){
+  .js .fluegel:not(.da) i{transform:none}.js .fluegel:not(.da) svg{opacity:1;transform:none}
+  .js .auftauchen{clip-path:none;transition:none}
+  .logo-glanz,.logo-glanz::after,.kino-adresse{animation:none}
+  .logo-glanz::after{display:none}
+  .zitatband{background-attachment:scroll}
+}
+
+</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -518,299 +536,250 @@ dialog.veh::backdrop{background:rgba(8,12,16,.74);backdrop-filter:blur(3px)}
   <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></symbol>
   <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16v-3l2-5a2 2 0 0 1 2-1.3h10A2 2 0 0 1 19 8l2 5v3"/><path d="M3 16h18v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1H7v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M6 13h12"/></symbol>
 </svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-emblem" viewBox="190 4 697 327"><path fill="currentColor" d="M195.0 100.0 L441.0 100.0 L441.0 121.5 L216.0 121.5ZM882.0 100.0 L636.0 100.0 L636.0 121.5 L861.0 121.5ZM257.0 155.0 L441.0 155.0 L441.0 177.0 L278.0 177.0ZM820.0 155.0 L636.0 155.0 L636.0 177.0 L799.0 177.0ZM311.0 209.0 L441.0 209.0 L441.0 231.0 L332.0 231.0ZM766.0 209.0 L636.0 209.0 L636.0 231.0 L745.0 231.0ZM485 9.5H592V13.2C573 13.4 562.2 18.5 561 28V304C562.2 315.5 573 319.8 592 320.2V325.5H485V320.2C504 319.8 514.8 315.5 516 304V28C514.8 18.5 504 13.4 485 13.2Z"/></symbol>
+</svg>
 
-<div class="topbar">
+<header class="kopf" id="top">
   <div class="wrap">
-    <span><a href="#bewertungen"><span class="stars">★★★★★</span> 5,0 auf Google<span class="sep">·</span>5,0 auf mobile.de</a></span>
-    <span class="hide-sm">Mo–Fr 10–17 Uhr · Sa 10–14 Uhr<span class="sep">·</span>Malteserstr. 24–36, 12249 Berlin</span>
-  </div>
-</div>
-
-<header class="head" id="top">
-  <div class="wrap">
-    <a class="brand" href="#start" aria-label="Autocenter Imperial – Startseite"><img src="img/logo-light.png" alt="Autocenter Imperial"></a>
-    <nav class="nav" id="nav" aria-label="Hauptnavigation">
-      <a href="#fahrzeuge">Fahrzeuge</a>
-      <a href="#ankauf">Ankauf</a>
-      <a href="#bewertungen">Bewertungen</a>
-      <a href="#leistungen">Service</a>
-      <a href="#einblicke">Einblicke</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
-    <div class="head-cta">
-      <a class="head-tel" href="tel:+491639553579">+49 163 9553579</a>
-      <a class="btn btn-gold btn-sm" href="https://wa.me/491639553579" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
-      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menü öffnen"><svg><use href="#i-menu"/></svg></button>
+    <button class="menu-knopf" id="menuBtn" type="button" aria-expanded="false" aria-controls="menue"><i aria-hidden="true"></i><span>MENÜ</span><b class="sr">Menü öffnen</b></button>
+    <a class="kopf-logo" href="#start" aria-label="Autocenter Imperial – Startseite"><img src="img/logo-weiss.svg" alt="Autocenter Imperial" width="102" height="48"></a>
+    <div class="kopf-rechts">
+      <a class="kopf-tel" href="tel:+491639553579">+49 163 9553579</a>
+      <a class="kopf-wa" href="https://wa.me/491639553579" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
     </div>
   </div>
 </header>
 
+<div class="menue" id="menue" role="dialog" aria-modal="true" aria-label="Menü">
+  <div class="wrap menue-kopf">
+    <button class="menue-zu" id="menuClose" type="button"><svg><use href="#i-x"/></svg>SCHLIESSEN</button>
+    <img src="img/logo-weiss.svg" alt="" width="102" height="48" style="height:44px;width:auto">
+  </div>
+  <nav aria-label="Hauptnavigation">
+    <a href="#fahrzeuge">Fahrzeuge</a>
+    <a href="#marken">Marken</a>
+    <a href="#ankauf">Ankauf &amp; Inzahlungnahme</a>
+    <a href="#hof">Unser Hof</a>
+    <a href="#bewertungen">Bewertungen</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+  <div class="menue-fuss">
+    <a href="tel:+491639553579">+49 163 9553579</a>
+    <a href="https://wa.me/491639553579" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="mailto:info@autocenter-imperial.de">info@autocenter-imperial.de</a>
+    <span>Malteserstr. 24–36, 12249 Berlin</span>
+  </div>
+</div>
+
 <main id="site">
-<section class="hero dark" id="start">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="kicker">Gebrauchtwagen · Berlin</span>
-      <h1>Autos, die halten, was das <em>Inserat</em> verspricht.</h1>
-      <p class="lead">Geprüfte Gebrauchtwagen von Mercedes-Benz, Audi, Volkswagen, Peugeot und weiteren Marken. Ehrlich beschrieben, persönlich beraten, auf Wunsch mit Garantie und bundesweiter Lieferung.</p>
-      <div class="score-row">
-        <a class="score" id="scoreGoogle" href="#" target="_blank" rel="noopener"><span class="stars">★★★★★</span><b>5,0</b><small>Google · <span class="js-gcount">30</span> Bewertungen</small></a>
-        <a class="score" id="scoreMobile" href="#" target="_blank" rel="noopener"><span class="stars">★★★★★</span><b>5,0</b><small>mobile.de · <span class="js-mcount">19</span> Bewertungen</small></a>
-      </div>
-      <form class="finder" id="finder" role="search" aria-label="Fahrzeug finden">
-        <div class="finder-title"><b>Fahrzeug finden</b><small id="finderStock">26 Fahrzeuge im Bestand</small></div>
-        <div class="finder-fields">
-          <div class="dfield"><label for="qBrand">Marke</label><select id="qBrand"><option value="">Alle Marken</option></select></div>
-          <div class="dfield"><label for="qBody">Aufbau</label><select id="qBody"><option value="">Alle</option></select></div>
-          <div class="dfield"><label for="qPrice">Preis bis</label><select id="qPrice"><option value="">Beliebig</option><option value="10000">10.000 €</option><option value="15000">15.000 €</option><option value="20000">20.000 €</option><option value="25000">25.000 €</option><option value="30000">30.000 €</option><option value="40000">40.000 €</option></select></div>
-        </div>
-        <button class="btn btn-gold btn-block" type="submit"><span id="finderBtn">26 Fahrzeuge anzeigen</span><svg><use href="#i-arrow"/></svg></button>
-        <div class="finder-portals" aria-label="Unser Bestand auf den Fahrzeugbörsen">
-          <a class="portal portal-mobile" href="https://home.mobile.de/AUTOCENTERIMPERIALGMBH" target="_blank" rel="noopener"><small>Alle Fahrzeuge auf</small><b>mobile.de</b><svg><use href="#i-ext"/></svg></a>
-          <a class="portal portal-as24" href="https://www.autoscout24.de/haendler/autocenter-imperial-gmbh" target="_blank" rel="noopener"><small>Alle Fahrzeuge auf</small><b>AutoScout24</b><svg><use href="#i-ext"/></svg></a>
-        </div>
-      </form>
+<section class="kino" id="start">
+  <div class="kino-bilder" aria-hidden="true">
+    <img src="img/fotos/p09.jpg" alt="">
+    <img src="img/fotos/p05.jpg" alt="" loading="lazy">
+    <img src="img/fotos/p03.jpg" alt="" loading="lazy">
+    <img src="img/fotos/p06.jpg" alt="" loading="lazy">
+  </div>
+  <div class="kino-inhalt">
+    <div class="logo-glanz"><img class="kino-logo" src="img/logo-weiss.svg" alt="Autocenter Imperial" width="440" height="207"></div>
+    <p class="kino-adresse">Malteserstraße 24–36, Berlin</p>
+    <h1>Ausgewählte Gebrauchtwagen in Berlin</h1>
+    <div class="kino-aktion">
+      <a class="btn btn-messing" href="#fahrzeuge">Zum Fahrzeugbestand</a>
+      <a class="btn btn-hell" href="#ankauf">Ihr Auto verkaufen</a>
     </div>
-    <div class="hero-media" id="heroMedia"></div>
+  </div>
+  <a class="kino-pfeil" href="#willkommen" aria-label="Weiter nach unten"><svg><use href="#i-arrow"/></svg></a>
+</section>
+
+<section class="abschnitt einleitung" id="willkommen">
+  <div class="wrap">
+    <div class="schmal">
+      <h2 class="titel">Autocenter Imperial</h2>
+      <span class="fluegel" aria-hidden="true"><i></i><svg viewBox="0 0 697 327"><use href="#i-emblem"/></svg><i></i></span>
+      <p>Wir verkaufen Gebrauchtwagen, die wir selbst ausgesucht haben: gepflegt, ehrlich beschrieben und vor Ort in Berlin zu besichtigen. Jedes Gespräch führt der Geschäftsführer persönlich, vom ersten Anruf bis zur Übergabe der Schlüssel.</p>
+    </div>
+    <div class="kennzahlen">
+      <a class="kennzahl" id="gRead" href="#" target="_blank" rel="noopener"><span class="sterne" aria-hidden="true">★★★★★</span><b class="js-gscore">5,0</b><span>bei Google, <span class="js-gcount">30</span> Bewertungen</span></a>
+      <a class="kennzahl" id="mRead" href="#" target="_blank" rel="noopener"><span class="sterne" aria-hidden="true">★★★★★</span><b class="js-mscore">5,0</b><span>bei mobile.de, <span class="js-mcount">19</span> Bewertungen</span></a>
+      <a class="kennzahl" href="#fahrzeuge"><span class="sterne" aria-hidden="true">&nbsp;</span><b id="stockNum">26</b><span>Fahrzeuge auf unserem Hof</span></a>
+    </div>
   </div>
 </section>
 
-<section class="trust" aria-label="Darum Autocenter Imperial">
+<section class="abschnitt" id="marken" style="background:var(--nebel)">
   <div class="wrap">
-    <div class="trust-grid">
-      <a class="trust-item" id="trustGoogle" href="#" target="_blank" rel="noopener"><svg><use href="#i-star"/></svg><div><b>5,0 bei Google</b><span><span class="js-gcount">30</span> Kundenbewertungen</span></div></a>
-      <a class="trust-item" id="trustMobile" href="#" target="_blank" rel="noopener"><svg><use href="#i-star"/></svg><div><b>5,0 bei mobile.de</b><span><span class="js-mcount">19</span> Kundenbewertungen</span></div></a>
-      <div class="trust-item"><svg><use href="#i-shield"/></svg><div><b>Garantie</b><span>Gebrauchtwagengarantie auf Wunsch</span></div></div>
-      <div class="trust-item"><svg><use href="#i-truck"/></svg><div><b>Lieferung</b><span>Bundesweit bis vor Ihre Haustür</span></div></div>
+    <div class="schmal">
+      <h2 class="titel">Unsere Marken</h2>
+      <span class="fluegel" aria-hidden="true"><i></i><svg viewBox="0 0 697 327"><use href="#i-emblem"/></svg><i></i></span>
+      <p class="muted" style="color:#4A4F54">Wählen Sie eine Marke und sehen Sie direkt alle passenden Fahrzeuge.</p>
+    </div>
+    <div class="marken-raster" id="brandTiles"></div>
+  </div>
+</section>
+
+<section class="showroom korn" id="fahrzeuge">
+  <div class="wrap">
+    <div class="schmal">
+      <h2 class="titel">Fahrzeugbestand</h2>
+      <span class="fluegel" aria-hidden="true"><i></i><svg viewBox="0 0 697 327"><use href="#i-emblem"/></svg><i></i></span>
+      <p>Alle Fahrzeuge stehen bei uns auf dem Hof. Besichtigung und Probefahrt nach kurzer Absprache.</p>
+      <div class="boersen" aria-label="Unser Bestand auf den Fahrzeugbörsen">
+        <a class="boerse boerse-mobile" href="https://home.mobile.de/AUTOCENTERIMPERIALGMBH" target="_blank" rel="noopener"><span><small>Alle Fahrzeuge auf</small>mobile.de</span><svg><use href="#i-ext"/></svg></a>
+        <a class="boerse boerse-as24" href="https://www.autoscout24.de/haendler/autocenter-imperial-gmbh" target="_blank" rel="noopener"><span><small>Alle Fahrzeuge auf</small>AutoScout24</span><svg><use href="#i-ext"/></svg></a>
+      </div>
     </div>
     <div class="brands" aria-label="Marken im Bestand"><span>Mercedes-Benz</span><span>Audi</span><span>Volkswagen</span><span>Peugeot</span><span>Volvo</span><span>Maserati</span><span>Citroën</span><span>smart</span></div>
-  </div>
-</section>
 
-<section class="sec" id="fahrzeuge">
-  <div class="wrap">
-    <div class="inv-head">
-      <div class="sec-head">
-        <span class="kicker">Aktueller Bestand</span>
-        <h2>Unsere Fahrzeuge</h2>
-        <p>Alle Fahrzeuge geprüft und sofort verfügbar. Besichtigung und Probefahrt nach kurzer Terminabsprache.</p>
-      </div>
-      <div class="portals" aria-label="Unser Bestand auf den Fahrzeugbörsen">
-        <span>Unser Bestand auch auf</span>
-        <a class="btn btn-outline btn-sm" href="https://www.autoscout24.de/haendler/autocenter-imperial-gmbh" target="_blank" rel="noopener">AutoScout24<svg><use href="#i-ext"/></svg></a>
-        <a class="btn btn-outline btn-sm" href="https://home.mobile.de/AUTOCENTERIMPERIALGMBH" target="_blank" rel="noopener">mobile.de<svg><use href="#i-ext"/></svg></a>
+    <div class="leiste-filter">
+      <ul class="reiter" id="brandChips" aria-label="Marke"></ul>
+      <div class="filter-rechts">
+        <span class="zahl"><b id="resCount">26</b> <span id="resLabel">Fahrzeuge</span></span>
+        <button class="btn btn-rand btn-klein" type="button" id="filterBtn" aria-expanded="false" aria-controls="filter">Filter und Sortierung</button>
       </div>
     </div>
-
-    <div class="toolbar" role="region" aria-label="Fahrzeuge filtern">
-      <div class="chips" id="brandChips" role="group" aria-label="Marke"></div>
-      <div class="controls" id="controls">
-        <div class="field f-search"><label for="q">Suche</label><input id="q" type="search" placeholder="z. B. GLB, Kombi, 7-Sitzer, Kamera" autocomplete="off"></div>
-        <div class="field"><label for="fFuel">Kraftstoff</label><select id="fFuel"><option value="">Alle</option></select></div>
-        <div class="field"><label for="fGear">Getriebe</label><select id="fGear"><option value="">Alle</option></select></div>
-        <div class="field"><label for="fBody">Aufbau</label><select id="fBody"><option value="">Alle</option></select></div>
-        <div class="field"><label for="fPrice">Preis bis</label><select id="fPrice"><option value="">Alle</option><option value="10000">10.000 €</option><option value="15000">15.000 €</option><option value="20000">20.000 €</option><option value="25000">25.000 €</option><option value="30000">30.000 €</option><option value="40000">40.000 €</option></select></div>
-        <div class="field"><label for="sort">Sortierung</label><select id="sort"><option value="rec">Empfehlung</option><option value="pa">Preis aufsteigend</option><option value="pd">Preis absteigend</option><option value="km">Kilometerstand</option><option value="ez">Erstzulassung (neueste)</option><option value="ps">Leistung</option></select></div>
-      </div>
-      <button class="btn btn-outline btn-sm more-filters" id="moreFilters" type="button" aria-expanded="false" aria-controls="controls">Weitere Filter &amp; Sortierung</button>
+    <div class="filter" id="filter">
+      <div class="feld"><label for="q">Suche</label><input id="q" type="search" placeholder="z. B. 7-Sitzer, Panorama" autocomplete="off"></div>
+      <div class="feld"><label for="fPrice">Preis bis</label><select id="fPrice"><option value="">Beliebig</option><option value="10000">10.000 €</option><option value="15000">15.000 €</option><option value="20000">20.000 €</option><option value="25000">25.000 €</option><option value="30000">30.000 €</option><option value="40000">40.000 €</option></select></div>
+      <div class="feld"><label for="fBody">Aufbau</label><select id="fBody"><option value="">Alle</option></select></div>
+      <div class="feld"><label for="fFuel">Kraftstoff</label><select id="fFuel"><option value="">Alle</option></select></div>
+      <div class="feld"><label for="sort">Sortierung</label><select id="sort"><option value="rec">Empfohlen</option><option value="pa">Preis aufsteigend</option><option value="pd">Preis absteigend</option><option value="km">Kilometer</option><option value="ez">Neueste Erstzulassung</option><option value="ps">Leistung</option></select></div>
+      <div class="feld"><label for="fGear">Getriebe</label><select id="fGear"><option value="">Alle</option></select></div>
+      <button class="filter-zu" type="button" id="resetBtn">Alle Filter zurücksetzen</button>
     </div>
 
-    <div class="result-row">
-      <p class="count" aria-live="polite"><b id="resCount">26</b> <span id="resLabel">Fahrzeuge</span></p>
-      <button class="link-btn" id="resetBtn" type="button">Filter zurücksetzen</button>
-    </div>
+    <ul class="raster" id="grid" aria-live="polite"></ul>
 
-    <div class="grid" id="grid"></div>
-
-    <div class="wish" id="suchauftrag">
+    <div class="suche" id="suchauftrag">
       <div>
-        <span class="kicker">Suchauftrag</span>
-        <h3 style="margin-top:10px">Ihr Wunschauto ist nicht dabei?</h3>
-        <p>Sagen Sie uns, was Sie suchen. Wir melden uns, sobald ein passendes Fahrzeug zu uns kommt.</p>
+        <h3>Ihr Wunschfahrzeug ist nicht dabei?</h3>
+        <p>Nennen Sie uns Marke, Modell und Budget. Wir melden uns, sobald ein passendes Fahrzeug zu uns kommt.</p>
       </div>
       <form id="wishForm" novalidate>
-        <div class="field span2"><label for="sCar">Marke &amp; Modell</label><input id="sCar" type="text" placeholder="z. B. Mercedes GLC, Audi A4 Avant"></div>
-        <div class="field"><label for="sBudget">Budget bis</label><input id="sBudget" type="text" inputmode="numeric" placeholder="z. B. 25.000 €"></div>
-        <div class="field"><label for="sName">Name</label><input id="sName" type="text" autocomplete="name"></div>
-        <div class="field"><label for="sTel">Telefon oder E-Mail</label><input id="sTel" type="text" autocomplete="tel"></div>
-        <button class="btn btn-ink" type="submit">Suchauftrag senden</button>
-        <div class="sendbox" id="wishSend" aria-live="polite">
-          <p><b>Ihr Suchauftrag ist fertig.</b> Wählen Sie, wie Sie ihn senden möchten.</p>
-          <div class="acts"><a class="btn btn-wa btn-sm" id="wishWa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Per WhatsApp</a><a class="btn btn-outline btn-sm" id="wishMail" href="#"><svg><use href="#i-mail"/></svg>Per E-Mail</a></div>
-        </div>
+        <div class="feld"><label for="sCar">Marke und Modell</label><input id="sCar" type="text" placeholder="z. B. Mercedes-Benz GLC"></div>
+        <div class="feld"><label for="sBudget">Budget bis</label><input id="sBudget" type="text" inputmode="numeric" placeholder="z. B. 30.000 €"></div>
+        <div class="feld"><label for="sName">Name</label><input id="sName" type="text" autocomplete="name"></div>
+        <div class="feld"><label for="sTel">Telefon oder E-Mail</label><input id="sTel" type="text" autocomplete="tel"></div>
+        <div class="breit"><button class="btn btn-messing" type="submit">Suchauftrag vorbereiten</button></div>
+        <div class="versand" id="wishSend" aria-live="polite"><p>Ihr Suchauftrag ist fertig. Wie möchten Sie ihn senden?</p><div class="reihe"><a class="btn btn-wa btn-klein" id="wishWa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Per WhatsApp</a><a class="btn btn-rand btn-klein" id="wishMail" href="#" style="color:#fff"><svg><use href="#i-mail"/></svg>Per E-Mail</a></div></div>
       </form>
     </div>
-
-    <p class="note">Alle Preise sind Endpreise in Euro. Fahrzeuge werden differenzbesteuert nach § 25a UStG angeboten – Mehrwertsteuer nicht ausweisbar, soweit nicht anders angegeben. Angebot freibleibend, Irrtümer und Zwischenverkauf vorbehalten. Angaben zu Kraftstoffverbrauch und CO₂-Emissionen (kombiniert) finden Sie in der Detailansicht des jeweiligen Fahrzeugs; weitere Informationen zum offiziellen Kraftstoffverbrauch und den offiziellen spezifischen CO₂-Emissionen neuer Personenkraftwagen können dem „Leitfaden über den Kraftstoffverbrauch, die CO₂-Emissionen und den Stromverbrauch neuer Personenkraftwagen“ entnommen werden, der kostenlos bei der DAT (www.dat.de) erhältlich ist.</p>
   </div>
 </section>
 
-<section class="sec dark buy" id="ankauf">
-  <div class="wrap buy-grid">
-    <div>
-      <span class="kicker">Ankauf &amp; Inzahlungnahme</span>
-      <h2 style="margin-top:14px">Wir kaufen Ihr Auto. Auch ohne Neukauf.</h2>
-      <p class="intro">Sie möchten Ihr Fahrzeug verkaufen oder beim Kauf eines unserer Autos in Zahlung geben? Schicken Sie uns die Eckdaten. Wir melden uns mit einer unverbindlichen Einschätzung und vereinbaren einen Termin zur Besichtigung.</p>
-      <ul class="ticks">
-        <li><svg><use href="#i-check"/></svg><span>Alle Marken und Modelle</span></li>
-        <li><svg><use href="#i-check"/></svg><span>Kostenlose, unverbindliche Einschätzung</span></li>
-        <li><svg><use href="#i-check"/></svg><span>Bewertung vor Ort in Berlin, persönlich mit uns</span></li>
-        <li><svg><use href="#i-check"/></svg><span>Fotos einfach per WhatsApp mitschicken</span></li>
-      </ul>
-      <div class="flow">
-        <div><b>01</b><h3>Daten senden</h3><p>Formular ausfüllen, per WhatsApp oder E-Mail abschicken.</p></div>
-        <div><b>02</b><h3>Einschätzung</h3><p>Wir melden uns mit einer ersten Einschätzung.</p></div>
-        <div><b>03</b><h3>Besichtigung</h3><p>Termin vor Ort, danach unser verbindliches Angebot.</p></div>
-      </div>
-    </div>
+<section class="zitatband" aria-label="Kundenstimme">
+  <div class="wrap">
+    <blockquote>Top Fahrzeug, Top Händler und der beste Café.</blockquote>
+    <p>Manfred, Kunde, auf mobile.de</p>
+  </div>
+</section>
 
-    <form class="form" id="buyForm" novalidate>
-      <h3>Fahrzeug anbieten</h3>
-      <div class="seg" role="radiogroup" aria-label="Was möchten Sie?">
-        <input type="radio" name="aMode" id="aModeSell" value="sell" checked><label for="aModeSell">Auto verkaufen</label>
+<section class="ankauf" id="ankauf">
+  <div class="ankauf-bild"><img class="auftauchen" src="img/fotos/p08.jpg" alt="BMW 3er Touring bei der Übergabe an einen Kunden" loading="lazy"></div>
+  <div class="ankauf-inhalt">
+    <h2 class="titel">Ankauf &amp; Inzahlungnahme</h2>
+    <span class="fluegel" aria-hidden="true"><i></i><svg viewBox="0 0 697 327"><use href="#i-emblem"/></svg><i></i></span>
+    <p>Wir kaufen Ihr Auto, auch wenn Sie bei uns kein Fahrzeug kaufen. Oder Sie geben es beim Kauf in Zahlung und wir verrechnen es mit dem Kaufpreis. Schicken Sie uns die Eckdaten, wir melden uns mit einem Angebot.</p>
+    <ol class="ablauf">
+      <li><b>Daten senden</b>Modell, Kilometer, ein paar Fotos.</li>
+      <li><b>Angebot erhalten</b>Wir melden uns mit einem Preis.</li>
+      <li><b>Verkaufen</b>Termin vor Ort, Abwicklung durch uns.</li>
+    </ol>
+    <form class="ankauf-form" id="buyForm" novalidate>
+      <div class="wahl" role="radiogroup" aria-label="Art des Angebots">
+        <input type="radio" name="aMode" id="aModeSell" value="sell" checked><label for="aModeSell">Nur verkaufen</label>
         <input type="radio" name="aMode" id="aModeTrade" value="trade"><label for="aModeTrade">In Zahlung geben</label>
       </div>
-      <div class="row2">
-        <div class="field"><label for="aCar">Marke &amp; Modell</label><input id="aCar" type="text" placeholder="z. B. VW Golf 1.5 TSI"></div>
-        <div class="field"><label for="aEz">Erstzulassung</label><input id="aEz" type="text" placeholder="MM/JJJJ" inputmode="numeric"></div>
-      </div>
-      <div class="row2">
-        <div class="field"><label for="aKm">Kilometerstand</label><input id="aKm" type="text" placeholder="z. B. 85.000" inputmode="numeric"></div>
-        <div class="field"><label for="aFuel">Kraftstoff / Getriebe</label><select id="aFuel"><option value="">Bitte wählen</option><option>Benzin · Schaltgetriebe</option><option>Benzin · Automatik</option><option>Diesel · Schaltgetriebe</option><option>Diesel · Automatik</option><option>Hybrid · Automatik</option><option>Elektro</option></select></div>
-      </div>
-      <div class="field"><label for="aState">Zustand &amp; Besonderheiten</label><textarea id="aState" placeholder="z. B. unfallfrei, scheckheftgepflegt, kleiner Kratzer hinten links, HU bis 05/2027, 2 Schlüssel"></textarea></div>
-      <div class="field" id="aWishWrap" hidden><label for="aWish">Wunschfahrzeug aus unserem Bestand</label><select id="aWish"><option value="">Noch nicht festgelegt</option></select></div>
-      <div class="row2">
-        <div class="field"><label for="aName">Name</label><input id="aName" type="text" autocomplete="name"></div>
-        <div class="field"><label for="aTel">Telefon oder E-Mail</label><input id="aTel" type="text" autocomplete="tel"></div>
-      </div>
-      <button class="btn btn-ink btn-block" type="submit">Anfrage vorbereiten</button>
-      <p class="hint">Im nächsten Schritt senden Sie per WhatsApp (dort gleich Fotos anhängen) oder per E-Mail.</p>
-      <div class="sendbox" id="buySend" aria-live="polite">
-        <p><b>Ihre Anfrage ist fertig.</b> Per WhatsApp können Sie direkt danach Fotos Ihres Fahrzeugs schicken.</p>
-        <div class="acts"><a class="btn btn-wa btn-sm" id="buyWa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Per WhatsApp senden</a><a class="btn btn-outline btn-sm" id="buyMail" href="#"><svg><use href="#i-mail"/></svg>Per E-Mail senden</a></div>
-      </div>
+      <div class="feld breit"><label for="aCar">Marke und Modell</label><input id="aCar" type="text" placeholder="z. B. VW Golf 1.5 TSI"></div>
+      <div class="feld"><label for="aEz">Erstzulassung</label><input id="aEz" type="text" placeholder="MM/JJJJ"></div>
+      <div class="feld"><label for="aKm">Kilometerstand</label><input id="aKm" type="text" inputmode="numeric"></div>
+      <div class="feld"><label for="aFuel">Kraftstoff und Getriebe</label><input id="aFuel" type="text" placeholder="z. B. Diesel, Automatik"></div>
+      <div class="feld"><label for="aState">Zustand</label><select id="aState"><option value="">Bitte wählen</option><option>Sehr gut</option><option>Gut</option><option>Gebrauchsspuren</option><option>Unfallschaden</option><option>Nicht fahrbereit</option></select></div>
+      <div class="feld breit" id="aWishWrap"><label for="aWish">Wunschfahrzeug aus unserem Bestand</label><select id="aWish"><option value="">Noch offen</option></select></div>
+      <div class="feld"><label for="aName">Name</label><input id="aName" type="text" autocomplete="name"></div>
+      <div class="feld"><label for="aTel">Telefon oder E-Mail</label><input id="aTel" type="text" autocomplete="tel"></div>
+      <div class="breit"><button class="btn btn-dunkel btn-block" type="submit">Angebot anfragen</button></div>
+      <div class="versand" id="buySend" aria-live="polite"><p>Ihre Anfrage ist fertig. Fotos können Sie direkt im Chat mitschicken.</p><div class="reihe"><a class="btn btn-wa btn-klein" id="buyWa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Per WhatsApp</a><a class="btn btn-rand btn-klein" id="buyMail" href="#"><svg><use href="#i-mail"/></svg>Per E-Mail</a></div></div>
     </form>
   </div>
 </section>
 
-<section class="sec" id="bewertungen" style="background:var(--white)">
+<section class="abschnitt" id="hof">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker">Bewertungen</span>
-      <h2>5,0 Sterne. Auf Google und auf mobile.de.</h2>
-      <p>Was Kundinnen und Kunden nach dem Kauf über uns schreiben.</p>
+    <div class="schmal">
+      <h2 class="titel">Unser Hof</h2>
+      <span class="fluegel" aria-hidden="true"><i></i><svg viewBox="0 0 697 327"><use href="#i-emblem"/></svg><i></i></span>
+      <p style="color:#4A4F54">In der Malteserstraße stehen die Fahrzeuge, die Sie online sehen, wirklich auf dem Platz. Nehmen Sie sich Zeit, fahren Sie Probe und prüfen Sie alle Unterlagen. Zulassung, Garantie und Lieferung erledigen wir auf Wunsch für Sie.</p>
+      <div class="person"><span class="mono" aria-hidden="true">FC</span><div><b>Fatih Cetin</b><span>Geschäftsführer, Ihr Ansprechpartner</span></div></div>
     </div>
-    <div class="scores">
-      <div class="scorecard">
-        <span class="big">5,0</span>
-        <span class="stars" aria-label="5 von 5 Sternen">★★★★★</span>
-        <span class="src">Google <small>· <span class="js-gcount">30</span> Bewertungen</small></span>
-        <span class="links"><a id="gRead" href="#" target="_blank" rel="noopener">Alle ansehen</a><a id="gWrite" href="#" target="_blank" rel="noopener">Bewertung schreiben</a></span>
-      </div>
-      <div class="scorecard">
-        <span class="big">5,0</span>
-        <span class="stars" aria-label="5 von 5 Sternen">★★★★★</span>
-        <span class="src">mobile.de <small>· <span class="js-mcount">19</span> Bewertungen</small></span>
-        <span class="links"><a id="mRead" href="#" target="_blank" rel="noopener">Alle ansehen</a></span>
-      </div>
-    </div>
-    <div class="quotes" id="quotes"></div>
-    <p class="src-note">Wörtliche Zitate bzw. Auszüge aus Kundenbewertungen auf <a id="mRead2" href="#" target="_blank" rel="noopener">mobile.de</a>.</p>
+    <div class="hof-band" id="gal"></div>
   </div>
 </section>
 
-<section class="sec" id="leistungen">
+<section class="abschnitt stimmen" id="bewertungen">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker">Service</span>
-      <h2>Alles rund um Ihren Autokauf</h2>
-      <p>Vom ersten Gespräch bis zur Übergabe vor Ihrer Haustür.</p>
+    <div class="schmal">
+      <h2 class="titel">Was unsere Kunden sagen</h2>
+      <span class="fluegel" aria-hidden="true"><i></i><svg viewBox="0 0 697 327"><use href="#i-emblem"/></svg><i></i></span>
+      <p style="color:#4A4F54">5,0 von 5 Sternen bei Google und bei mobile.de.</p>
     </div>
-    <div class="serv-grid">
-      <a class="serv" href="#ankauf"><svg><use href="#i-swap"/></svg><h3>Ankauf &amp; Inzahlungnahme</h3><p>Wir kaufen Ihr Auto, mit oder ohne Neukauf.</p></a>
-      <div class="serv"><svg><use href="#i-shield"/></svg><h3>Gebrauchtwagengarantie</h3><p>Auf Wunsch zu Ihrem Fahrzeug dazu.</p></div>
-      <div class="serv"><svg><use href="#i-truck"/></svg><h3>Bundesweite Lieferung</h3><p>Ihr Auto kommt bis vor Ihre Haustür.</p></div>
-      <div class="serv"><svg><use href="#i-plate"/></svg><h3>Zulassung</h3><p>Bundesweite Zulassung, Kurzzeit- und Zollkennzeichen.</p></div>
-      <div class="serv"><svg><use href="#i-check"/></svg><h3>TÜV &amp; Gebrauchtwagencheck</h3><p>TÜV-Abnahme auf Wunsch, Check vor der Übergabe.</p></div>
-      <div class="serv"><svg><use href="#i-umbrella"/></svg><h3>Versicherung</h3><p>Individuelle Versicherungslösungen direkt beim Kauf.</p></div>
-      <div class="serv"><svg><use href="#i-tire"/></svg><h3>Reifen</h3><p>Winter-, Sommer- oder Allwetterreifen gegen Aufpreis.</p></div>
-      <a class="serv" href="#suchauftrag"><svg><use href="#i-search"/></svg><h3>Suchauftrag</h3><p>Wir halten nach Ihrem Wunschauto Ausschau.</p></a>
+    <div class="zitate" id="quotes"></div>
+    <div class="stimmen-fuss">
+      <a class="btn btn-rand btn-klein" id="gWrite" href="#" target="_blank" rel="noopener">Bewertung auf Google schreiben</a>
+      <a class="btn btn-rand btn-klein" id="mRead2" href="#" target="_blank" rel="noopener">Alle Bewertungen auf mobile.de</a>
     </div>
   </div>
 </section>
 
-<section class="sec" id="ueber-uns" style="background:var(--white)">
+<section class="abschnitt" id="leistungen">
   <div class="wrap">
-    <div class="about">
-      <div class="txt">
-        <span class="kicker">Über uns</span>
-        <h2 style="font-size:clamp(1.9rem,3.6vw,2.7rem)">Ihr Gebrauchtwagenhändler in Berlin</h2>
-        <hr class="rule">
-        <p class="lead">Bei uns finden Sie eine sorgfältig ausgewählte Auswahl an geprüften Fahrzeugen, vom kompakten Stadtflitzer bis zur komfortablen Familienlimousine.</p>
-        <p>Unser Anspruch: faire Preise, ehrliche Beratung und Fahrzeuge, auf die Sie sich verlassen können. Wir nehmen uns Zeit für Sie, beantworten Ihre Fragen persönlich und sorgen dafür, dass Sie sich bei uns gut aufgehoben fühlen, egal ob Sie Ihren ersten Wagen suchen oder ein Upgrade planen.</p>
-      </div>
-      <div class="person">
-        <span class="mono" aria-hidden="true">FC</span>
-        <div><b>Fatih Cetin</b><span>Geschäftsführer</span></div>
-        <p>Ihr Ansprechpartner für Kauf, Ankauf und Inzahlungnahme. Erreichbar per Telefon und WhatsApp.</p>
-        <a class="btn btn-wa" href="https://wa.me/491639553579" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>+49 163 9553579</a>
-      </div>
+    <div class="schmal">
+      <h2 class="titel">Rund um Ihr Fahrzeug</h2>
+      <span class="fluegel" aria-hidden="true"><i></i><svg viewBox="0 0 697 327"><use href="#i-emblem"/></svg><i></i></span>
     </div>
-    <div class="steps" aria-label="So läuft der Kauf ab">
-      <div class="step"><b>SCHRITT 1</b><h3>Anfrage</h3><p>Wunschfahrzeug finden und per WhatsApp, Telefon oder E-Mail anfragen.</p></div>
-      <div class="step"><b>SCHRITT 2</b><h3>Besichtigung &amp; Probefahrt</h3><p>Termin vereinbaren und das Fahrzeug in Ruhe kennenlernen.</p></div>
-      <div class="step"><b>SCHRITT 3</b><h3>Vertrag &amp; Zulassung</h3><p>Transparenter Kaufvertrag, Inzahlungnahme und Zulassung aus einer Hand.</p></div>
-      <div class="step"><b>SCHRITT 4</b><h3>Übergabe</h3><p>Abholung bei uns in Berlin oder Lieferung bis vor Ihre Haustür.</p></div>
-    </div>
+    <dl class="leistungen">
+      <div><dt>Ankauf</dt><dd>Wir kaufen Ihr Auto, mit oder ohne Neukauf. <a href="#ankauf">Angebot anfragen</a></dd></div>
+      <div><dt>Zulassung</dt><dd>Bundesweite Zulassung, Kurzzeit- und Zollkennzeichen.</dd></div>
+      <div><dt>Garantie</dt><dd>Gebrauchtwagengarantie auf Wunsch.</dd></div>
+      <div><dt>Lieferung</dt><dd>Bundesweit bis vor Ihre Haustür.</dd></div>
+      <div><dt>TÜV</dt><dd>TÜV-Abnahme auf Wunsch, Durchsicht vor der Übergabe.</dd></div>
+      <div><dt>Versicherung</dt><dd>Passende Versicherung direkt beim Kauf.</dd></div>
+      <div><dt>Reifen</dt><dd>Sommer-, Winter- oder Allwetterreifen gegen Aufpreis.</dd></div>
+      <div><dt>Suchauftrag</dt><dd>Wir suchen Ihr Wunschauto. <a href="#suchauftrag">Suchauftrag aufgeben</a></dd></div>
+    </dl>
   </div>
 </section>
 
-<section class="sec" id="einblicke">
+<section class="abschnitt dunkel korn" id="kontakt">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker">Einblicke</span>
-      <h2>Ein Blick auf unseren Platz</h2>
-      <p>Echte Fotos aus der Malteserstraße: Neuzugänge, Übergaben und der Bestand vor Ort. Kommen Sie gern nach kurzer Absprache vorbei und sehen Sie sich die Fahrzeuge in Ruhe an.</p>
+    <div class="schmal">
+      <h2 class="titel">Besuchen Sie uns</h2>
+      <span class="fluegel" aria-hidden="true"><i></i><svg viewBox="0 0 697 327"><use href="#i-emblem"/></svg><i></i></span>
     </div>
-    <div class="gal" id="gal" aria-label="Fotos von Autocenter Imperial"></div>
-    <p class="gal-note">Die Fotos zeigen Fahrzeuge aus dem laufenden Betrieb, teils bereits verkauft. Den aktuellen Bestand mit allen Details finden Sie unter <a href="#fahrzeuge">Fahrzeuge</a>.</p>
-  </div>
-</section>
-
-<section class="sec dark" id="kontakt">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker">Kontakt</span>
-      <h2>Besuchen Sie uns in Berlin</h2>
-      <p>Besichtigungen und Probefahrten bitte kurz vorher ankündigen. Wir antworten in der Regel noch am selben Werktag.</p>
-    </div>
-    <div class="contact">
+    <div class="kontakt">
       <div>
-        <div class="info-list">
-          <div class="info"><svg><use href="#i-pin"/></svg><div><div class="k">Adresse</div><div class="v">Autocenter Imperial GmbH<br>Malteserstr. 24–36 · 12249 Berlin</div></div><a class="btn btn-ghost btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Autocenter+Imperial+GmbH+Malteserstr.+24-36+12249+Berlin" target="_blank" rel="noopener">Route</a></div>
-          <div class="info"><svg><use href="#i-phone"/></svg><div><div class="k">Telefon &amp; WhatsApp</div><div class="v"><a href="tel:+491639553579">+49 163 9553579</a></div></div><a class="btn btn-wa btn-sm" href="https://wa.me/491639553579" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Chat</a></div>
-          <div class="info"><svg><use href="#i-mail"/></svg><div><div class="k">E-Mail</div><div class="v"><a href="mailto:info@autocenter-imperial.de">info@autocenter-imperial.de</a></div></div><span></span></div>
+        <p class="adresse">Autocenter Imperial GmbH<br>Malteserstr. 24–36<br>12249 Berlin</p>
+        <div class="kontakt-wege">
+          <a class="btn btn-wa" href="https://wa.me/491639553579" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp schreiben</a>
+          <a class="btn btn-rand" href="tel:+491639553579"><svg><use href="#i-phone"/></svg>+49 163 9553579</a>
+          <a class="btn btn-rand" href="mailto:info@autocenter-imperial.de"><svg><use href="#i-mail"/></svg>info@autocenter-imperial.de</a>
+          <a class="btn btn-rand" href="https://www.google.com/maps/search/?api=1&amp;query=Autocenter+Imperial+GmbH+Malteserstr.+24-36+12249+Berlin" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Route planen</a>
         </div>
-        <div class="hours" aria-label="Öffnungszeiten">
-          <div class="h-t"><span>Öffnungszeiten</span><span>Termine nach Vereinbarung</span></div>
-          <div><span>Montag – Freitag</span><span>10:00 – 17:00 Uhr</span></div>
-          <div><span>Samstag</span><span>10:00 – 14:00 Uhr</span></div>
-          <div><span>Sonntag</span><span>geschlossen</span></div>
-        </div>
+        <dl class="zeiten" aria-label="Öffnungszeiten">
+          <div><dt>Montag bis Freitag</dt><dd>10:00 – 17:00 Uhr</dd></div>
+          <div><dt>Samstag</dt><dd>10:00 – 14:00 Uhr</dd></div>
+          <div><dt>Sonntag</dt><dd>geschlossen</dd></div>
+        </dl>
+        <p class="zeiten-hinweis">Für Besichtigungen und Probefahrten bitte kurz vorher anrufen oder schreiben.</p>
       </div>
-      <form class="form" id="form" novalidate>
-        <h3>Nachricht senden</h3>
-        <div class="row2">
-          <div class="field"><label for="fName">Name</label><input id="fName" type="text" autocomplete="name"></div>
-          <div class="field"><label for="fTel">Telefon oder E-Mail</label><input id="fTel" type="text" autocomplete="tel"></div>
-        </div>
-        <div class="field"><label for="fCar">Fahrzeug</label><select id="fCar"><option value="">Allgemeine Anfrage</option></select></div>
-        <div class="field"><label for="fMsg">Ihre Nachricht</label><textarea id="fMsg" placeholder="z. B. Ist das Fahrzeug noch verfügbar? Ich möchte gern einen Besichtigungstermin vereinbaren."></textarea></div>
-        <button class="btn btn-ink btn-block" type="submit">Anfrage vorbereiten</button>
-        <div class="sendbox" id="sendbox" aria-live="polite">
-          <p><b>Ihre Anfrage ist fertig.</b> Wählen Sie, wie Sie sie senden möchten.</p>
-          <div class="acts"><a class="btn btn-wa btn-sm" id="sendWa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Per WhatsApp senden</a><a class="btn btn-outline btn-sm" id="sendMail" href="#"><svg><use href="#i-mail"/></svg>Per E-Mail senden</a></div>
-        </div>
+      <form class="kontakt-form" id="form" novalidate>
+        <h3>Nachricht schreiben</h3>
+        <div class="feld"><label for="fName">Name</label><input id="fName" type="text" autocomplete="name"></div>
+        <div class="feld"><label for="fTel">Telefon oder E-Mail</label><input id="fTel" type="text" autocomplete="tel"></div>
+        <div class="feld"><label for="fCar">Fahrzeug</label><select id="fCar"><option value="">Allgemeine Anfrage</option></select></div>
+        <div class="feld"><label for="fMsg">Ihre Nachricht</label><textarea id="fMsg" placeholder="Ist das Fahrzeug noch verfügbar? Wann passt eine Besichtigung?"></textarea></div>
+        <button class="btn btn-messing btn-block" type="submit">Nachricht vorbereiten</button>
+        <div class="versand" id="sendbox" aria-live="polite"><p>Ihre Nachricht ist fertig. Wie möchten Sie sie senden?</p><div class="reihe"><a class="btn btn-wa btn-klein" id="sendWa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Per WhatsApp</a><a class="btn btn-rand btn-klein" id="sendMail" href="#"><svg><use href="#i-mail"/></svg>Per E-Mail</a></div></div>
       </form>
     </div>
   </div>
@@ -867,53 +836,45 @@ dialog.veh::backdrop{background:rgba(8,12,16,.74);backdrop-filter:blur(3px)}
   </div>
 </section>
 
-<footer>
-  <div class="wrap cols">
-    <div>
-      <img src="img/logo-light.png" alt="Autocenter Imperial">
-      <p>Autocenter Imperial GmbH<br>Malteserstr. 24–36 · 12249 Berlin<br>Geschäftsführer: Fatih Cetin</p>
-    </div>
-    <div>
-      <h4>Seite</h4>
-      <ul><li><a href="#fahrzeuge">Fahrzeuge</a></li><li><a href="#ankauf">Ankauf</a></li><li><a href="#bewertungen">Bewertungen</a></li><li><a href="#leistungen">Service</a></li><li><a href="#kontakt">Kontakt</a></li></ul>
-    </div>
-    <div>
-      <h4>Kontakt</h4>
-      <ul><li><a href="tel:+491639553579">+49 163 9553579</a></li><li><a href="https://wa.me/491639553579" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:info@autocenter-imperial.de">info@autocenter-imperial.de</a></li></ul>
-    </div>
-    <div>
-      <h4>Finden Sie uns auf</h4>
-      <ul><li><a href="https://www.autoscout24.de/haendler/autocenter-imperial-gmbh" target="_blank" rel="noopener">AutoScout24</a></li><li><a id="fMobile" href="#" target="_blank" rel="noopener">mobile.de</a></li><li><a id="fGoogle" href="#" target="_blank" rel="noopener">Google</a></li></ul>
-    </div>
-  </div>
-  <div class="wrap legal">
-    <span>© <span id="year">2026</span> Autocenter Imperial GmbH · Berlin</span>
-    <span><button type="button" data-view="impressum">Impressum</button> · <button type="button" data-view="datenschutz">Datenschutz</button></span>
+
+
+<footer class="fuss">
+  <span class="wasser" aria-hidden="true">IMPERIAL</span>
+  <div class="wrap">
+    <img src="img/logo-weiss.svg" alt="Autocenter Imperial" width="136" height="64">
+    <p class="fuss-adr">Malteserstraße 24–36, 12249 Berlin</p>
+    <nav class="fuss-links" aria-label="Weitere Links">
+      <a href="https://www.autoscout24.de/haendler/autocenter-imperial-gmbh" target="_blank" rel="noopener">AutoScout24</a>
+      <a id="fMobile" href="#" target="_blank" rel="noopener">mobile.de</a>
+      <a id="fGoogle" href="#" target="_blank" rel="noopener">Google</a>
+      <a href="https://www.instagram.com/autocenter.imperial/" target="_blank" rel="noopener">Instagram</a>
+      <button type="button" data-view="impressum">Impressum</button>
+      <button type="button" data-view="datenschutz">Datenschutz</button>
+    </nav>
+    <p class="fuss-recht">© <span id="year">2026</span> Autocenter Imperial GmbH</p>
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/491639553579?text=Guten%20Tag%2C%20ich%20habe%20eine%20Frage%20zu%20Ihrem%20Fahrzeugangebot." target="_blank" rel="noopener" aria-label="Per WhatsApp schreiben"><svg><use href="#i-wa"/></svg>WhatsApp</a>
-<nav class="mbar" aria-label="Schnellkontakt">
+<nav class="leiste" aria-label="Schnellkontakt">
   <a href="tel:+491639553579"><svg><use href="#i-phone"/></svg>Anrufen</a>
-  <a class="wa" href="https://wa.me/491639553579?text=Guten%20Tag%2C%20ich%20habe%20eine%20Frage%20zu%20Ihrem%20Fahrzeugangebot." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+  <a class="wa" href="https://wa.me/491639553579" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
   <a href="#fahrzeuge"><svg><use href="#i-car"/></svg>Autos</a>
 </nav>
 
-<dialog class="veh" id="dlg" aria-labelledby="dlgTitle">
-  <button class="v-close" id="dlgClose" type="button" aria-label="Schließen"><svg><use href="#i-x"/></svg></button>
-  <div class="v-inner" id="dlgInner"></div>
+<dialog class="fz" id="dlg" aria-labelledby="dlgTitle">
+  <button class="fz-zu" id="dlgClose" type="button" aria-label="Schließen"><svg><use href="#i-x"/></svg></button>
+  <div class="fz-innen" id="dlgInner"></div>
 </dialog>
-<dialog class="lb" id="lb" aria-label="Fotogalerie">
-  <button class="lb-btn lb-close" id="lbClose" type="button" aria-label="Schließen"><svg><use href="#i-x"/></svg></button>
-  <button class="lb-btn lb-prev" id="lbPrev" type="button" aria-label="Vorheriges Foto"><svg><use href="#i-arrow"/></svg></button>
-  <button class="lb-btn lb-next" id="lbNext" type="button" aria-label="Nächstes Foto"><svg><use href="#i-arrow"/></svg></button>
+<dialog class="lb" id="lb" aria-label="Fotos vom Hof">
+  <button class="lb-btn lb-zu" id="lbClose" type="button" aria-label="Schließen"><svg><use href="#i-x"/></svg></button>
+  <button class="lb-btn lb-zurueck" id="lbPrev" type="button" aria-label="Vorheriges Foto"><svg><use href="#i-arrow"/></svg></button>
+  <button class="lb-btn lb-vor" id="lbNext" type="button" aria-label="Nächstes Foto"><svg><use href="#i-arrow"/></svg></button>
   <figure><img id="lbImg" alt=""><figcaption><b id="lbNum"></b><span id="lbCap"></span></figcaption></figure>
 </dialog>
 <div class="toast" id="toast" role="status"></div>
 
 <script>
-document.documentElement.lang=document.documentElement.lang||'de';
-/* ---------- Fahrzeugdaten (wird montags automatisch mit AutoScout24 abgeglichen) ---------- */
+/* ---------- Bestand (wird wöchentlich mit AutoScout24 abgeglichen) ---------- */
 const WA='491639553579', MAIL='info@autocenter-imperial.de';
 const AS='https://prod.pictures.autoscout24.net/listing-images/';
 const LAST_SYNC='24.10.2026'; // Datum des letzten Abgleichs mit AutoScout24 (wird wöchentlich aktualisiert)
@@ -965,7 +926,6 @@ const REVIEWS=[
 const FEATURED_ID='a02';   // Fahrzeug im Startbild; ist es verkauft, wird automatisch das teuerste mit Foto gezeigt
 const NEW_DAYS=14;         // Fahrzeuge mit Feld added (JJJJ-MM-TT) gelten so lange als „Neu“
 
-/* ---------- Helpers ---------- */
 const $=s=>document.querySelector(s);
 const eur=n=>n.toLocaleString('de-DE')+' €';
 const num=n=>n.toLocaleString('de-DE');
@@ -984,7 +944,8 @@ const asLink=c=>{
 const syncDate=(()=>{const [d,m,y]=LAST_SYNC.split('.');return new Date(+y,+m-1,+d);})();
 const isNew=c=>{if(!c.added)return false;const a=new Date(c.added+'T00:00:00');return (syncDate-a)/864e5<=NEW_DAYS;};
 const askText=c=>`Guten Tag, ich interessiere mich für den ${title(c)} ${c.variant} (EZ ${c.ez}, ${num(c.km)} km, ${eur(c.price)}). Ist das Fahrzeug noch verfügbar?`;
-function fallbackEl(big){const d=document.createElement('div');d.className='fallback';d.innerHTML=`<img src="img/logo-light.png" alt=""><span>${big?'Fotos auf AutoScout24':'Foto folgt'}</span>`;return d;}
+const varText=c=>c.variant.replace(/ · /g,', ');
+function fallbackEl(big){const d=document.createElement('div');d.className='ersatz';d.innerHTML=`<img src="img/logo-weiss.svg" alt=""><span>${big?'Fotos auf AutoScout24':'Foto folgt'}</span>`;return d;}
 function imgFail(el,big){el.replaceWith(fallbackEl(big));}
 function upgrade(img,sizes){
   if(!img||!img.dataset.hi)return;
@@ -992,41 +953,31 @@ function upgrade(img,sizes){
   tryNext(0);
 }
 function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),2400);}
-function badges(c){
-  const b=[];
-  if(isNew(c))b.push(['Neu','new']);
-  if(c.oldPrice)b.push(['Reduziert','cut']);
-  if(c.seats===7)b.push(['7-Sitzer','']);
-  if(/4MATIC|xDrive|AWD|quattro|Allrad/i.test(c.model+' '+c.variant))b.push(['Allrad','']);
-  if(c.km<20000)b.push(['Unter 20.000 km','']);
-  return b.slice(0,2);
-}
+function marker(c){if(isNew(c))return['Neu im Bestand',''];if(c.oldPrice)return['Preis gesenkt','dezent'];return null;}
 
 /* ---------- Filter ---------- */
 const state={brand:'',q:'',fuel:'',gear:'',body:'',price:'',sort:'rec'};
 function brandList(){const present=BRAND_ORDER.filter(b=>CARS.some(c=>c.brand===b));CARS.forEach(c=>{if(!present.includes(c.brand))present.push(c.brand);});return present;}
+const brandCount=b=>CARS.filter(c=>c.brand===b).length;
 function fillSelect(sel,vals){[...new Set(vals)].sort((a,b)=>a.localeCompare(b,'de')).forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent=v;sel.appendChild(o);});}
-function syncChips(){document.querySelectorAll('#brandChips .chip').forEach(x=>x.setAttribute('aria-pressed',x.dataset.brand===state.brand?'true':'false'));}
+function syncChips(){document.querySelectorAll('#brandChips button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.brand===state.brand?'true':'false'));}
 function syncControls(){$('#q').value=state.q;$('#fFuel').value=state.fuel;$('#fGear').value=state.gear;$('#fBody').value=state.body;$('#fPrice').value=state.price;$('#sort').value=state.sort;syncChips();}
 function buildFilters(){
   const chips=$('#brandChips'),brands=brandList();
-  chips.innerHTML=['',...brands].map(b=>`<button type="button" class="chip" data-brand="${esc(b)}" aria-pressed="${b===''}">${b===''?'Alle Marken':esc(b)}<small>${b===''?CARS.length:CARS.filter(c=>c.brand===b).length}</small></button>`).join('');
-  chips.addEventListener('click',e=>{const btn=e.target.closest('.chip');if(!btn)return;state.brand=btn.dataset.brand;syncChips();render();});
+  chips.innerHTML=['',...brands].map(b=>`<li><button type="button" data-brand="${esc(b)}" aria-pressed="${b===''}">${b===''?'Alle':esc(b)}<span>${b===''?CARS.length:brandCount(b)}</span></button></li>`).join('');
+  chips.addEventListener('click',e=>{const btn=e.target.closest('button');if(!btn)return;state.brand=btn.dataset.brand;syncChips();render();});
+  $('#brandTiles').innerHTML=brands.map(b=>{const n=brandCount(b);const bc=CARS.filter(c=>c.brand===b&&c.img).sort((x,y)=>y.price-x.price)[0];return `<button class="marke-kachel" type="button" data-brandtile="${esc(b)}">${bc?`<img src="${esc(bc.photos[0])}" alt="" loading="lazy" data-hi="${esc(bc.img)}" onerror="this.remove()">`:''}<b>${esc(b)}</b><span>${n===1?'1 Fahrzeug':n+' Fahrzeuge'}</span></button>`;}).join('');
+  document.querySelectorAll('#brandTiles img[data-hi]').forEach(img=>{const go=()=>upgrade(img,['720x540.webp']);if(img.complete)go();else img.addEventListener('load',go,{once:true});});
+  $('#brandTiles').addEventListener('click',e=>{const t=e.target.closest('[data-brandtile]');if(!t)return;state.brand=t.dataset.brandtile;syncChips();render();document.getElementById('fahrzeuge').scrollIntoView({behavior:'smooth'});});
   fillSelect($('#fFuel'),CARS.map(fuelGroup));fillSelect($('#fGear'),CARS.map(c=>c.gear));fillSelect($('#fBody'),CARS.map(bodyGroup));
   const map={q:'q',fFuel:'fuel',fGear:'gear',fBody:'body',fPrice:'price',sort:'sort'};
   Object.keys(map).forEach(id=>$('#'+id).addEventListener('input',e=>{state[map[id]]=e.target.value;render();}));
   $('#resetBtn').addEventListener('click',()=>{Object.assign(state,{brand:'',q:'',fuel:'',gear:'',body:'',price:'',sort:'rec'});syncControls();render();});
-  // Schnellsuche im Startbereich
-  brands.forEach(b=>{const o=document.createElement('option');o.value=b;o.textContent=b;$('#qBrand').appendChild(o);});
-  fillSelect($('#qBody'),CARS.map(bodyGroup));
-  const qCount=()=>{const n=CARS.filter(c=>(!$('#qBrand').value||c.brand===$('#qBrand').value)&&(!$('#qBody').value||bodyGroup(c)===$('#qBody').value)&&(!$('#qPrice').value||c.price<=+$('#qPrice').value)).length;$('#finderBtn').textContent=n===1?'1 Fahrzeug anzeigen':`${n} Fahrzeuge anzeigen`;};
-  ['qBrand','qBody','qPrice'].forEach(id=>$('#'+id).addEventListener('input',qCount));qCount();
-  $('#finder').addEventListener('submit',e=>{e.preventDefault();Object.assign(state,{brand:$('#qBrand').value,body:$('#qBody').value,price:$('#qPrice').value,q:'',fuel:'',gear:''});syncControls();render();document.getElementById('fahrzeuge').scrollIntoView({behavior:'smooth'});});
-  // Formular-Auswahllisten
   [...CARS].sort((a,b)=>title(a).localeCompare(title(b),'de')).forEach(c=>{
-    const t=`${title(c)} ${c.variant} (${c.ez}, ${eur(c.price)})`;
+    const t=`${title(c)}, ${varText(c)} (${c.ez}, ${eur(c.price)})`;
     [$('#fCar'),$('#aWish')].forEach(sel=>{const o=document.createElement('option');o.value=c.id;o.textContent=t;sel.appendChild(o);});
   });
+  $('#stockNum').textContent=CARS.length;
 }
 function filtered(){
   const q=state.q.trim().toLowerCase();
@@ -1041,57 +992,63 @@ function filtered(){
   return list;
 }
 
-/* ---------- Karten ---------- */
-function cardHtml(c){
-  const bd=badges(c).map(([t,k])=>`<span class="badge ${k}">${t}</span>`).join('');
-  const pic=c.img?`<img src="${esc(c.photos[0])}" alt="${esc(title(c))} ${esc(c.variant)}" loading="lazy" data-hi="${esc(c.img)}" onerror="imgFail(this,false)">`:fallbackEl(false).outerHTML;
-  return `<article class="car">
-    <button type="button" class="car-pic" data-open="${c.id}" aria-label="${esc(title(c))} – Details anzeigen">${pic}${bd?`<span class="badges">${bd}</span>`:''}${c.img?'<span class="photo-count"><svg><use href="#i-cam"/></svg>Mehr Fotos</span>':''}</button>
-    <div class="car-body">
-      <div><div class="car-make">${esc(c.brand)}</div><h3><button type="button" data-open="${c.id}">${esc(c.model)}</button></h3><p class="car-variant">${esc(c.variant)}</p><p class="car-meta">${esc(c.gear)} · ${esc(bodyGroup(c))}${c.seats===7?' · 7 Sitze':''}</p></div>
-      <dl class="cluster">
-        <div><dt>EZ</dt><dd>${c.ez}</dd></div>
-        <div><dt>km</dt><dd>${num(c.km)}</dd></div>
-        <div><dt>PS</dt><dd>${c.ps}</dd></div>
-        <div><dt>Kraftstoff</dt><dd>${esc(fuelGroup(c))}</dd></div>
-      </dl>
-      <div class="car-foot">
-        <div class="car-price"><b>${eur(c.price)}</b>${c.oldPrice?`<s>${eur(c.oldPrice)}</s>`:''}</div>
-        <div class="car-actions">
-          <a class="wa-mini" href="${waLink(askText(c))}" target="_blank" rel="noopener" aria-label="${esc(title(c))} per WhatsApp anfragen"><svg><use href="#i-wa"/></svg></a>
-          <button type="button" class="btn btn-outline btn-sm" data-open="${c.id}">Details</button>
-        </div>
+/* ---------- Showroom ---------- */
+function carHtml(c,fokus){
+  const m=marker(c);
+  const pic=c.img?`<img src="${esc(c.photos[0])}" alt="${esc(title(c))}, ${esc(varText(c))}" loading="lazy" data-hi="${esc(c.img)}" onerror="imgFail(this,false)">`:fallbackEl(false).outerHTML;
+  const bild=`<div class="auto-bild auftauchen">${pic}${m?`<span class="marker ${m[1]}">${m[0]}</span>`:''}</div>`;
+  if(fokus) return `<li class="auto fokus" data-open="${c.id}">${bild}
+    <div class="auto-text">
+      <span class="fokus-k">Im Fokus</span><span class="auto-marke">${esc(c.brand)}</span>
+      <h3 class="auto-modell"><button type="button" data-open="${c.id}">${esc(c.model)}</button></h3>
+      <div class="auto-preis">${eur(c.price)}${c.oldPrice?`<s>${eur(c.oldPrice)}</s>`:''}</div>
+      <p class="auto-variante">${esc(varText(c))}</p>
+      <p class="auto-daten"><span>EZ ${c.ez}</span><span>${num(c.km)} km</span><span>${c.ps} PS</span><span>${esc(fuelGroup(c))}</span><span>${esc(c.gear)}</span></p>
+      <span class="btn btn-messing fokus-cta">Fahrzeug ansehen</span>
+    </div>
+  </li>`;
+  const eck=[['Erstzulassung',c.ez],['Kilometer',num(c.km)+' km'],['Leistung',`${c.kw} kW (${c.ps} PS)`],['Kraftstoff',fuelGroup(c)],['Getriebe',c.gear],['Fahrzeughalter',c.owners||'–']];
+  return `<li class="auto zeile" data-open="${c.id}">${bild}
+    <div class="zeile-mitte">
+      <span class="auto-marke">${esc(c.brand)}</span>
+      <h3 class="auto-modell"><button type="button" data-open="${c.id}">${esc(c.model)}</button></h3>
+      <p class="auto-variante">${esc(varText(c))}</p>
+      <dl class="eck">${eck.map(([k,v])=>`<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+      <p class="eck-kurz">EZ ${c.ez}, ${num(c.km)} km, ${c.ps} PS, ${esc(fuelGroup(c))}, ${esc(c.gear)}</p>
+      ${c.cons||c.co2?`<p class="verbrauch">${c.cons?esc(c.cons)+' (komb.)':''}${c.cons&&c.co2?', ':''}${c.co2?esc(c.co2)+' CO₂ (komb.)':''}</p>`:''}
+    </div>
+    <div class="zeile-preis">
+      <div class="preis-gross">${eur(c.price)}${c.oldPrice?`<s>${eur(c.oldPrice)}</s>`:''}</div>
+      <div class="zeile-aktion">
+        <a class="wa-quadrat" href="${waLink(askText(c))}" target="_blank" rel="noopener" aria-label="${esc(title(c))} per WhatsApp anfragen"><svg><use href="#i-wa"/></svg></a>
+        <span class="btn btn-rand btn-klein">Details</span>
       </div>
     </div>
-  </article>`;
+  </li>`;
 }
 let current=[];
 function render(){
   current=filtered();
-  $('#grid').innerHTML=current.length?current.map(cardHtml).join(''):`<div class="empty">Kein Fahrzeug passt zu dieser Auswahl. Setzen Sie die Filter zurück oder <a href="#suchauftrag" style="color:var(--gold-ink)">geben Sie einen Suchauftrag auf</a>.</div>`;
+  const plain=!state.brand&&!state.q&&!state.fuel&&!state.gear&&!state.body&&!state.price&&state.sort==='rec';
+  const f=plain&&current.find(c=>c.id===FEATURED_ID&&c.img);
+  if(f){current=[f,...current.filter(c=>c!==f)];}
+  $('#grid').innerHTML=current.length?current.map((c,i)=>carHtml(c,f&&i===0)).join(''):`<li class="leer">Kein Fahrzeug passt zu dieser Auswahl. Setzen Sie die Filter zurück oder <a href="#suchauftrag">geben Sie einen Suchauftrag auf</a>.</li>`;
   $('#resCount').textContent=current.length;
   $('#resLabel').textContent=current.length===1?'Fahrzeug':'Fahrzeuge';
-  document.querySelectorAll('#grid img[data-hi]').forEach(img=>{if(img.complete)upgrade(img,['720x540.webp']);else img.addEventListener('load',()=>upgrade(img,['720x540.webp']),{once:true});});
-}
-
-/* ---------- Startbild ---------- */
-function renderHero(){
-  const withImg=CARS.filter(c=>c.img);
-  const f=CARS.find(c=>c.id===FEATURED_ID&&c.img)||[...withImg].sort((a,b)=>b.price-a.price)[0];
-  if(!f){$('#heroMedia').innerHTML='';return;}
-  $('#heroMedia').innerHTML=`<button type="button" class="hero-photo" data-open="${f.id}" aria-label="${esc(title(f))} ansehen" style="padding:0;cursor:pointer"><img src="${esc(f.photos[0])}" alt="${esc(title(f))} ${esc(f.variant)}" data-hi="${esc(f.img)}" onerror="imgFail(this,true)"></button>
-  <a class="hero-tag plate" href="#" data-open="${f.id}"><span class="plate-top"></span><span class="plate-body"><span class="plate-k">Im Fokus</span><span class="plate-name">${esc(title(f))}</span><span class="plate-meta">EZ ${f.ez} · ${num(f.km)} km · ${f.ps} PS · ${esc(fuelGroup(f))}</span><span class="plate-price"><b>${eur(f.price)}</b><span>Ansehen →</span></span></span></a>`;
-  const img=$('#heroMedia img');if(img){const go=()=>upgrade(img,['1280x960.webp','720x540.webp']);if(img.complete)go();else img.addEventListener('load',go,{once:true});}
+  document.querySelectorAll('#grid img[data-hi]').forEach(img=>{const go=()=>upgrade(img,['1280x960.webp','720x540.webp']);if(img.complete)go();else img.addEventListener('load',go,{once:true});});
+  beobachten();
 }
 
 /* ---------- Bewertungen ---------- */
 function renderReviews(){
   document.querySelectorAll('.js-gcount').forEach(e=>e.textContent=RATINGS.google.count);
   document.querySelectorAll('.js-mcount').forEach(e=>e.textContent=RATINGS.mobile.count);
-  ['#scoreGoogle','#trustGoogle','#gRead','#fGoogle'].forEach(s=>$(s).href=RATINGS.google.read);
+  document.querySelectorAll('.js-gscore').forEach(e=>e.textContent=RATINGS.google.score);
+  document.querySelectorAll('.js-mscore').forEach(e=>e.textContent=RATINGS.mobile.score);
+  ['#gRead','#fGoogle'].forEach(s=>$(s).href=RATINGS.google.read);
   $('#gWrite').href=RATINGS.google.write;
-  ['#scoreMobile','#trustMobile','#mRead','#mRead2','#fMobile'].forEach(s=>$(s).href=RATINGS.mobile.read);
-  $('#quotes').innerHTML=REVIEWS.map(r=>`<figure class="quote"><span class="stars" aria-label="5 von 5 Sternen">★★★★★</span><blockquote>„${esc(r.text)}${r.part?' …':''}“</blockquote><figcaption><span><b>${esc(r.name)}</b> · Fahrzeug gekauft</span><span>${esc(r.date)} · mobile.de</span></figcaption></figure>`).join('');
+  ['#mRead','#mRead2','#fMobile'].forEach(s=>$(s).href=RATINGS.mobile.read);
+  $('#quotes').innerHTML=REVIEWS.slice(0,6).map(r=>`<figure class="zitat"><span class="sterne" aria-label="5 von 5 Sternen">★★★★★</span><blockquote>„${esc(r.text)}${r.part?' …':''}“</blockquote><figcaption>${esc(r.name)}, ${esc(r.date)}</figcaption></figure>`).join('');
 }
 
 /* ---------- Detailansicht ---------- */
@@ -1099,25 +1056,24 @@ const dlg=$('#dlg');let curIdx=0;
 function openCar(id){
   let list=current.some(c=>c.id===id)?current:CARS;
   curIdx=list.findIndex(c=>c.id===id);const c=list[curIdx];if(!c)return;
-  const rows=[['Erstzulassung',c.ezFull||c.ez],['Kilometerstand',num(c.km)+' km'],['Leistung',`${c.kw} kW (${c.ps} PS)`],['Kraftstoff',c.fuel],['Getriebe',c.gear],['Aufbau',c.body],['Sitzplätze',c.seats],c.owners?['Vorbesitzer',c.owners]:null,['Verbrauch (komb.)',c.cons||'siehe Inserat'],['CO₂ (komb.)',c.co2||'siehe Inserat']].filter(Boolean);
-  const media=c.img?`<a class="v-main" id="vMain" href="${asLink(c)}" target="_blank" rel="noopener" title="Alle Fotos auf AutoScout24"><img src="${esc(c.photos[0])}" alt="${esc(title(c))}" data-hi="${esc(c.img)}" onerror="imgFail(this,true)"></a>`:`<a class="v-main" href="${asLink(c)}" target="_blank" rel="noopener">${fallbackEl(true).outerHTML}</a>`;
+  const rows=[['Erstzulassung',c.ez],['Kilometerstand',num(c.km)+' km'],['Leistung',`${c.kw} kW (${c.ps} PS)`],['Kraftstoff',c.fuel],['Getriebe',c.gear],['Aufbau',c.body],['Sitzplätze',c.seats],c.owners?['Vorbesitzer',c.owners]:null,['Verbrauch kombiniert',c.cons||'siehe Inserat'],['CO₂ kombiniert',c.co2||'siehe Inserat']].filter(Boolean);
+  const media=c.img?`<a class="fz-haupt" id="vMain" href="${asLink(c)}" target="_blank" rel="noopener" title="Alle Fotos auf AutoScout24"><img src="${esc(c.photos[0])}" alt="${esc(title(c))}" data-hi="${esc(c.img)}" onerror="imgFail(this,true)"></a>`:`<a class="fz-haupt" href="${asLink(c)}" target="_blank" rel="noopener">${fallbackEl(true).outerHTML}</a>`;
   $('#dlgInner').innerHTML=`
-    <div class="v-media">${media}
-      <a class="btn btn-gold btn-block" href="${asLink(c)}" target="_blank" rel="noopener"><svg><use href="#i-cam"/></svg>Alle Fotos &amp; Details auf AutoScout24</a>
+    <div class="fz-bild">${media}
+      <a class="btn btn-messing" href="${asLink(c)}" target="_blank" rel="noopener"><svg><use href="#i-cam"/></svg>Alle Fotos auf AutoScout24</a>
     </div>
-    <div class="v-info">
-      <div class="v-head"><span class="kicker">${esc(c.brand)}</span><h3 id="dlgTitle">${esc(c.model)}</h3><p class="car-variant">${esc(c.variant)}</p></div>
-      <div class="plate"><span class="plate-top"></span><span class="plate-body"><span class="plate-k">Preis</span><span class="plate-price" style="margin-top:0;padding-top:0;border-top:0"><b>${eur(c.price)}</b>${c.oldPrice?`<span style="color:var(--muted);text-decoration:line-through">${eur(c.oldPrice)}</span>`:''}</span><span class="plate-meta">Endpreis · differenzbesteuert nach § 25a UStG</span></span></div>
-      <dl class="spec">${rows.map(([k,v])=>`<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
-      <div><p class="kicker" style="margin-bottom:8px">Ausstattung (Auszug)</p><div class="tags">${c.feat.map(f=>`<span class="tag">${esc(f)}</span>`).join('')}</div></div>
-      <div class="v-cta">
-        <a class="btn btn-wa full" href="${waLink(askText(c))}" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Per WhatsApp anfragen</a>
-        <a class="btn btn-outline" href="tel:+491639553579"><svg><use href="#i-phone"/></svg>Anrufen</a>
-        <a class="btn btn-outline" href="${mailLink('Anfrage: '+title(c)+' '+c.variant,askText(c)+'\n\nMit freundlichen Grüßen\n')}"><svg><use href="#i-mail"/></svg>E-Mail</a>
+    <div class="fz-info">
+      <div><span class="auto-marke">${esc(c.brand)}</span><h3 id="dlgTitle">${esc(c.model)}</h3><p class="auto-variante" style="margin-top:8px">${esc(varText(c))}</p></div>
+      <div class="fz-preis"><b>${eur(c.price)}</b>${c.oldPrice?`<s>${eur(c.oldPrice)}</s>`:''}<small>Endpreis, differenzbesteuert nach § 25a UStG</small></div>
+      <dl class="spez">${rows.map(([k,v])=>`<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+      <div class="ausst"><h4>Ausstattung (Auszug)</h4><p>${c.feat.map(esc).join(', ')}</p></div>
+      <div class="fz-aktion">
+        <a class="btn btn-wa ganz" href="${waLink(askText(c))}" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Per WhatsApp anfragen</a>
+        <a class="btn btn-rand" href="tel:+491639553579"><svg><use href="#i-phone"/></svg>Anrufen</a>
+        <a class="btn btn-rand" href="${mailLink('Anfrage: '+title(c)+' '+c.variant,askText(c)+'\n\nMit freundlichen Grüßen\n')}"><svg><use href="#i-mail"/></svg>E-Mail</a>
       </div>
-      <div class="v-cross"><span>Altes Auto in Zahlung geben?</span><a href="#ankauf" data-trade="${c.id}">Jetzt anbieten →</a></div>
-      <p class="v-foot">Angaben ohne Gewähr. Irrtümer und Zwischenverkauf vorbehalten. Fahrzeughistorie und Unterlagen zeigen wir Ihnen gern vor Ort.</p>
-      <div class="v-nav"><button class="btn btn-outline btn-sm" type="button" id="prevCar">← Vorheriges</button><button class="btn btn-outline btn-sm" type="button" id="nextCar">Nächstes →</button></div>
+      <p class="fz-zusatz">Altes Auto in Zahlung geben? <a href="#ankauf" data-trade="${c.id}">Fahrzeug anbieten</a>. Angaben ohne Gewähr, Zwischenverkauf vorbehalten.</p>
+      <div class="fz-nav"><button class="btn btn-rand btn-klein" type="button" id="prevCar">Vorheriges</button><button class="btn btn-rand btn-klein" type="button" id="nextCar">Nächstes</button></div>
     </div>`;
   $('#prevCar').disabled=curIdx===0;$('#nextCar').disabled=curIdx===list.length-1;
   $('#prevCar').onclick=()=>openCar(list[curIdx-1].id);
@@ -1127,6 +1083,7 @@ function openCar(id){
   if(!dlg.open)dlg.showModal();
 }
 document.addEventListener('click',e=>{
+  if(e.target.closest('.wa-quadrat'))return;
   const o=e.target.closest('[data-open]');if(o){e.preventDefault();openCar(o.dataset.open);return;}
   const t=e.target.closest('[data-trade]');if(t){e.preventDefault();dlg.close();$('#aModeTrade').checked=true;setMode();$('#aWish').value=t.dataset.trade;document.getElementById('ankauf').scrollIntoView({behavior:'smooth'});}
 });
@@ -1156,31 +1113,34 @@ $('#wishForm').addEventListener('submit',e=>{
   const body=`Guten Tag,\n\nich suche folgendes Fahrzeug:\n\nMarke/Modell: ${val('sCar')}\nBudget bis: ${val('sBudget')||'–'}\n\nBitte melden Sie sich, wenn Sie ein passendes Fahrzeug haben.\n\nName: ${val('sName')}\nKontakt: ${val('sTel')}\n\nMit freundlichen Grüßen\n${val('sName')}`;
   prepare('#wishSend','#wishWa','#wishMail','Suchauftrag: '+val('sCar'),body);
 });
+$('#filterBtn').addEventListener('click',e=>{const o=$('#filter').classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',o);});
 
-$('#moreFilters').addEventListener('click',e=>{const o=$('#controls').classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',o);e.currentTarget.textContent=o?'Filter ausblenden':'Weitere Filter & Sortierung';});
+/* ---------- Kopf und Menü ---------- */
+const kopf=$('#top'),menue=$('#menue'),menuBtn=$('#menuBtn');
+const onScroll=()=>kopf.classList.toggle('voll',window.scrollY>window.innerHeight*.6||$('#site').hidden);
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+function menu(open){menue.classList.toggle('offen',open);menuBtn.setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':'';if(open)$('#menuClose').focus();else menuBtn.focus();}
+menuBtn.addEventListener('click',()=>menu(true));
+$('#menuClose').addEventListener('click',()=>menu(false));
+menue.addEventListener('click',e=>{if(e.target.closest('nav a'))menu(false);});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menue.classList.contains('offen'))menu(false);});
 
-/* ---------- Navigation & Rechtliches ---------- */
-const menuBtn=$('#menuBtn'),nav=$('#nav');
-menuBtn.addEventListener('click',()=>{const o=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',o);});
-nav.addEventListener('click',e=>{if(e.target.tagName==='A'){nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}});
-
-/* ---- gallery / lightbox ---- */
+/* ---------- Fotos vom Hof ---------- */
 const PHOTOS=[
-  {f:'p09',w:1206,h:1507,c:'Audi A6 und Maserati auf unserem Hof'},
-  {f:'p02',w:1206,h:804,c:'BMW 3er Touring und BMW X5'},
-  {f:'p01',w:1206,h:1507,c:'Mercedes-Benz CLA AMG Line in Grau metallic'},
-  {f:'p05',w:1206,h:1507,c:'Unser Platz in der Malteserstraße'},
-  {f:'p08',w:1206,h:1507,c:'BMW 3er Touring M Sport, Übergabe an den Kunden'},
-  {f:'p03',w:1206,h:1357,c:'Mercedes-Benz CLA AMG Line, Neuzugang'},
-  {f:'p07',w:1174,h:1468,c:'Unser Eingang, Malteserstraße 24–36'},
-  {f:'p04',w:1206,h:1507,c:'Mercedes-Benz CLA 200 AMG Line und VW Polo GTI'},
-  {f:'p06',w:1206,h:1507,c:'Bestand vor Ort: Mercedes-Benz und VW Polo GTI'}
+  {f:'p07',c:'Unser Eingang, Malteserstraße 24–36'},
+  {f:'p09',c:'Audi A6 und Maserati Ghibli auf unserem Hof'},
+  {f:'p03',c:'Mercedes-Benz CLA AMG Line'},
+  {f:'p02',c:'BMW 3er Touring und BMW X5'},
+  {f:'p01',c:'Mercedes-Benz CLA AMG Line in Grau metallic'},
+  {f:'p05',c:'Unser Platz in der Malteserstraße'},
+  {f:'p08',c:'BMW 3er Touring M Sport bei der Übergabe'},
+  {f:'p04',c:'Mercedes-Benz CLA 200 AMG Line und VW Polo GTI'},
+  {f:'p06',c:'Bestand vor Ort'}
 ];
 const gal=$('#gal'),lb=$('#lb'),lbImg=$('#lbImg'),lbCap=$('#lbCap'),lbNum=$('#lbNum');let lbI=0;
-gal.innerHTML=PHOTOS.map((p,i)=>`<button class="g" type="button" data-i="${i}" aria-label="Foto vergrößern: ${esc(p.c)}"><img src="img/fotos/${p.f}-640.jpg" srcset="img/fotos/${p.f}-640.jpg 640w, img/fotos/${p.f}.jpg 1206w" sizes="(max-width:900px) 50vw, 400px" width="${p.w}" height="${p.h}" alt="${esc(p.c)} – Autocenter Imperial Berlin" loading="lazy" decoding="async"><span>${esc(p.c)}</span></button>`).join('');
-function lbShow(i){lbI=(i+PHOTOS.length)%PHOTOS.length;const p=PHOTOS[lbI];lbImg.src=`img/fotos/${p.f}.jpg`;lbImg.alt=p.c+' – Autocenter Imperial Berlin';lbCap.textContent=p.c;lbNum.textContent=`${lbI+1} / ${PHOTOS.length}`;
-  const n=PHOTOS[(lbI+1)%PHOTOS.length];new Image().src=`img/fotos/${n.f}.jpg`;}
-gal.addEventListener('click',e=>{const b=e.target.closest('.g');if(!b)return;lbShow(+b.dataset.i);if(!lb.open)lb.showModal();});
+gal.innerHTML=[0,1,2,3,4].map(i=>{const p=PHOTOS[i];return `<button type="button" data-i="${i}" aria-label="Foto vergrößern: ${esc(p.c)}"><img src="img/fotos/${p.f}${i===0?'':'-640'}.jpg" alt="${esc(p.c)}" loading="lazy" decoding="async"></button>`;}).join('');
+function lbShow(i){lbI=(i+PHOTOS.length)%PHOTOS.length;const p=PHOTOS[lbI];lbImg.src=`img/fotos/${p.f}.jpg`;lbImg.alt=p.c;lbCap.textContent=p.c;lbNum.textContent=`${lbI+1} von ${PHOTOS.length}`;const n=PHOTOS[(lbI+1)%PHOTOS.length];new Image().src=`img/fotos/${n.f}.jpg`;}
+gal.addEventListener('click',e=>{const b=e.target.closest('[data-i]');if(!b)return;lbShow(+b.dataset.i);if(!lb.open)lb.showModal();});
 $('#lbClose').addEventListener('click',()=>lb.close());
 $('#lbPrev').addEventListener('click',()=>lbShow(lbI-1));
 $('#lbNext').addEventListener('click',()=>lbShow(lbI+1));
@@ -1188,11 +1148,14 @@ lb.addEventListener('click',e=>{if(e.target===lb)lb.close();});
 lb.addEventListener('keydown',e=>{if(e.key==='ArrowRight')lbShow(lbI+1);if(e.key==='ArrowLeft')lbShow(lbI-1);});
 let tx=null;lb.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
 lb.addEventListener('touchend',e=>{if(tx===null)return;const d=e.changedTouches[0].clientX-tx;tx=null;if(Math.abs(d)>50)lbShow(lbI+(d<0?1:-1));},{passive:true});
+
+/* ---------- Rechtliches ---------- */
 function showView(v){
   const legal=v==='impressum'||v==='datenschutz';
   $('#site').hidden=legal;
   document.querySelectorAll('.legal-view').forEach(s=>s.classList.toggle('show',s.id===v));
   if(legal)window.scrollTo({top:0});
+  onScroll();
 }
 document.addEventListener('click',e=>{
   const b=e.target.closest('[data-view]');
@@ -1201,13 +1164,21 @@ document.addEventListener('click',e=>{
 });
 $('#year').textContent=new Date().getFullYear();
 
+/* ---------- Bewegung: einmalig, beim Erscheinen ---------- */
+document.documentElement.classList.add('js');
+const still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const io=('IntersectionObserver' in window)?new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;el.classList.add('da');io.unobserve(el);if(el.dataset.ziel)zaehlen(el);}),{rootMargin:'0px 0px -12% 0px'}):null;
+function beobachten(){document.querySelectorAll('.auftauchen:not(.da),.fluegel:not(.da),[data-ziel]:not(.da)').forEach(el=>{if(!io||still){el.classList.add('da');return;}io.observe(el);});}
+function zaehlen(el){const ziel=parseFloat(el.dataset.ziel.replace(',','.')),komma=el.dataset.ziel.includes(','),t0=performance.now(),d=1400;const fmt=v=>komma?v.toFixed(1).replace('.',','):Math.round(v);if(still){el.textContent=fmt(ziel);return;}(function step(t){const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3);el.textContent=fmt(ziel*e);if(k<1)requestAnimationFrame(step);})(t0);}
+window.addEventListener('scroll',()=>{const h=document.documentElement;kopf.style.setProperty('--fort',(h.scrollTop/((h.scrollHeight-h.clientHeight)||1)).toFixed(4));},{passive:true});
+
 /* ---------- Start ---------- */
-buildFilters();render();renderHero();renderReviews();setMode();
-$('#finderStock').textContent=`${CARS.length} Fahrzeuge im Bestand`;
+buildFilters();render();renderReviews();setMode();
+[['.kennzahl .js-gscore',RATINGS.google.score],['.kennzahl .js-mscore',RATINGS.mobile.score],['#stockNum',String(CARS.length)]].forEach(([s,v])=>{const el=$(s);if(el){el.dataset.ziel=v;}});
+beobachten();
 const h=(location.hash||'').replace('#','');
 if(h==='impressum'||h==='datenschutz')showView(h);
 else if(h&&document.getElementById(h))setTimeout(()=>document.getElementById(h).scrollIntoView(),60);
 </script>
-
 </body>
 </html>
