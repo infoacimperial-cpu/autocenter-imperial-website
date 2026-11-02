@@ -629,7 +629,7 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
         <a class="boerse boerse-as24" href="https://www.autoscout24.de/haendler/autocenter-imperial-gmbh" target="_blank" rel="noopener"><span><small>Alle Fahrzeuge auf</small>AutoScout24</span><svg><use href="#i-ext"/></svg></a>
       </div>
     </div>
-    <div class="brands" aria-label="Marken im Bestand"><span>Mercedes-Benz</span><span>BMW</span><span>Audi</span><span>Volkswagen</span><span>Peugeot</span><span>Volvo</span><span>Maserati</span><span>Citroën</span><span>smart</span></div>
+    <div class="brands" aria-label="Marken im Bestand"><span>Mercedes-Benz</span><span>BMW</span><span>Audi</span><span>Volkswagen</span><span>Peugeot</span><span>Volvo</span><span>Maserati</span><span>Citroën</span><span>Nissan</span><span>smart</span></div>
 
     <div class="leiste-filter">
       <ul class="reiter" id="brandChips" aria-label="Marke"></ul>
@@ -877,8 +877,9 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
 /* ---------- Bestand (wird wöchentlich mit AutoScout24 abgeglichen) ---------- */
 const WA='491639553579', MAIL='info@autocenter-imperial.de';
 const AS='https://prod.pictures.autoscout24.net/listing-images/';
-const LAST_SYNC='01.11.2026'; // Datum des letzten Abgleichs mit AutoScout24 (wird wöchentlich aktualisiert)
+const LAST_SYNC='02.11.2026'; // Datum des letzten Abgleichs mit AutoScout24 (wird wöchentlich aktualisiert)
 const CARS=[
+ {id:'a28',as:'Nissan Qashqai|Tekna+/360°/Head-Up/Bose/Massage/Pano',brand:'Nissan',model:'Qashqai Tekna+ Mild-Hybrid',variant:'Tekna+ · Panoramadach · Bose Sound',price:26890,ez:'04/2026',km:9669,kw:116,ps:158,fuel:'Benzin',gear:'Automatik',body:'SUV',seats:5,owners:1,cons:'6,3 l/100 km',co2:'143 g/km',img:'a94d282f-010a-4a8b-a7b3-4cda7a8e09b7_db165966-c240-4bc0-aaf0-97b98eb98615',feat:['360°-Kamera','Head-up-Display','Bose Soundsystem','Massagesitze','Panoramadach'],added:'2026-11-02'},
  {id:'a27',as:'BMW 430|i Gran Coupe xDrive M Sport/S.Dach/360°/Spur',brand:'BMW',model:'430i Gran Coupé xDrive',variant:'M Sport · Schiebedach · 360°-Kamera',price:40490,ez:'03/2025',km:36180,kw:180,ps:245,fuel:'Benzin',gear:'Automatik',body:'Coupé',seats:5,owners:1,img:'f4463c34-4e08-44cb-b24d-7baf96f4e1de_93b91b13-7740-4279-98b6-503a4e7111cc',feat:['M Sport','xDrive Allrad','Schiebedach','360°-Kamera','Spurhalteassistent'],added:'2026-11-01'},
  {id:'a02',as:'Mercedes-Benz GLE 450|360°Kamera/Memory/Burmester/Head-Up/Spur',brand:'Mercedes-Benz',model:'GLE 450 4MATIC',variant:'360°-Kamera · Burmester · Head-up-Display',price:41890,oldPrice:44790,ez:'11/2020',km:87899,kw:270,ps:367,fuel:'Benzin',gear:'Automatik',body:'SUV',seats:5,owners:1,cons:'8,3 l/100 km',co2:'190 g/km',img:'d287e613-40ae-49a8-8eed-b6ee2d8a43c6_f2adbba4-a93e-4b56-8485-c87a1d0d72a5',feat:['360°-Kamera','Memory-Sitze','Burmester Soundsystem','Head-up-Display','Spurhalteassistent']},
  {id:'a03',as:'Mercedes-Benz GLC 220|d Coupé 4Matic AMG/Night/S.Dach/Multib.',brand:'Mercedes-Benz',model:'GLC 220 d Coupé 4MATIC',variant:'AMG Line · Night-Paket · Schiebedach',price:34990,ez:'11/2020',km:85162,kw:143,ps:194,fuel:'Diesel',gear:'Automatik',body:'SUV-Coupé',seats:5,owners:1,cons:'5,2 l/100 km',co2:'136 g/km',img:'1f259166-88b3-4abf-85a5-2d6ee6fd1d21_37af331f-148f-49f0-996f-ae7f088b39f2',feat:['AMG Line','4MATIC Allrad','Night-Paket','Schiebedach','MULTIBEAM LED']},
@@ -904,7 +905,7 @@ const CARS=[
  {id:'a25',as:'Volkswagen Polo|VI Comfortline/Navi/Klima/ACC/Apple-Carplay',brand:'Volkswagen',model:'Polo VI',variant:'Comfortline · Navigation · ACC',price:9990,ez:'07/2020',km:142188,kw:70,ps:95,fuel:'Benzin',gear:'Schaltgetriebe',body:'Kleinwagen',seats:5,owners:2,cons:'4,6 l/100 km',co2:'105 g/km',img:'54256699-0a95-44e7-b623-b3fa546bb877_d4056d71-54a3-4c79-a55b-f87dcc2fd522',feat:['Navigation','Klimaanlage','Adaptiver Tempomat (ACC)','Apple CarPlay']},
  {id:'a26',as:'smart forFour|forfour Basis 52 kW/Automatik/Klima',brand:'smart',model:'forfour',variant:'Basis 52 kW · Automatik · Klimaanlage',price:8290,oldPrice:9190,ez:'09/2018',km:112784,kw:52,ps:71,fuel:'Benzin',gear:'Automatik',body:'Kleinwagen',seats:4,owners:2,cons:'5,0 l/100 km',co2:'113 g/km',img:'29c96601-4133-42b2-a9d2-cffa19b08635_79321f04-85ef-4839-9577-2dd1275961c5',feat:['Automatik','Klimaanlage']}
 ];
-const BRAND_ORDER=['Mercedes-Benz','BMW','Audi','Volkswagen','Peugeot','Volvo','Maserati','Citroën','smart'];
+const BRAND_ORDER=['Mercedes-Benz','BMW','Audi','Volkswagen','Peugeot','Volvo','Maserati','Citroën','Nissan','smart'];
 const pic=(c,size)=>AS+c.img+'.jpg/'+(size||'420x315.jpg');
 CARS.forEach(c=>{c.photos=c.img?[pic(c)]:[];});
 
