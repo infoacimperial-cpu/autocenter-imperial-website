@@ -6,6 +6,7 @@
 <meta name="robots" content="index, follow">
 <link rel="icon" href="img/emblem-gold.svg" type="image/svg+xml"><link rel="alternate icon" href="img/logo-dark.png" type="image/png">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<script>(function(){try{var m=window.matchMedia('(prefers-reduced-motion: reduce)').matches,c=document.createElement('canvas'),g=c.getContext('webgl2')||c.getContext('webgl');if(!m&&g)document.documentElement.classList.add('drei');}catch(e){}})();</script>
 <title>Autocenter Imperial GmbH – Gebrauchtwagen in Berlin</title>
 <meta name="description" content="Autocenter Imperial GmbH – ausgewählte Gebrauchtwagen in Berlin. Mercedes-Benz, Audi, Maserati, Volvo und mehr. 5,0 Sterne auf Google und mobile.de. Ankauf auch ohne Neukauf.">
 <link rel="canonical" href="https://autocenter-imperial.de/">
@@ -502,6 +503,73 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
   .zitatband{background-attachment:scroll}
 }
 
+
+/* ============ 3D: Bühne, Rampenlicht, Tiefe ============ */
+.kino-3d{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:0;transition:opacity 1.2s ease}
+.kino-pfeil span{display:none}
+.drei .buehne{height:calc(100vh + 110vh);height:calc(100svh + 110vh)}
+.drei .kino{position:sticky;top:0}
+.drei .kino::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 70% 60% at 50% 38%,#191c1f 0,#0c0d0f 75%);opacity:calc(.9 - .9*var(--p,0));pointer-events:none}
+.drei .kino-bilder{transform:scale(calc(1.14 - .14*var(--p,0)));will-change:transform}
+.kino.d3 .kino-3d{opacity:1}
+.kino.d3 .logo-glanz{visibility:hidden;animation:none}
+.kino.d3 .logo-glanz::after{display:none}
+.drei .kino-inhalt{transform:translateY(calc(var(--q,0)*-17vh));will-change:transform}
+.drei .kino h1{transform:scale(calc(1 + .5*var(--q,0)));transform-origin:50% 0;animation:none;transition:opacity .6s .5s;text-shadow:0 2px 30px rgba(0,0,0,.55)}
+.drei .kino-aktion{transform:translateY(calc(var(--q,0)*3.2vh))}
+.drei .kino-pfeil{display:grid;justify-items:center;gap:6px;width:auto;height:auto;bottom:22px;text-decoration:none;opacity:calc(.9 - 3*var(--p,0))}
+.drei .kino-pfeil span{display:block;font-family:var(--breit);font-stretch:125%;font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;color:var(--messing-hell);padding-left:.34em}
+.drei .kino-pfeil svg{width:22px;height:22px;animation:wippen 2.2s ease-in-out infinite}
+@keyframes wippen{0%,100%{transform:rotate(90deg) translateX(0)}50%{transform:rotate(90deg) translateX(7px)}}
+@media (max-width:760px){.drei .kino h1{transform:scale(calc(1 + .1*var(--q,0)))}.marke-kachel b{font-size:clamp(.8rem,3.9vw,1.05rem);letter-spacing:.02em}.drei .buehne{height:calc(100svh + 90vh)}.drei .kino-pfeil{bottom:calc(var(--bar) + 14px)}}
+
+/* Rampenlicht: der Bestand als begehbare Reihe im Raum */
+.rampe{margin-top:70px;position:relative;user-select:none;-webkit-user-select:none}
+.rampe-k{text-align:center;font-family:var(--breit);font-stretch:125%;font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--messing-hell);padding-left:.34em}
+.rampe-k::after{content:"";display:block;width:1px;height:34px;margin:16px auto 0;background:linear-gradient(var(--messing),transparent)}
+.rampe-buehne{--kw:min(620px,74vw);position:relative;height:calc(var(--kw)*.75*1.34);margin:8px calc(50% - 50vw) 0;perspective:1500px;perspective-origin:50% 42%;overflow:hidden;touch-action:pan-y;cursor:grab}
+.rampe-buehne.zieht{cursor:grabbing}
+.rampe-buehne::before{content:"";position:absolute;left:50%;top:6%;width:min(1100px,120vw);height:70%;transform:translateX(-50%);background:radial-gradient(ellipse at 50% 40%,rgba(205,176,127,.16),rgba(205,176,127,0) 62%);pointer-events:none}
+.rampe-buehne::after{content:"";position:absolute;left:0;right:0;bottom:0;height:26%;background:linear-gradient(180deg,rgba(29,32,35,0),var(--nacht) 85%);pointer-events:none;z-index:300}
+.karte{position:absolute;left:50%;top:0;width:var(--kw);aspect-ratio:4/3;margin-left:calc(var(--kw)/-2);transform-style:preserve-3d;backface-visibility:hidden;will-change:transform;-webkit-box-reflect:below 4px linear-gradient(transparent 58%,rgba(0,0,0,.34));background:var(--nacht-2);box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.karte img{width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
+.karte::after{content:"";position:absolute;inset:0;background:#0e1012;opacity:var(--dunkel,0);pointer-events:none;box-shadow:inset 0 0 0 1px rgba(205,176,127,calc(.75 - var(--dunkel,0)*2))}
+.karte .marker{z-index:2}
+.rampe-text{display:grid;grid-template-columns:auto minmax(0,560px) auto;justify-content:center;align-items:center;gap:26px;margin-top:-4%;position:relative;z-index:5;text-align:center}
+.rampe-info{display:grid;justify-items:center;gap:6px;min-height:210px;align-content:start}
+.rampe-info h3{font-size:clamp(1.5rem,2.8vw,2.3rem)}
+.rampe-info p{font-family:var(--breit);font-stretch:112%;font-size:.86rem;color:#C9CBC8;letter-spacing:.02em}
+.rampe-preis{font-family:var(--breit);font-stretch:112%;font-size:clamp(1.5rem,2.2vw,2rem);font-variant-numeric:tabular-nums;margin:8px 0 12px}
+.rampe-preis s{font-size:.95rem;color:var(--grau);margin-left:12px}
+.rampe-info.wechsel>*{animation:rein .5s cubic-bezier(.2,.7,.2,1) both}
+.rampe-info.wechsel>*:nth-child(2){animation-delay:.04s}.rampe-info.wechsel>*:nth-child(3){animation-delay:.08s}.rampe-info.wechsel>*:nth-child(4){animation-delay:.12s}.rampe-info.wechsel>*:nth-child(5){animation-delay:.16s}
+@keyframes rein{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.rampe-pfeil{width:54px;height:54px;display:grid;place-items:center;background:transparent;border:1px solid var(--nacht-linie);color:var(--weiss);cursor:pointer;transition:border-color .2s,color .2s,transform .2s}
+.rampe-pfeil:hover{border-color:var(--messing);color:var(--messing-hell)}
+.rampe-pfeil svg{width:22px;height:22px}
+#rampeZur svg{transform:rotate(180deg)}
+.rampe-punkte{display:flex;justify-content:center;gap:8px;margin-top:26px}
+.rampe-punkte i{width:22px;height:2px;background:var(--nacht-linie);transition:background .3s,width .3s}
+.rampe-punkte i.an{background:var(--messing);width:40px}
+.rampe+.leiste-filter{margin-top:84px}
+@media (max-width:760px){
+  .rampe{margin-top:54px}
+  .rampe-buehne{--kw:72vw;perspective:900px}
+  .rampe-text{grid-template-columns:minmax(0,1fr);gap:0;margin-top:-2%}
+  .rampe-pfeil{display:none}
+  .rampe-info{min-height:200px}
+}
+@media (prefers-reduced-motion:reduce){.rampe-info.wechsel>*{animation:none}.drei .kino-pfeil svg{animation:none}}
+
+/* Markenkacheln kippen dem Zeiger entgegen */
+@media (hover:hover){
+  .marken-raster{perspective:1300px}
+  .marke-kachel{transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(var(--tz,0px));transition:transform .5s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;will-change:transform}
+  .marke-kachel.kippt{transition:transform .08s linear}
+  .marke-kachel .glanz{position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,236,196,.26),rgba(255,236,196,0) 42%);opacity:0;transition:opacity .3s}
+  .marke-kachel.kippt .glanz{opacity:1}
+  .marke-kachel b,.marke-kachel span:not(.glanz){transform:translateZ(26px)}
+}
 </style>
 </head>
 <body>
@@ -573,6 +641,7 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
 </div>
 
 <main id="site">
+<div class="buehne" id="buehne">
 <section class="kino" id="start">
   <div class="kino-bilder" aria-hidden="true">
     <img src="img/fotos/p09.jpg" alt="">
@@ -580,6 +649,7 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
     <img src="img/fotos/p03.jpg" alt="" loading="lazy">
     <img src="img/fotos/p06.jpg" alt="" loading="lazy">
   </div>
+  <canvas class="kino-3d" id="kino3d" aria-hidden="true"></canvas>
   <div class="kino-inhalt">
     <div class="logo-glanz"><img class="kino-logo" src="img/logo-weiss.svg" alt="Autocenter Imperial" width="440" height="207"></div>
     <p class="kino-adresse">Malteserstraße 24–36, Berlin</p>
@@ -589,8 +659,9 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
       <a class="btn btn-hell" href="#ankauf">Ihr Auto verkaufen</a>
     </div>
   </div>
-  <a class="kino-pfeil" href="#willkommen" aria-label="Weiter nach unten"><svg><use href="#i-arrow"/></svg></a>
+  <a class="kino-pfeil" href="#willkommen" aria-label="Weiter nach unten"><span>Tor öffnen</span><svg><use href="#i-arrow"/></svg></a>
 </section>
+</div>
 
 <section class="abschnitt einleitung" id="willkommen">
   <div class="wrap">
@@ -630,6 +701,23 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
       </div>
     </div>
     <div class="brands" aria-label="Marken im Bestand"><span>Mercedes-Benz</span><span>Audi</span><span>Volkswagen</span><span>Peugeot</span><span>Volvo</span><span>Maserati</span><span>Citroën</span><span>Nissan</span><span>Toyota</span><span>smart</span></div>
+
+    <div class="rampe" id="rampe" role="region" aria-roledescription="Karussell" aria-label="Fahrzeuge im Rampenlicht" hidden>
+      <p class="rampe-k">Im Rampenlicht</p>
+      <div class="rampe-buehne" id="rampeSpur"></div>
+      <div class="rampe-text">
+        <button class="rampe-pfeil" type="button" id="rampeZur" aria-label="Vorheriges Fahrzeug"><svg><use href="#i-arrow"/></svg></button>
+        <div class="rampe-info" aria-live="polite">
+          <span class="auto-marke" id="rMarke"></span>
+          <h3 id="rModell"></h3>
+          <p id="rDaten"></p>
+          <div class="rampe-preis" id="rPreis"></div>
+          <button class="btn btn-messing" type="button" id="rOeffnen">Fahrzeug ansehen</button>
+        </div>
+        <button class="rampe-pfeil" type="button" id="rampeVor" aria-label="Nächstes Fahrzeug"><svg><use href="#i-arrow"/></svg></button>
+      </div>
+      <div class="rampe-punkte" id="rampePunkte" aria-hidden="true"></div>
+    </div>
 
     <div class="leiste-filter">
       <ul class="reiter" id="brandChips" aria-label="Marke"></ul>
@@ -966,7 +1054,7 @@ function buildFilters(){
   const chips=$('#brandChips'),brands=brandList();
   chips.innerHTML=['',...brands].map(b=>`<li><button type="button" data-brand="${esc(b)}" aria-pressed="${b===''}">${b===''?'Alle':esc(b)}<span>${b===''?CARS.length:brandCount(b)}</span></button></li>`).join('');
   chips.addEventListener('click',e=>{const btn=e.target.closest('button');if(!btn)return;state.brand=btn.dataset.brand;syncChips();render();});
-  $('#brandTiles').innerHTML=brands.map(b=>{const n=brandCount(b);const bc=CARS.filter(c=>c.brand===b&&c.photos.length).sort((x,y)=>y.price-x.price)[0];return `<button class="marke-kachel" type="button" data-brandtile="${esc(b)}">${bc?`<img src="${esc(bc.photos[0])}" alt="" loading="lazy" data-hi="${esc(bc.img||'')}" onerror="this.remove()">`:''}<b>${esc(b)}</b><span>${n===1?'1 Fahrzeug':n+' Fahrzeuge'}</span></button>`;}).join('');
+  $('#brandTiles').innerHTML=brands.map(b=>{const n=brandCount(b);const bc=CARS.filter(c=>c.brand===b&&c.photos.length).sort((x,y)=>y.price-x.price)[0];return `<button class="marke-kachel" type="button" data-brandtile="${esc(b)}">${bc?`<img src="${esc(bc.photos[0])}" alt="" loading="lazy" data-hi="${esc(bc.img||'')}" onerror="this.remove()">`:''}<b>${esc(b)}</b><span>${n===1?'1 Fahrzeug':n+' Fahrzeuge'}</span><span class="glanz"></span></button>`;}).join('');
   document.querySelectorAll('#brandTiles img[data-hi]').forEach(img=>{const go=()=>upgrade(img,['720x540.webp']);if(img.complete)go();else img.addEventListener('load',go,{once:true});});
   $('#brandTiles').addEventListener('click',e=>{const t=e.target.closest('[data-brandtile]');if(!t)return;state.brand=t.dataset.brandtile;syncChips();render();document.getElementById('fahrzeuge').scrollIntoView({behavior:'smooth'});});
   fillSelect($('#fFuel'),CARS.map(fuelGroup));fillSelect($('#fGear'),CARS.map(c=>c.gear));fillSelect($('#fBody'),CARS.map(bodyGroup));
@@ -1026,11 +1114,11 @@ function carHtml(c,fokus){
     </div>
   </li>`;
 }
-let current=[];
+let current=[],rampeAn=false;
 function render(){
   current=filtered();
   const plain=!state.brand&&!state.q&&!state.fuel&&!state.gear&&!state.body&&!state.price&&state.sort==='rec';
-  const f=plain&&current.find(c=>c.id===FEATURED_ID&&c.img);
+  const f=!rampeAn&&plain&&current.find(c=>c.id===FEATURED_ID&&c.img);
   if(f){current=[f,...current.filter(c=>c!==f)];}
   $('#grid').innerHTML=current.length?current.map((c,i)=>carHtml(c,f&&i===0)).join(''):`<li class="leer">Kein Fahrzeug passt zu dieser Auswahl. Setzen Sie die Filter zurück oder <a href="#suchauftrag">geben Sie einen Suchauftrag auf</a>.</li>`;
   $('#resCount').textContent=current.length;
@@ -1117,7 +1205,8 @@ $('#filterBtn').addEventListener('click',e=>{const o=$('#filter').classList.togg
 
 /* ---------- Kopf und Menü ---------- */
 const kopf=$('#top'),menue=$('#menue'),menuBtn=$('#menuBtn');
-const onScroll=()=>kopf.classList.toggle('voll',window.scrollY>window.innerHeight*.6||$('#site').hidden);
+const DREI=document.documentElement.classList.contains('drei');
+const onScroll=()=>kopf.classList.toggle('voll',window.scrollY>window.innerHeight*(DREI?1.02:.6)||$('#site').hidden);
 window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 function menu(open){menue.classList.toggle('offen',open);menuBtn.setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':'';if(open)$('#menuClose').focus();else menuBtn.focus();}
 menuBtn.addEventListener('click',()=>menu(true));
@@ -1176,6 +1265,94 @@ window.addEventListener('scroll',()=>{const h=document.documentElement;kopf.styl
 buildFilters();render();renderReviews();setMode();
 [['.kennzahl .js-gscore',RATINGS.google.score],['.kennzahl .js-mscore',RATINGS.mobile.score],['#stockNum',String(CARS.length)]].forEach(([s,v])=>{const el=$(s);if(el){el.dataset.ziel=v;}});
 beobachten();
+
+/* ---------- 3D: Bühne ---------- */
+(function(){
+  if(!DREI)return;
+  const b=$('#buehne'),k=$('.kino'),cv=$('#kino3d');let P=0,Q=0;
+  const rechne=()=>{const r=b.getBoundingClientRect();P=Math.min(1,Math.max(0,-r.top/((r.height-window.innerHeight)||1)));k.style.setProperty('--p',P.toFixed(4));Q=Math.min(1,Math.max(0,(P-.4)/.6));Q=Q*Q*(3-2*Q);k.style.setProperty('--q',Q.toFixed(4));};
+  window.addEventListener('scroll',rechne,{passive:true});window.addEventListener('resize',rechne);rechne();
+  const los=()=>Promise.all([import('./js/buehne.js'),fetch('img/logo-weiss.svg').then(r=>{if(!r.ok)throw 0;return r.text();})])
+    .then(([m,svg])=>{m.start({canvas:cv,anker:$('.logo-glanz'),svgText:svg,progress:()=>P,versatz:()=>Q*.17*window.innerHeight,sparsam:window.matchMedia('(max-width:760px)').matches});k.classList.add('d3');})
+    .catch(()=>{});
+  if(document.readyState==='complete')setTimeout(los,60);else window.addEventListener('load',()=>setTimeout(los,60));
+})();
+
+/* ---------- 3D: Rampenlicht ---------- */
+(function(){
+  const wrap=$('#rampe'),spur=$('#rampeSpur');
+  const liste=CARS.filter(c=>c.photos.length).sort((a,b)=>((b.id===FEATURED_ID)-(a.id===FEATURED_ID))||(b.price-a.price)).slice(0,9);
+  if(liste.length<5||!('transform' in document.body.style))return;
+  const n=liste.length;
+  /* Reihenfolge so, dass Nachbarn sich abwechseln: Mitte zuerst, dann links und rechts */
+  spur.innerHTML=liste.map((c,i)=>{const m=marker(c);return `<div class="karte" data-i="${i}"><img src="${esc(c.photos[0])}" alt="${esc(title(c))}" draggable="false" data-hi="${esc(c.img||'')}" data-full="${c.foto?esc(c.foto+'.jpg'):''}">${m?`<span class="marker ${m[1]}">${m[0]}</span>`:''}</div>`;}).join('');
+  $('#rampePunkte').innerHTML=liste.map(()=>'<i></i>').join('');
+  const karten=[...spur.children],punkte=[...$('#rampePunkte').children];
+  karten.forEach(el=>{const img=el.firstChild;const go=()=>upgrade(img,['1280x960.webp','720x540.webp']);if(img.complete&&img.naturalWidth)go();else img.addEventListener('load',go,{once:true});img.addEventListener('error',()=>{el.style.display='none';},{once:true});});
+  wrap.hidden=false;rampeAn=true;render();
+  const mod=(a,m)=>((a%m)+m)%m;
+  let pos=0,ziel=0,zieht=false,x0=0,p0=0,weg=0,vx=0,xl=0,tl=0,ruhe=0,sicht=false,raf=0,akt=-1;
+  const info=$('.rampe-info');
+  function text(i){
+    if(i===akt)return;akt=i;const c=liste[i];
+    $('#rMarke').textContent=c.brand;$('#rModell').textContent=c.model;
+    $('#rDaten').textContent=`EZ ${c.ez} · ${num(c.km)} km · ${c.ps} PS · ${fuelGroup(c)}`;
+    $('#rPreis').innerHTML=eur(c.price)+(c.oldPrice?`<s>${eur(c.oldPrice)}</s>`:'');
+    punkte.forEach((p,j)=>p.classList.toggle('an',j===i));
+    info.classList.remove('wechsel');void info.offsetWidth;info.classList.add('wechsel');
+  }
+  function lege(){
+    const kw=karten[0].offsetWidth||600;
+    karten.forEach((el,i)=>{
+      let d=mod(i-pos+n/2,n)-n/2;const ad=Math.abs(d),sg=d<0?-1:1,nah=Math.min(ad,1),fern=Math.max(ad-1,0);
+      const x=sg*(nah*.64+fern*.3)*kw,z=-nah*380-fern*150,ry=-sg*nah*54;
+      el.style.transform=`translate3d(${x.toFixed(1)}px,0,${z.toFixed(1)}px) rotateY(${ry.toFixed(2)}deg)`;
+      el.style.setProperty('--dunkel',Math.min(.72,ad*.36).toFixed(3));
+      el.style.zIndex=200-Math.round(ad*20);
+      el.style.visibility=ad>3.4?'hidden':'visible';
+    });
+    text(mod(Math.round(pos),n));
+  }
+  function schritt(){
+    raf=0;
+    if(!zieht){const d=ziel-pos;pos+=d*.11;if(Math.abs(d)<.0008)pos=ziel;}
+    lege();
+    if(zieht||pos!==ziel)raf=requestAnimationFrame(schritt);
+  }
+  const an=()=>{if(!raf)raf=requestAnimationFrame(schritt);};
+  const gehe=d=>{ziel=Math.round(ziel)+d;ruhe=performance.now()+9000;an();};
+  $('#rampeVor').addEventListener('click',()=>gehe(1));$('#rampeZur').addEventListener('click',()=>gehe(-1));
+  $('#rOeffnen').addEventListener('click',()=>openCar(liste[mod(Math.round(ziel),n)].id));
+  wrap.tabIndex=0;wrap.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){gehe(1);e.preventDefault();}if(e.key==='ArrowLeft'){gehe(-1);e.preventDefault();}});
+  spur.addEventListener('pointerdown',e=>{if(e.button)return;zieht=true;weg=0;x0=xl=e.clientX;p0=pos;vx=0;tl=e.timeStamp;spur.classList.add('zieht');an();});
+  window.addEventListener('pointermove',e=>{if(!zieht)return;const dx=e.clientX-x0;weg=Math.max(weg,Math.abs(dx));const kw=karten[0].offsetWidth||600;pos=p0-dx/(kw*.64);const dt=e.timeStamp-tl;if(dt>0){vx=(e.clientX-xl)/dt;xl=e.clientX;tl=e.timeStamp;}},{passive:true});
+  const ende=e=>{
+    if(!zieht)return;zieht=false;spur.classList.remove('zieht');ruhe=performance.now()+9000;
+    if(weg<7){const el=document.elementFromPoint(e.clientX,e.clientY),ka=el&&el.closest('.karte');
+      if(ka){const i=+ka.dataset.i,mitte=mod(Math.round(pos),n);if(i===mitte)openCar(liste[i].id);else{let d=mod(i-mitte+n/2,n)-n/2;ziel=Math.round(pos)+d;}}
+      else ziel=Math.round(pos);}
+    else{const kw=karten[0].offsetWidth||600;ziel=Math.round(pos-vx*220/(kw*.64));}
+    an();
+  };
+  window.addEventListener('pointerup',ende);window.addEventListener('pointercancel',ende);
+  spur.addEventListener('dragstart',e=>e.preventDefault());
+  if('IntersectionObserver' in window)new IntersectionObserver(es=>{sicht=es[0].isIntersecting;},{threshold:.35}).observe(spur);
+  wrap.addEventListener('pointerenter',()=>{ruhe=performance.now()+1e9;});wrap.addEventListener('pointerleave',()=>{ruhe=performance.now()+2500;});
+  if(!still)setInterval(()=>{if(sicht&&!zieht&&!document.hidden&&performance.now()>ruhe&&!dlg.open){ziel=Math.round(ziel)+1;an();}},4600);
+  window.addEventListener('resize',lege);
+  lege();
+})();
+
+/* ---------- 3D: Markenkacheln kippen ---------- */
+(function(){
+  if(still||!window.matchMedia('(hover:hover)').matches)return;
+  const r=$('#brandTiles');let akt=null;
+  r.addEventListener('pointermove',e=>{const t=e.target.closest('.marke-kachel');if(akt&&akt!==t)los();if(!t)return;akt=t;const b=t.getBoundingClientRect(),x=(e.clientX-b.left)/b.width,y=(e.clientY-b.top)/b.height;
+    t.classList.add('kippt');t.style.setProperty('--ry',((x-.5)*14).toFixed(2)+'deg');t.style.setProperty('--rx',((.5-y)*12).toFixed(2)+'deg');t.style.setProperty('--tz','14px');t.style.setProperty('--gx',(x*100).toFixed(1)+'%');t.style.setProperty('--gy',(y*100).toFixed(1)+'%');},{passive:true});
+  function los(){if(!akt)return;akt.classList.remove('kippt');['--rx','--ry','--tz'].forEach(p=>akt.style.removeProperty(p));akt=null;}
+  r.addEventListener('pointerleave',los);
+})();
+
 const h=(location.hash||'').replace('#','');
 if(h==='impressum'||h==='datenschutz')showView(h);
 else if(h&&document.getElementById(h))setTimeout(()=>document.getElementById(h).scrollIntoView(),60);
