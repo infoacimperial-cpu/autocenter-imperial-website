@@ -621,6 +621,21 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
 .wa-quadrat{box-shadow:0 1px 0 var(--seite),0 2px 0 var(--seite),0 3px 0 var(--seite),0 4px 0 var(--seite2),0 10px 12px -6px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.5);margin-bottom:4px}
 .leiste a.wa{box-shadow:0 1px 0 var(--seite),0 2px 0 var(--seite),0 3px 0 var(--seite2),inset 0 1px 0 rgba(255,255,255,.5);margin-bottom:3px;border:0}
 @media (prefers-reduced-motion:reduce){.boerse{animation:none}.boerse::after,.btn-wa::after,.wa-quadrat::after,.leiste a.wa::after{animation:none}}
+
+/* Grössere Fahrzeugfotos in der Liste */
+.auto.zeile{grid-template-columns:minmax(0,440px) minmax(0,1fr) 230px}
+@media (max-width:1060px){.auto.zeile{grid-template-columns:minmax(0,340px) minmax(0,1fr) 190px}}
+@media (max-width:760px){
+  .auto.zeile{grid-template-columns:minmax(0,1fr);gap:14px;padding:0 0 18px}
+  .zeile .auto-bild{grid-row:auto;aspect-ratio:4/3;box-shadow:none}
+  .zeile-mitte{grid-row:auto;padding:2px 16px 0}
+  .zeile .auto-modell{font-size:1.35rem}
+  .zeile .auto-variante{display:block;font-size:.95rem}
+  .eck-kurz{font-size:.88rem}
+  .zeile-preis{grid-column:1;grid-row:auto;display:flex;align-items:center;justify-content:space-between;padding:4px 16px 0;gap:12px}
+  .preis-gross{font-size:1.7rem}
+  .zeile .marker{font-size:.74rem;padding:6px 12px;top:14px}
+}
 </style>
 </head>
 <body>
