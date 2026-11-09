@@ -572,8 +572,8 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
 }
 
 /* ============ 3D, Teil 2: Fahrzeugliste als Schaukästen, Tasten mit Tiefe ============ */
-.raster{counter-reset:z;gap:18px}
-.auto.zeile{counter-increment:z;position:relative;overflow:hidden;padding:22px 28px 22px 22px;border:1px solid rgba(255,255,255,.07);border-radius:2px;
+.raster{gap:18px}
+.auto.zeile{position:relative;overflow:hidden;padding:22px 28px 22px 22px;border:1px solid rgba(255,255,255,.07);border-radius:2px;
   background:radial-gradient(560px circle at var(--mx,-400px) var(--my,-400px),rgba(205,176,127,.13),rgba(205,176,127,0) 62%),linear-gradient(135deg,#2B2F34 0,#23272B 55%,#1F2226 100%);
   box-shadow:0 34px 50px -42px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.06);
   transform:perspective(1300px) rotateX(calc(var(--d,0)*-9deg)) scale(calc(1 - var(--a,0)*.05));opacity:calc(1.32 - var(--a,0)*.5);
@@ -581,11 +581,9 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
 .auto.zeile:first-child{border-top:1px solid rgba(255,255,255,.07)}
 .auto.zeile:hover{background:radial-gradient(560px circle at var(--mx,-400px) var(--my,-400px),rgba(205,176,127,.13),rgba(205,176,127,0) 62%),linear-gradient(135deg,#2B2F34 0,#23272B 55%,#1F2226 100%)}
 .auto.zeile>*{position:relative;z-index:1}
-.auto.zeile::before{content:counter(z,decimal-leading-zero);position:absolute;right:262px;bottom:-.2em;z-index:0;font-family:var(--breit);font-stretch:125%;font-weight:200;font-size:clamp(5.5rem,10vw,8.5rem);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(205,176,127,.14);pointer-events:none;transition:-webkit-text-stroke-color .5s}
 .auto.zeile::after{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;z-index:2;background:linear-gradient(180deg,var(--messing-hell),var(--messing));transform:scaleY(0);transform-origin:50% 0;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
 .auto.zeile.mitte,.auto.zeile:hover{border-color:rgba(205,176,127,.38);box-shadow:0 44px 60px -40px rgba(0,0,0,1),0 0 0 1px rgba(205,176,127,.06),inset 0 1px 0 rgba(255,255,255,.09)}
 .auto.zeile.mitte::after,.auto.zeile:hover::after{transform:scaleY(1)}
-.auto.zeile.mitte::before,.auto.zeile:hover::before{-webkit-text-stroke-color:rgba(205,176,127,.34)}
 .auto.zeile .preis-gross{transition:color .5s}
 .auto.zeile.mitte .preis-gross,.auto.zeile:hover .preis-gross{color:#F1DFBB}
 .auto.zeile.mitte .zeile-aktion .btn{border-color:var(--messing);color:var(--messing-hell)}
@@ -595,11 +593,9 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
 .zeile .auto-bild img,.auto.zeile:hover .auto-bild img{transform:scale(1.15) translateY(calc(var(--d,0)*-5%))}
 .zeile .auto-bild::before{content:"";position:absolute;inset:-20% -70%;z-index:1;pointer-events:none;background:linear-gradient(102deg,rgba(255,240,210,0) 43%,rgba(255,240,210,.2) 50%,rgba(255,240,210,0) 57%);transform:translateX(calc(var(--d,0)*-62%));mix-blend-mode:screen}
 .zeile .marker{z-index:2}
-@media (max-width:1060px){.auto.zeile::before{right:210px}}
 @media (max-width:760px){
   .raster{gap:14px}
   .auto.zeile{padding:14px 14px 16px;transform:perspective(900px) rotateX(calc(var(--d,0)*-11deg)) scale(calc(1 - var(--a,0)*.06))}
-  .auto.zeile::before{right:auto;left:12px;bottom:-.14em;font-size:4.6rem}
 }
 @media (prefers-reduced-motion:reduce){.auto.zeile{transform:none;opacity:1}.zeile .auto-bild img{transform:none}.zeile .auto-bild::before{display:none}}
 
