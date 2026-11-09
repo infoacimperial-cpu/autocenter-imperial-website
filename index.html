@@ -570,6 +570,61 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
   .marke-kachel.kippt .glanz{opacity:1}
   .marke-kachel b,.marke-kachel span:not(.glanz){transform:translateZ(26px)}
 }
+
+/* ============ 3D, Teil 2: Fahrzeugliste als Schaukästen, Tasten mit Tiefe ============ */
+.raster{counter-reset:z;gap:18px}
+.auto.zeile{counter-increment:z;position:relative;overflow:hidden;padding:22px 28px 22px 22px;border:1px solid rgba(255,255,255,.07);border-radius:2px;
+  background:radial-gradient(560px circle at var(--mx,-400px) var(--my,-400px),rgba(205,176,127,.13),rgba(205,176,127,0) 62%),linear-gradient(135deg,#2B2F34 0,#23272B 55%,#1F2226 100%);
+  box-shadow:0 34px 50px -42px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.06);
+  transform:perspective(1300px) rotateX(calc(var(--d,0)*-9deg)) scale(calc(1 - var(--a,0)*.05));opacity:calc(1.32 - var(--a,0)*.5);
+  transition:border-color .5s,box-shadow .5s}
+.auto.zeile:first-child{border-top:1px solid rgba(255,255,255,.07)}
+.auto.zeile:hover{background:radial-gradient(560px circle at var(--mx,-400px) var(--my,-400px),rgba(205,176,127,.13),rgba(205,176,127,0) 62%),linear-gradient(135deg,#2B2F34 0,#23272B 55%,#1F2226 100%)}
+.auto.zeile>*{position:relative;z-index:1}
+.auto.zeile::before{content:counter(z,decimal-leading-zero);position:absolute;right:262px;bottom:-.2em;z-index:0;font-family:var(--breit);font-stretch:125%;font-weight:200;font-size:clamp(5.5rem,10vw,8.5rem);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(205,176,127,.14);pointer-events:none;transition:-webkit-text-stroke-color .5s}
+.auto.zeile::after{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;z-index:2;background:linear-gradient(180deg,var(--messing-hell),var(--messing));transform:scaleY(0);transform-origin:50% 0;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.auto.zeile.mitte,.auto.zeile:hover{border-color:rgba(205,176,127,.38);box-shadow:0 44px 60px -40px rgba(0,0,0,1),0 0 0 1px rgba(205,176,127,.06),inset 0 1px 0 rgba(255,255,255,.09)}
+.auto.zeile.mitte::after,.auto.zeile:hover::after{transform:scaleY(1)}
+.auto.zeile.mitte::before,.auto.zeile:hover::before{-webkit-text-stroke-color:rgba(205,176,127,.34)}
+.auto.zeile .preis-gross{transition:color .5s}
+.auto.zeile.mitte .preis-gross,.auto.zeile:hover .preis-gross{color:#F1DFBB}
+.auto.zeile.mitte .zeile-aktion .btn{border-color:var(--messing);color:var(--messing-hell)}
+/* Foto: liegt tiefer im Rahmen, Licht zieht beim Scrollen darüber */
+.zeile .auto-bild{transform:perspective(900px) rotateY(var(--ty,0deg)) rotateX(var(--tx,0deg));transition:transform .5s cubic-bezier(.2,.7,.2,1);box-shadow:0 22px 30px -22px rgba(0,0,0,.9)}
+.zeile.zeigt .auto-bild{transition:transform .08s linear}
+.zeile .auto-bild img,.auto.zeile:hover .auto-bild img{transform:scale(1.15) translateY(calc(var(--d,0)*-5%))}
+.zeile .auto-bild::before{content:"";position:absolute;inset:-20% -70%;z-index:1;pointer-events:none;background:linear-gradient(102deg,rgba(255,240,210,0) 43%,rgba(255,240,210,.2) 50%,rgba(255,240,210,0) 57%);transform:translateX(calc(var(--d,0)*-62%));mix-blend-mode:screen}
+.zeile .marker{z-index:2}
+@media (max-width:1060px){.auto.zeile::before{right:210px}}
+@media (max-width:760px){
+  .raster{gap:14px}
+  .auto.zeile{padding:14px 14px 16px;transform:perspective(900px) rotateX(calc(var(--d,0)*-11deg)) scale(calc(1 - var(--a,0)*.06))}
+  .auto.zeile::before{right:auto;left:12px;bottom:-.14em;font-size:4.6rem}
+}
+@media (prefers-reduced-motion:reduce){.auto.zeile{transform:none;opacity:1}.zeile .auto-bild img{transform:none}.zeile .auto-bild::before{display:none}}
+
+/* Tasten mit echter Tiefe: mobile.de, AutoScout24, WhatsApp */
+.boerse,.btn-wa,.wa-quadrat,.leiste a.wa{position:relative;overflow:hidden;border:0;border-radius:5px;translate:0 0;
+  box-shadow:0 1px 0 var(--seite),0 2px 0 var(--seite),0 3px 0 var(--seite),0 4px 0 var(--seite),0 5px 0 var(--seite),0 6px 0 var(--seite2),0 16px 18px -8px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.5),inset 0 -2px 0 rgba(0,0,0,.14);
+  transition:translate .12s ease-out,box-shadow .12s ease-out,filter .2s;margin-bottom:6px;-webkit-tap-highlight-color:transparent}
+.boerse:hover,.btn-wa:hover,.wa-quadrat:hover{filter:brightness(1.05);translate:0 -2px;
+  box-shadow:0 1px 0 var(--seite),0 2px 0 var(--seite),0 3px 0 var(--seite),0 4px 0 var(--seite),0 5px 0 var(--seite),0 6px 0 var(--seite),0 7px 0 var(--seite),0 8px 0 var(--seite2),0 22px 22px -8px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 0 rgba(0,0,0,.14)}
+.boerse:active,.btn-wa:active,.wa-quadrat:active,.leiste a.wa:active{translate:0 5px;filter:brightness(.96);
+  box-shadow:0 1px 0 var(--seite2),0 4px 6px -3px rgba(0,0,0,.7),inset 0 2px 3px rgba(0,0,0,.22)}
+.boerse::after,.btn-wa::after,.wa-quadrat::after,.leiste a.wa::after{content:"";position:absolute;top:-20%;bottom:-20%;left:-60%;width:38%;pointer-events:none;background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.5),rgba(255,255,255,0));transform:skewX(-18deg);animation:streif 6s ease-in-out infinite}
+.boerse-as24::after{animation-delay:.9s}.wa-quadrat::after{animation-duration:7.5s}
+@keyframes streif{0%,62%{left:-60%}88%,100%{left:130%}}
+.boerse-mobile{background:linear-gradient(180deg,#FF9A48 0,#F47920 52%,#E26B13 100%);--seite:#B4520D;--seite2:#863B07;text-shadow:0 1px 0 rgba(120,50,0,.45)}
+.boerse-as24{background:linear-gradient(180deg,#FFE05A 0,#FFC800 52%,#EFB900 100%);--seite:#B88E00;--seite2:#8A6A00;text-shadow:0 1px 0 rgba(255,255,255,.35)}
+.btn-wa,.wa-quadrat,.leiste a.wa{background:linear-gradient(180deg,#2DAE6C 0,#1E8A52 52%,#197747 100%);--seite:#115C35;--seite2:#0B4025;text-shadow:0 1px 0 rgba(0,50,25,.5)}
+.boersen{perspective:900px;gap:20px;padding-bottom:6px}
+.boerse{min-height:62px;padding:12px 26px;animation:wiegen 7s ease-in-out infinite}
+.boerse-as24{animation-delay:-3.5s}
+.boerse:hover{animation-play-state:paused}
+@keyframes wiegen{0%,100%{rotate:y -9deg}50%{rotate:y 9deg}}
+.wa-quadrat{box-shadow:0 1px 0 var(--seite),0 2px 0 var(--seite),0 3px 0 var(--seite),0 4px 0 var(--seite2),0 10px 12px -6px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.5);margin-bottom:4px}
+.leiste a.wa{box-shadow:0 1px 0 var(--seite),0 2px 0 var(--seite),0 3px 0 var(--seite2),inset 0 1px 0 rgba(255,255,255,.5);margin-bottom:3px;border:0}
+@media (prefers-reduced-motion:reduce){.boerse{animation:none}.boerse::after,.btn-wa::after,.wa-quadrat::after,.leiste a.wa::after{animation:none}}
 </style>
 </head>
 <body>
@@ -1351,6 +1406,34 @@ beobachten();
     t.classList.add('kippt');t.style.setProperty('--ry',((x-.5)*14).toFixed(2)+'deg');t.style.setProperty('--rx',((.5-y)*12).toFixed(2)+'deg');t.style.setProperty('--tz','14px');t.style.setProperty('--gx',(x*100).toFixed(1)+'%');t.style.setProperty('--gy',(y*100).toFixed(1)+'%');},{passive:true});
   function los(){if(!akt)return;akt.classList.remove('kippt');['--rx','--ry','--tz'].forEach(p=>akt.style.removeProperty(p));akt=null;}
   r.addEventListener('pointerleave',los);
+})();
+
+/* ---------- 3D: Fahrzeugliste rollt durchs Licht ---------- */
+(function(){
+  if(still)return;
+  const grid=$('#grid');let tick=0,mitte=null;
+  function lauf(){
+    tick=0;const H=window.innerHeight;let best=null,bd=9;
+    for(const el of grid.children){
+      if(!el.classList.contains('zeile'))continue;
+      const r=el.getBoundingClientRect();if(r.bottom<-260||r.top>H+260)continue;
+      const d=Math.max(-1.25,Math.min(1.25,((r.top+r.height/2)-H/2)/(H/2))),a=Math.abs(d);
+      el.style.setProperty('--d',d.toFixed(3));el.style.setProperty('--a',a.toFixed(3));
+      if(a<bd){bd=a;best=el;}
+    }
+    if(bd>.5)best=null;
+    if(best!==mitte){if(mitte)mitte.classList.remove('mitte');if(best)best.classList.add('mitte');mitte=best;}
+  }
+  const plan=()=>{if(!tick)tick=requestAnimationFrame(lauf);};
+  window.addEventListener('scroll',plan,{passive:true});window.addEventListener('resize',plan);
+  new MutationObserver(()=>{mitte=null;plan();}).observe(grid,{childList:true});plan();
+  if(window.matchMedia('(hover:hover)').matches){
+    let akt=null;const los=()=>{if(!akt)return;akt.classList.remove('zeigt');['--tx','--ty'].forEach(p=>akt.style.removeProperty(p));akt.style.setProperty('--mx','-400px');akt=null;};
+    grid.addEventListener('pointermove',e=>{const z=e.target.closest('.zeile');if(akt&&akt!==z)los();if(!z)return;akt=z;const b=z.getBoundingClientRect();
+      z.style.setProperty('--mx',(e.clientX-b.left).toFixed(0)+'px');z.style.setProperty('--my',(e.clientY-b.top).toFixed(0)+'px');
+      const x=(e.clientX-b.left)/b.width-.5,y=(e.clientY-b.top)/b.height-.5;z.classList.add('zeigt');z.style.setProperty('--ty',(x*9).toFixed(2)+'deg');z.style.setProperty('--tx',(-y*7).toFixed(2)+'deg');},{passive:true});
+    grid.addEventListener('pointerleave',los);
+  }
 })();
 
 const h=(location.hash||'').replace('#','');
