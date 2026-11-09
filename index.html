@@ -629,7 +629,7 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
         <a class="boerse boerse-as24" href="https://www.autoscout24.de/haendler/autocenter-imperial-gmbh" target="_blank" rel="noopener"><span><small>Alle Fahrzeuge auf</small>AutoScout24</span><svg><use href="#i-ext"/></svg></a>
       </div>
     </div>
-    <div class="brands" aria-label="Marken im Bestand"><span>Mercedes-Benz</span><span>Audi</span><span>Volkswagen</span><span>Peugeot</span><span>Volvo</span><span>Maserati</span><span>Citroën</span><span>Nissan</span><span>smart</span></div>
+    <div class="brands" aria-label="Marken im Bestand"><span>Mercedes-Benz</span><span>Audi</span><span>Volkswagen</span><span>Peugeot</span><span>Volvo</span><span>Maserati</span><span>Citroën</span><span>Nissan</span><span>Toyota</span><span>smart</span></div>
 
     <div class="leiste-filter">
       <ul class="reiter" id="brandChips" aria-label="Marke"></ul>
@@ -879,6 +879,8 @@ const WA='491639553579', MAIL='info@autocenter-imperial.de';
 const AS='https://prod.pictures.autoscout24.net/listing-images/';
 const LAST_SYNC='09.11.2026'; // Datum des letzten Abgleichs mit AutoScout24 (wird wöchentlich aktualisiert)
 const CARS=[
+ {id:'a33',as:'Toyota RAV4|4x2 Teamplayer/360°/Spur',brand:'Toyota',model:'RAV4 2.5 Hybrid',variant:'Teamplayer · 360°-Kamera · Teilleder',price:34990,ez:'06/2025',km:29182,kw:131,ps:178,fuel:'Hybrid (Benzin/Elektro)',gear:'Automatik',body:'SUV',seats:5,owners:1,mob:'55326696467552',foto:'img/bestand/toyota-rav4-teamplayer-weiss',feat:['360°-Kamera','Toyota Safety Sense','Abstandstempomat','Lenkradheizung','Sitzheizung','Induktives Laden','Digitaler Innenspiegel'],added:'2026-11-09'},
+ {id:'a34',as:'Nissan Qashqai|Tekna+ 360°/Head-Up/Bose/Massage/Pano',brand:'Nissan',model:'Qashqai Tekna+ Mild-Hybrid',variant:'Tekna+ · Vollleder · Bose Sound',price:27490,ez:'05/2026',km:9308,kw:116,ps:158,fuel:'Benzin',gear:'Automatik',body:'SUV',seats:5,owners:1,cons:'6,3 l/100 km',co2:'143 g/km',mob:'55329036963232',foto:'img/bestand/nissan-qashqai-tekna-plus-grau',feat:['360°-Kamera','Head-up-Display','Bose Soundsystem','Massagesitze','Panoramadach','Vollleder'],added:'2026-11-09'},
  {id:'a29',as:'Nissan Qashqai|Tekna+ 360°/Head-Up/Bose/Massage/Pano',brand:'Nissan',model:'Qashqai Tekna+ Mild-Hybrid',variant:'Tekna+ · Panoramadach · Bose Sound',price:26990,ez:'04/2026',km:13013,kw:116,ps:158,fuel:'Benzin',gear:'Automatik',body:'SUV',seats:5,owners:1,cons:'6,3 l/100 km',co2:'143 g/km',img:'35f819ba-1122-43e2-aa31-93f4fd76f186_8c593b8c-1340-4267-b634-22b92c211177',feat:['360°-Kamera','Head-up-Display','Bose Soundsystem','Massagesitze','Panoramadach'],added:'2026-11-09'},
  {id:'a30',as:'Mercedes-Benz C 200|AMG/AHK/SHZ/Ambiente/8x-Bereift',brand:'Mercedes-Benz',model:'C 200 T-Modell',variant:'AMG Line · Anhängerkupplung · 8-fach bereift',price:15990,ez:'03/2018',km:128315,kw:135,ps:184,fuel:'Benzin',gear:'Automatik',body:'Kombi',seats:5,owners:1,cons:'5,5 l/100 km',img:'64d2c7d1-2864-477a-951a-390005e481dd_98a23456-fc10-46a7-83f4-9c2b4116151c',feat:['AMG Line','Anhängerkupplung','Ambientebeleuchtung','Sitzheizung','Abstandstempomat','LED-Scheinwerfer','Navigationssystem'],added:'2026-11-09'},
  {id:'a31',as:'Mercedes-Benz E 200|d/R.Kamera/SHZ/Klima/Taxi-Paket',brand:'Mercedes-Benz',model:'E 200 d',variant:'Taxi-Paket · Rückfahrkamera · Leder',price:11990,ez:'01/2021',km:389500,kw:118,ps:160,fuel:'Diesel',gear:'Automatik',body:'Limousine',seats:5,owners:5,cons:'4,5 l/100 km',co2:'118 g/km',img:'6110cb2e-681e-4c2f-9671-afdc8ba4d61e_caf647b4-a3ef-45b2-abb1-31bc20dec31a',feat:['Taxi-Paket','Rückfahrkamera','Lederausstattung','Sitzheizung','Navigationssystem','LED-Scheinwerfer'],added:'2026-11-09'},
@@ -902,9 +904,9 @@ const CARS=[
  {id:'a25',as:'Volkswagen Polo|VI Comfortline/Navi/Klima/ACC/Apple-Carplay',brand:'Volkswagen',model:'Polo VI',variant:'Comfortline · Navigation · ACC',price:9290,oldPrice:9990,ez:'07/2020',km:142188,kw:70,ps:95,fuel:'Benzin',gear:'Schaltgetriebe',body:'Kleinwagen',seats:5,owners:2,cons:'4,6 l/100 km',co2:'105 g/km',img:'54256699-0a95-44e7-b623-b3fa546bb877_d4056d71-54a3-4c79-a55b-f87dcc2fd522',feat:['Navigation','Klimaanlage','Adaptiver Tempomat (ACC)','Apple CarPlay']},
  {id:'a26',as:'smart forFour|forfour Basis 52 kW/Automatik/Klima',brand:'smart',model:'forfour',variant:'Basis 52 kW · Automatik · Klimaanlage',price:7990,oldPrice:9190,ez:'09/2018',km:112784,kw:52,ps:71,fuel:'Benzin',gear:'Automatik',body:'Kleinwagen',seats:4,owners:2,cons:'5,0 l/100 km',co2:'113 g/km',img:'29c96601-4133-42b2-a9d2-cffa19b08635_79321f04-85ef-4839-9577-2dd1275961c5',feat:['Automatik','Klimaanlage']}
 ];
-const BRAND_ORDER=['Mercedes-Benz','Audi','Volkswagen','Peugeot','Volvo','Maserati','Citroën','Nissan','smart'];
+const BRAND_ORDER=['Mercedes-Benz','Audi','Volkswagen','Peugeot','Volvo','Maserati','Citroën','Nissan','Toyota','smart'];
 const pic=(c,size)=>AS+c.img+'.jpg/'+(size||'420x315.jpg');
-CARS.forEach(c=>{c.photos=c.img?[pic(c)]:[];});
+CARS.forEach(c=>{c.photos=c.foto?[c.foto+'-640.jpg']:c.img?[pic(c)]:[];});
 
 /* ---------- Bewertungen ---------- */
 const RATINGS={
@@ -934,6 +936,7 @@ const waLink=txt=>`https://wa.me/${WA}?text=${encodeURIComponent(txt)}`;
 const mailLink=(subj,body)=>`mailto:${MAIL}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
 const AS_DEALER='https://www.autoscout24.de/haendler/autocenter-imperial-gmbh';
 const asLink=c=>{
+  if(!c.img&&c.mob)return `https://suchen.mobile.de/fahrzeuge/details.html?id=${c.mob}`;
   if(c.img){const slug=(c.brand+'-'+c.model).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');return `https://www.autoscout24.de/angebote/${slug}-${c.img.split('_')[0]}`;}
   return `${AS_DEALER}?pricefrom=${c.price-10}&priceto=${c.price+10}`;
 };
@@ -944,6 +947,7 @@ const varText=c=>c.variant.replace(/ · /g,', ');
 function fallbackEl(big){const d=document.createElement('div');d.className='ersatz';d.innerHTML=`<img src="img/logo-weiss.svg" alt=""><span>${big?'Fotos auf AutoScout24':'Foto folgt'}</span>`;return d;}
 function imgFail(el,big){el.replaceWith(fallbackEl(big));}
 function upgrade(img,sizes){
+  if(img&&img.dataset.full){if(sizes.length>1)img.src=img.dataset.full;return;}
   if(!img||!img.dataset.hi)return;
   const tryNext=i=>{if(i>=sizes.length)return;const t=new Image();t.onload=()=>{if(t.naturalWidth>img.naturalWidth)img.src=t.src;};t.onerror=()=>tryNext(i+1);t.src=AS+img.dataset.hi+'.jpg/'+sizes[i];};
   tryNext(0);
@@ -962,7 +966,7 @@ function buildFilters(){
   const chips=$('#brandChips'),brands=brandList();
   chips.innerHTML=['',...brands].map(b=>`<li><button type="button" data-brand="${esc(b)}" aria-pressed="${b===''}">${b===''?'Alle':esc(b)}<span>${b===''?CARS.length:brandCount(b)}</span></button></li>`).join('');
   chips.addEventListener('click',e=>{const btn=e.target.closest('button');if(!btn)return;state.brand=btn.dataset.brand;syncChips();render();});
-  $('#brandTiles').innerHTML=brands.map(b=>{const n=brandCount(b);const bc=CARS.filter(c=>c.brand===b&&c.img).sort((x,y)=>y.price-x.price)[0];return `<button class="marke-kachel" type="button" data-brandtile="${esc(b)}">${bc?`<img src="${esc(bc.photos[0])}" alt="" loading="lazy" data-hi="${esc(bc.img)}" onerror="this.remove()">`:''}<b>${esc(b)}</b><span>${n===1?'1 Fahrzeug':n+' Fahrzeuge'}</span></button>`;}).join('');
+  $('#brandTiles').innerHTML=brands.map(b=>{const n=brandCount(b);const bc=CARS.filter(c=>c.brand===b&&c.photos.length).sort((x,y)=>y.price-x.price)[0];return `<button class="marke-kachel" type="button" data-brandtile="${esc(b)}">${bc?`<img src="${esc(bc.photos[0])}" alt="" loading="lazy" data-hi="${esc(bc.img||'')}" onerror="this.remove()">`:''}<b>${esc(b)}</b><span>${n===1?'1 Fahrzeug':n+' Fahrzeuge'}</span></button>`;}).join('');
   document.querySelectorAll('#brandTiles img[data-hi]').forEach(img=>{const go=()=>upgrade(img,['720x540.webp']);if(img.complete)go();else img.addEventListener('load',go,{once:true});});
   $('#brandTiles').addEventListener('click',e=>{const t=e.target.closest('[data-brandtile]');if(!t)return;state.brand=t.dataset.brandtile;syncChips();render();document.getElementById('fahrzeuge').scrollIntoView({behavior:'smooth'});});
   fillSelect($('#fFuel'),CARS.map(fuelGroup));fillSelect($('#fGear'),CARS.map(c=>c.gear));fillSelect($('#fBody'),CARS.map(bodyGroup));
@@ -991,7 +995,7 @@ function filtered(){
 /* ---------- Showroom ---------- */
 function carHtml(c,fokus){
   const m=marker(c);
-  const pic=c.img?`<img src="${esc(c.photos[0])}" alt="${esc(title(c))}, ${esc(varText(c))}" loading="lazy" data-hi="${esc(c.img)}" onerror="imgFail(this,false)">`:fallbackEl(false).outerHTML;
+  const pic=c.photos.length?`<img src="${esc(c.photos[0])}" alt="${esc(title(c))}, ${esc(varText(c))}" loading="lazy" data-hi="${esc(c.img||'')}" onerror="imgFail(this,false)">`:fallbackEl(false).outerHTML;
   const bild=`<div class="auto-bild auftauchen">${pic}${m?`<span class="marker ${m[1]}">${m[0]}</span>`:''}</div>`;
   if(fokus) return `<li class="auto fokus" data-open="${c.id}">${bild}
     <div class="auto-text">
@@ -1053,10 +1057,10 @@ function openCar(id){
   let list=current.some(c=>c.id===id)?current:CARS;
   curIdx=list.findIndex(c=>c.id===id);const c=list[curIdx];if(!c)return;
   const rows=[['Erstzulassung',c.ez],['Kilometerstand',num(c.km)+' km'],['Leistung',`${c.kw} kW (${c.ps} PS)`],['Kraftstoff',c.fuel],['Getriebe',c.gear],['Aufbau',c.body],['Sitzplätze',c.seats],c.owners?['Vorbesitzer',c.owners]:null,['Verbrauch kombiniert',c.cons||'siehe Inserat'],['CO₂ kombiniert',c.co2||'siehe Inserat']].filter(Boolean);
-  const media=c.img?`<a class="fz-haupt" id="vMain" href="${asLink(c)}" target="_blank" rel="noopener" title="Alle Fotos auf AutoScout24"><img src="${esc(c.photos[0])}" alt="${esc(title(c))}" data-hi="${esc(c.img)}" onerror="imgFail(this,true)"></a>`:`<a class="fz-haupt" href="${asLink(c)}" target="_blank" rel="noopener">${fallbackEl(true).outerHTML}</a>`;
+  const media=c.photos.length?`<a class="fz-haupt" id="vMain" href="${asLink(c)}" target="_blank" rel="noopener" title="${c.img?'Alle Fotos auf AutoScout24':'Inserat auf mobile.de'}"><img src="${esc(c.photos[0])}" alt="${esc(title(c))}" data-hi="${esc(c.img||'')}" data-full="${c.foto?esc(c.foto+'.jpg'):''}" onerror="imgFail(this,true)"></a>`:`<a class="fz-haupt" href="${asLink(c)}" target="_blank" rel="noopener">${fallbackEl(true).outerHTML}</a>`;
   $('#dlgInner').innerHTML=`
     <div class="fz-bild">${media}
-      <a class="btn btn-messing" href="${asLink(c)}" target="_blank" rel="noopener"><svg><use href="#i-cam"/></svg>Alle Fotos auf AutoScout24</a>
+      <a class="btn btn-messing" href="${asLink(c)}" target="_blank" rel="noopener"><svg><use href="#i-cam"/></svg>${c.img?'Alle Fotos auf AutoScout24':'Inserat auf mobile.de'}</a>
     </div>
     <div class="fz-info">
       <div><span class="auto-marke">${esc(c.brand)}</span><h3 id="dlgTitle">${esc(c.model)}</h3><p class="auto-variante" style="margin-top:8px">${esc(varText(c))}</p></div>
