@@ -644,7 +644,7 @@ dialog.lb figcaption{font-family:var(--breit);font-stretch:112%;font-size:.88rem
 .ruhig .karte.nah{-webkit-box-reflect:none}
 .ruhig .boerse,.ruhig .boerse::after{animation:none}
 .ruhig .zitatband{background-attachment:scroll}
-.ruhig .kino-bilder img{animation-name:blende-ruhig}
+.ruhig .kino-bilder img{animation:none;opacity:0}.ruhig .kino-bilder img:first-child{opacity:1}
 @keyframes blende-ruhig{0%{opacity:0}6%{opacity:1}25%{opacity:1}31%{opacity:0}100%{opacity:0}}
 .ruhig .drei-aus,.ruhig.drei .kino-bilder{transform:none}
 .ruhig .zeile .auto-bild img,.ruhig .auto.zeile:hover .auto-bild img{transform:none}
@@ -1424,7 +1424,7 @@ beobachten();
   spur.addEventListener('dragstart',e=>e.preventDefault());
   if('IntersectionObserver' in window)new IntersectionObserver(es=>{sicht=es[0].isIntersecting;},{threshold:.35}).observe(spur);
   wrap.addEventListener('pointerenter',()=>{ruhe=performance.now()+1e9;});wrap.addEventListener('pointerleave',()=>{ruhe=performance.now()+2500;});
-  if(!still)setInterval(()=>{if(sicht&&!zieht&&!document.hidden&&performance.now()>ruhe&&!dlg.open){ziel=Math.round(ziel)+1;an();}},4600);
+  if(!still)setInterval(()=>{if(sicht&&!zieht&&!document.hidden&&performance.now()>ruhe&&!dlg.open&&!document.documentElement.classList.contains('ruhig')){ziel=Math.round(ziel)+1;an();}},4600);
   window.addEventListener('resize',lege);
   lege();
 })();
